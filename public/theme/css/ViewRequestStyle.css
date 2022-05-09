@@ -1,0 +1,1416 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5rem;
+}
+
+.yajari-removebg-preview-1 {
+    width: 200px;
+    padding-left: 50px;
+}
+
+.servicesnav {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+
+.requestnav {
+    padding-left: 25px;
+    text-decoration: none;
+}
+
+
+
+.QuotationButton {
+    background-color: #fec8d9;
+    color: #F82669;
+    height: 25px;
+    font-size: 15px;
+    border: hidden;
+    border-radius: 5px;
+    padding: 0.1rem .1rem;
+}
+
+#nav-publish {
+    margin-left: 30px;
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#nav-home {
+    color: palevioletred;
+}
+
+.background-image {
+    width: 100%;
+    height: 175px;
+    border-radius: 2%;
+    background-image: url(pictures/Group\ 12.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.mapDIV {
+    width: 18rem;
+    height: 18rem;
+    margin: auto;
+}
+
+.CRequestContainer {
+    width: 70%;
+}
+
+.responses-tQ1 {
+    background-color: #ffacbf;
+    color: #F9326D;
+    border-radius: 3px;
+    width: 80px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.responses-tQ2 {
+    background-color: #ffacbf;
+    color: #F9326D;
+    border-radius: 3px;
+    width: 80px;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.Responses-Name1 {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.requestFaceImg1 {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+.responses-date1 {
+    color: #F9326D;
+    font-size: 16px;
+}
+
+.Position-t1 {
+    font-size: 13px;
+    padding-left: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.CRperticularT {
+    text-align: center;
+    width: 5rem;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 1px solid rgb(180, 178, 178);
+    border-radius: 3px;
+    margin-bottom: 0.8rem;
+    margin-left: 1rem;
+    padding-top: 1px;
+}
+
+.responses-star1 {
+    height: 15px;
+}
+
+.Responses-starText {
+    font-size: 13px;
+    margin-bottom: 0.8rem;
+}
+
+#request-textID1 {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    margin-top: 1rem;
+}
+
+#request-textID2 {
+    font-size: 14px;
+}
+
+.CRPhotosT {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.CRPhotosImg {
+    width: 8rem;
+    height: 8rem;
+}
+
+.CRButton1 a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #F9326D;
+}
+
+.CRButton1 {
+    text-align: center;
+    width: 8rem;
+    height: 2.5rem;
+    background-color: white;
+    border: 2px solid #fd6794;
+    border-radius: 6px;
+    margin-top: 1rem;
+    padding-top: 7px;
+/*    margin-left: -.8rem;*/
+}
+
+
+.CRButton2 a {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.CRButton2 {
+    text-align: center;
+    width: 13rem;
+    height: 3.5rem;
+    background: linear-gradient(to right, #ff6d99, #fd0d55);
+    border-radius: 6px;
+}
+
+.CRBoxCont {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 100px 1px #ffe8ef;
+    padding: 3rem;
+}
+
+.mapDIVP {
+    padding-top: 2rem;
+}
+
+.modal-header {
+    justify-content: unset;
+    border-bottom: 1px solid #dee2e6;
+    --bs-gutter-x: 0;
+}
+
+#staticBackdropLabel {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.model-img1 {
+    width: 0.4rem;
+    height: 0.7rem;
+}
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 1px 2px 30px 1px #ff99b8;
+}
+
+.MBText1 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.MBText2 {
+    text-align: center;
+    font-size: 14px;
+}
+
+.Modelinput {
+    margin-right: 5%;
+}
+
+.form-control {
+    height: 3rem;
+}
+
+.form-control::placeholder {
+    position: relative;
+    top: 5%;
+    left: 30%;
+}
+
+.MFtext {
+    font-size: 14px;
+}
+
+.modal-footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.modal-footer {
+    display: block;
+}
+
+.MFImg {
+    margin: auto;
+    width: 8rem;
+}
+
+.ConformRequestCol2 {
+    margin: auto;
+    margin-top: 0.8rem;
+}
+
+.ContactMeButton {
+    font-size: 14px;
+    color: white;
+    padding: 0.2rem 1rem;
+    background: linear-gradient(to right, #ff6d99, #fd0d55);
+    border-radius: 5px;
+}
+
+.SendMessageButton,
+.CallButton,
+.CallButton2 {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    background: linear-gradient(to right, #ff719b, #ff155b);
+    padding: 0.6rem 2rem;
+    border-radius: 5px;
+}
+
+.CallButton {
+    background: gray;
+    padding: 0.6rem 3rem;
+}
+
+.CallButton2 {
+    background: gray;
+    padding: 0.6rem 5rem;
+}
+
+.MBText3 {
+    font-size: 22px;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 560px;
+    }
+
+    .modal-body {
+        padding: 1rem 4rem 2rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .modal-header {
+        padding: 0.5rem;
+    }
+
+    .Modelinput {
+        margin-right: 3%;
+    }
+
+    .modal-footer {
+        padding: 0.5rem;
+    }
+
+    .modal-body {
+        padding: 2rem 0.5rem;
+    }
+
+    .modal-dialog {
+        width: 80%;
+        margin: auto;
+    }
+
+    #staticBackdropLabel {
+        font-size: 9px;
+    }
+
+    .MBText1 {
+        font-size: 9px;
+        margin-bottom: 0.5rem;
+    }
+
+    .MBText2 {
+        font-size: 9px;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+        height: 2rem;
+    }
+
+    .MIputDIV {
+        width: 80%;
+        margin: auto;
+    }
+
+    .MFtext {
+        font-size: 9px;
+        margin-bottom: 0.5rem;
+    }
+
+    .MFImg {
+        width: 5rem;
+    }
+
+    .form-control::placeholder {
+        font-size: 9px;
+        top: 0%;
+        left: 30%;
+    }
+}
+
+@media (min-width: 769px) {
+    .CRperticularDIV2 {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .requestnav {
+        padding-left: 0px;
+        text-decoration: none;
+    }
+
+    .servicesnav {
+        padding-left: 0px;
+        padding-right: 20px;
+        text-decoration: none;
+    }
+
+    .publishnavbar {
+        position: relative;
+        left: -28px;
+        text-align: center;
+    }
+
+    .navpublish {
+        padding-left: 20px;
+        width: 200px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+
+    .background-image {
+        width: 100%;
+        top: 0px;
+        border-radius: 5%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .requestFaceImg1 {
+        width: 4rem;
+        height: 4rem;
+        margin-left: 1rem;
+    }
+
+    .responses-date1 {
+        font-size: 12px;
+        margin-left: 15px;
+    }
+
+    .confirmpublish {
+        position: relative;
+        left: -100px;
+    }
+
+    .Responses-Name1 {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .CRperticularT {
+        font-size: 12px;
+        margin-bottom: 0.3rem;
+        height: 1.2rem;
+        margin-left: 0.7rem;
+        width: 4.5rem;
+    }
+
+    .lebardolocation {
+        position: relative;
+        left: -100px;
+    }
+
+    .star {
+        position: relative;
+        left: -100px;
+        top: 5px;
+    }
+
+    .lookingformove {
+        position: relative;
+        left: 15px;
+    }
+
+    #request-textID1 {
+        font-size: 12px;
+        font-weight: bolder;
+        margin-bottom: 5px;
+        margin-top: 1rem;
+    }
+
+    .CRButton3 {
+        position: relative;
+        left: -402px;
+        top: 76px;
+    }
+
+    .mapDIV {
+        width: 40rem;
+        height: 16rem;
+        margin: auto;
+    }
+
+/*
+    .CRButton1 {
+        text-align: center;
+        width: 8rem;
+        height: 2.5rem;
+        background-color: white;
+        border: 2px solid #fd6794;
+        border-radius: 6px;
+        margin-top: 1rem;
+        padding-top: 7px;
+        margin-left: -0.8rem;
+        position: relative;
+        left: -80px;
+        top: 20px;
+    }
+*/
+
+}
+
+@media (max-width: 768px) {
+
+    .SendMessageButton,
+    .CallButton {
+        font-size: 12px;
+        padding: 0.2rem 1rem;
+        border-radius: 5px;
+    }
+
+    .CallButton {
+        padding: 0.2rem 2rem;
+    }
+
+    .ContactMeButton {
+        font-size: 13px;
+        padding: 0.1rem 0.5rem;
+    }
+
+    .CRBoxCont {
+        padding: 0;
+        padding-top: 1rem;
+    }
+
+    .responses-tQ1 {
+        width: 60px;
+        font-size: 12px;
+        margin-bottom: 0.2rem;
+    }
+
+    .responses-tQ2 {
+        width: 60px;
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .ConformRequestCol2 {
+        margin-top: 0.15rem;
+    }
+
+    .Responses-Name1 {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .requestFaceImg1 {
+        width: 4rem;
+        height: 4rem;
+        margin-left: 1rem;
+    }
+
+    .responses-date1 {
+        font-size: 12px;
+        margin-left: 15px;
+    }
+
+    .Position-t1 {
+        font-size: 12px;
+        margin-bottom: 0;
+        height: 1rem;
+    }
+
+    .CRperticularT {
+        font-size: 12px;
+        margin-bottom: 0.3rem;
+        height: 1.2rem;
+        margin-left: 0.7rem;
+        width: 4.5rem;
+    }
+
+    .responses-star1 {
+        margin-top: 0.1rem;
+        height: 13px;
+    }
+
+    .Responses-starText {
+        font-size: 12px;
+    }
+
+    #request-textID1 {
+        font-size: 12px;
+    }
+
+    #request-textID2 {
+        font-size: 13px;
+    }
+
+    .CRPhotosT {
+        font-size: 12px;
+    }
+
+    .CRPhotosImg {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .CRButton1 a {
+        font-size: 12px;
+    }
+
+    .CRButton1,
+    .CRButton2 {
+        width: 7rem;
+        height: 2rem;
+/*
+        position: relative;
+        top: 20px;
+        left: -83px;
+*/
+    }
+
+    .CRButton1 p {
+        padding-top: -0.7rem;
+    }
+
+    .CRButton2 p {
+        padding-top: 0.4rem;
+    }
+
+    .CRButton2 a {
+        font-size: 12px;
+    }
+
+    .CRperticularDIV2 {
+        display: flex;
+    }
+
+    .CRperticularDIV1 {
+        display: none;
+    }
+
+    body {
+        padding-top: 2rem;
+    }
+
+
+    .confirmpublish {
+        position: relative;
+        left: -130px;
+    }
+
+    .lebardolocation {
+        position: relative;
+
+        left: -131px;
+    }
+
+    .star {
+        position: relative;
+        left: -131px;
+        top: 5px;
+    }
+
+    .CRButton3 {
+        position: relative;
+        left: -504px;
+        top: 76px;
+    }
+
+    .lookingformove {
+        position: relative;
+        left: 15px;
+    }
+
+    .photogallery {
+        position: relative;
+        left: 15px;
+    }
+
+    .background-image {
+        width: 100%;
+        top: 30px;
+        border-radius: 5%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mapDIV {
+        width: 40rem;
+        height: 16rem;
+        margin: auto;
+    }
+
+    .requestnav {
+        padding-left: 0px;
+        text-decoration: none;
+    }
+
+    .servicesnav {
+        padding-left: 0px;
+        padding-right: 20px;
+        text-decoration: none;
+    }
+
+    .publishnavbar {
+        position: relative;
+        left: -28px;
+        text-align: center;
+    }
+
+    .navpublish {
+        padding-left: 20px;
+        width: 200px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .CRequestContainer {
+        width: 95%;
+    }
+}
+/*
+
+@media (max-width: 900px) {
+
+    .CRButton2,
+    .CRButton1 {
+        margin: auto;
+    }
+}
+*/
+
+@media (min-width: 1200px) {
+    #nav-login {
+        position: absolute;
+        right: 160px;
+    }
+}
+
+.showcase-text1 {
+    font-size: 30px;
+    font-weight: 900;
+    padding-top: 4.5rem;
+}
+
+@media (max-width: 400px) {
+    .Publish-text1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px) {
+    .follow-img {
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .yajari-removebg-preview-1 {
+        width: 120px;
+        padding-left: 20px;
+    }
+
+    #nav-publish1 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        padding-bottom: 30vh;
+    }
+}
+
+@media (min-width: 461px) {
+    #nav-publish2 {
+        display: none;
+    }
+}
+
+@media (min-width: 990px) {
+    .Form-Container {
+        width: 65%;
+    }
+}
+
+
+@media all and (min-width: 1165px) {
+    .navalign {
+        padding-left: 120px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+        display: inline-flex;
+        padding-right: .5rem;
+    }
+
+    .confirmpublish {
+        position: relative;
+        left: -35px;
+    }
+
+    .lebardolocation {
+        position: relative;
+        left: -35px;
+    }
+
+    .star {
+        position: relative;
+        left: -35px;
+    }
+
+    .ahre {
+        padding-left: 2rem;
+    }
+
+    .fontdummy {
+        font-size: 12px;
+    }
+
+    /*
+    .background-image {
+        width: 90%;
+        height: 200px;
+        border-radius: 2%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        left: 70px;
+    }
+*/
+
+    .showcase-text1 {
+        font-size: 30px;
+        font-weight: 900;
+        padding-top: 5rem;
+    }
+
+    .CRButton3 {
+        text-align: center;
+        width: 5rem;
+        font-size: 14px;
+        font-weight: bolder;
+
+
+        margin-bottom: 0.8rem;
+        margin-left: 1rem;
+        height: 1.2rem;
+        position: relative;
+        left: -372px;
+        top: 97px
+    }
+
+    .navalign2 {
+        padding-left: 200px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+        display: inline-flex;
+    }
+
+    .navpublish {
+
+        padding-left: 20px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .johnydavid {
+        position: relative;
+        left: 0px;
+    }
+
+    .labardoloation {
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+
+
+@media (max-width: 425px) {
+
+
+    .navalign {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+    .requestnav {
+        padding-left: 0px;
+        text-decoration: none;
+    }
+
+    .servicesnav {
+        padding-left: 0px;
+        padding-right: 0px;
+        text-decoration: none;
+    }
+
+    .publishnavbar {
+        position: relative;
+        left: -28px;
+        text-align: center;
+    }
+
+    .nav-publish {
+        padding-left: 20px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        width: 56%;
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+/*
+    .CRButton1 {
+        position: relative;
+        left: -142px;
+        top: 20px;
+    }
+*/
+
+    .imgtopurgent {
+        width: 20px;
+        margin-left: 10px;
+        margin-top: 4px;
+    }
+
+
+    .confirmpublish {
+        position: relative;
+        left: 0px;
+    }
+
+    .lebardolocation {
+        position: relative;
+        left: 0px;
+    }
+
+    .star {
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
+
+    .requestFaceImg1 {
+        width: 4rem;
+        height: 4rem;
+        position: relative;
+        left: 9px;
+    }
+
+    .cardtop {
+        padding-top: 1rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .navalign2 {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+    .lookingformove {
+        position: relative;
+        left: 10px
+    }
+
+
+    .navpublish {
+        padding-left: 20px;
+        width: 200px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+
+
+    .background-image {
+        width: 100%;
+        height: 130px;
+        border-radius: 10%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        top: 15px;
+    }
+
+
+    .showcase-text1 {
+        font-size: 25px;
+        font-weight: 900;
+        padding-top: 2.5rem;
+    }
+
+
+
+
+    .CRButton3 {
+        text-align: center;
+        background-color: white;
+
+        border-radius: 6px;
+        position: relative;
+        top: 55px;
+        left: -220px;
+        font-size: 13px;
+        color: #e8225e;
+        width: 4rem;
+        height: 1.5rem;
+        padding-top: .2rem;
+    }
+
+    .mapDIV {
+        width: 26rem;
+        height: 15rem;
+        margin: auto;
+    }
+
+    .ConformRequestCol2 {
+        margin-top: 0.15rem;
+        position: relative;
+        left: -11px;
+    }
+
+    .photogallery {
+        position: relative;
+        left: 12px;
+    }
+
+    .fontdummy {
+        font-size: 12px;
+    }
+
+}
+
+
+@media (max-width: 411px) {
+    .CRButton3 {
+        text-align: center;
+        background-color: white;
+
+
+        position: relative;
+        top: 55px;
+        left: -203px;
+        font-size: 13px;
+        color: #e8225e;
+        width: 4rem;
+        height: 1.5rem;
+        padding-top: .2rem;
+    }
+
+    .mapDIV {
+        width: 25rem;
+        height: 15rem;
+        margin: auto;
+    }
+
+}
+
+
+
+@media (max-width: 375px) {
+
+    .CRButton3 {
+        text-align: center;
+        background-color: white;
+
+        position: relative;
+        top: 54px;
+        left: -165px;
+        font-size: 13px;
+        color: #e8225e;
+        width: 4rem;
+        height: 1.5rem;
+        padding-top: .2rem;
+    }
+
+    .confirmpublish {
+        position: relative;
+        left: 10px;
+    }
+
+    .imgtopurgent {
+        width: 20px;
+        margin-left: 5px !important;
+        margin-top: 6px;
+    }
+
+    .lebardolocation {
+        position: relative;
+        left: 11px;
+    }
+
+    .star {
+        position: relative;
+        left: 13px;
+        top: 0px;
+    }
+
+
+    .showcase-text1 {
+        font-size: 25px;
+        font-weight: 900;
+        padding-top: 2.5rem;
+    }
+
+    .mapDIV {
+        width: 22rem;
+        height: 15rem;
+        margin: auto;
+    }
+
+
+    .labardoloation {
+        position: relative;
+        left: 26px;
+        top: 3px;
+    }
+
+
+
+    .starside {
+        position: relative;
+        left: 28px;
+        top: 5px;
+    }
+
+
+    .navalign {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+    .navalign2 {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+
+    .navpublish {
+        padding-left: 20px;
+        width: 200px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+
+
+    .background-image {
+        width: 100%;
+        height: 130px;
+        border-radius: 10%;
+        background-image: url(pictures/Group\ 12.png);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+
+/*
+    .CRButton1 {
+        position: relative;
+        left: -117px;
+        top: 20px;
+    }
+*/
+
+}
+
+@media (max-width: 360px) {
+    .navalign {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+    .CRButton1 p {
+        position: relative;
+        top: -13px;
+    }
+
+    .requestFaceImg1 {
+        width: 4rem;
+        height: 4rem;
+        position: relative;
+        left: 0px;
+    }
+
+    .imgtopurgent {
+        width: 20px;
+        margin-left: 5px;
+        margin-top: 4px;
+    }
+
+    .navalign2 {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+
+    .navpublish {
+        padding-left: 20px;
+        width: 200px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+
+
+    .background-image {
+        width: 100%;
+        height: 130px;
+        border-radius: 10%;
+        background-image: url(pictures/Group\ 12.png);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .CRButton3 {
+        text-align: center;
+
+
+        position: relative;
+        top: 55px;
+        left: -150px;
+        font-size: 13px;
+        color: #e8225e;
+        width: 4rem;
+        height: 1.5rem;
+        padding-top: .2rem;
+    }
+
+    .showcase-text1 {
+        font-size: 25px;
+        font-weight: 900;
+        padding-top: 2.5rem;
+    }
+
+    .CRButton1 {
+        position: relative;
+        left: -111px;
+        top: 21px;
+        padding-top: 14px;
+    }
+
+
+}
+
+
+@media (max-width: 325px) {
+    .navalign {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+    .CRButton1 {
+        position: relative;
+        left: -68px;
+        top: 21px;
+        padding-top: 14px;
+    }
+
+    .CRperticularT {
+        font-size: 12px;
+        margin-bottom: 0.3rem;
+        height: 1.2rem;
+        margin-left: 0.3rem;
+        width: 4.5rem;
+    }
+
+    .requestFaceImg1 {
+        width: 4rem;
+        height: 4rem;
+        position: relative;
+        left: -3px;
+    }
+
+    .confirmpublish {
+        position: relative;
+        left: 2px;
+    }
+
+    .lebardolocation {
+        position: relative;
+        left: 4px;
+    }
+
+    .star {
+        position: relative;
+        left: 4px;
+        top: 0px;
+    }
+
+    .ConformRequestCol2 {
+        margin-top: 0.15rem;
+        position: relative;
+        left: -5px;
+    }
+
+    .CRButton3 {
+        text-align: center;
+
+
+        position: relative;
+        top: 54px;
+        left: -115px;
+        font-size: 13px;
+        color: #e8225e;
+        width: 4rem;
+        height: 1.5rem;
+        padding-top: .2rem;
+    }
+
+    .showcase-text1 {
+        font-size: 25px;
+        font-weight: 900;
+        padding-top: 2.5rem;
+    }
+
+    .navalign2 {
+        padding-left: 30px;
+        padding-top: 10px;
+        color: #ff6e9a;
+        font-weight: bold;
+    }
+
+
+    .navpublish {
+        padding-left: 20px;
+        width: 200px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+
+
+    .background-image {
+        width: 100%;
+        height: 130px;
+        border-radius: 10%;
+        background-image: url(pictures/Group\ 12.png);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        left: 0px;
+    }
+
+    .mapDIV {
+        width: 16rem;
+        height: 15rem;
+        margin: auto;
+    }
+}
+
+.imgtopurgent {
+    margin-left: 40px
+}
+
+@media(min-width:1920px) {
+    .imgtopurgent {
+        margin-left: 20px;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:768px) {
+    .pt-3 {
+        padding-top: 1.72rem !important;
+    }
+
+    .CRButton1 p {
+        position: relative;
+        top: -1px;
+    }
+}

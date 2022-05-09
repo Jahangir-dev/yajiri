@@ -1,0 +1,334 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5rem;
+}
+
+.yajari-removebg-preview-1 {
+    width: 200px;
+    padding-left: 50px;
+}
+
+.requestnav {
+    padding-left: 25px;
+    text-decoration: none;
+}
+
+.servicesnav {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.navpublish {
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#nav-publish {
+    margin-left: 30px;
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#nav-home {
+    color: palevioletred;
+}
+
+.ProfileDropdown p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ProfileDropdown {
+    width: 16rem;
+    border-radius: 10px;
+}
+
+.ProfileDropdown li {
+    list-style: none;
+    background-image: none;
+    background-repeat: none;
+    background-position: 0;
+}
+
+.ProfileDropdown ul {
+    padding-left: 0;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button:focus {
+    color: black;
+    background-color: white;
+    box-shadow: none;
+}
+
+.ReviewImg1 {
+    width: 6rem;
+    margin: auto;
+}
+
+.ReviewContainer {
+    padding: 2rem 5rem;
+    width: 40%;
+    margin: auto;
+    box-shadow: 1px 2px 20px 1px #93d6e2;
+    border-radius: 30px;
+}
+
+.ReviewText1 {
+    margin-top: 1rem;
+    color: #3ecff0;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.ReviewImg2 {
+    height: 1rem;
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+.PostReviewButton {
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #76EDF9, #13B7E9);
+
+    text-align: center;
+    width: 10rem;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+}
+
+.LeaveReviewSection {
+    padding-top: 8rem;
+}
+@media (min-width: 1200px) {
+    .flex-container {
+        position: absolute;
+        right: 45px;
+        top: 20px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .flex-container {
+        position: relative;
+        left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .ReviewContainer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .Publish-text1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px) {
+    .follow-img {
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .yajari-removebg-preview-1 {
+        width: 120px;
+        padding-left: 20px;
+    }
+
+    #nav-publish1 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        padding-bottom: 30vh;
+    }
+}
+
+@media (min-width: 461px) {
+    #nav-publish2 {
+        display: none;
+    }
+}
+
+
+@media (max-width: 800px) {
+    #nav-publish {
+        margin-top: 0.8rem;
+    }
+
+    .nav-item2 {
+        height: 3rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .flex-container {
+        position: relative;
+        left: -2.8rem;
+        margin-top: 1rem;
+    }
+
+    .chatDIV {
+        display: none;
+    }
+
+    .ReviewContainer {
+        padding: 2rem;
+        width: 95%;
+    }
+
+    .LeaveReviewSection {
+        padding-top: 3rem;
+    }
+
+    .ReviewImg1 {
+        width: 5rem;
+    }
+
+    .requestnav {
+        padding-left: 0px;
+        text-decoration: none;
+    }
+
+    .servicesnav {
+        padding-left: 0px;
+        padding-right: 20px;
+        text-decoration: none;
+    }
+
+    .publishnavbar {
+        position: relative;
+        left: -30px;
+        text-align: center;
+        width: 27%;
+    }
+
+    .navpublish {
+        padding-left: 20px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 769px) {
+    .chatDIV2 {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #nav-publish {
+        margin-top: 0.8rem;
+    }
+
+    .nav-item2 {
+        height: 3rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .flex-container {
+        position: relative;
+        left: -2.8rem;
+        margin-top: 1rem;
+    }
+
+    .chatDIV {
+        display: none;
+    }
+
+    .ReviewContainer {
+        padding: 2rem;
+        width: 95%;
+    }
+
+    .LeaveReviewSection {
+        padding-top: 3rem;
+    }
+
+    .ReviewImg1 {
+        width: 5rem;
+    }
+
+    .requestnav {
+        padding-left: 0px;
+        text-decoration: none;
+    }
+
+    .servicesnav {
+        padding-left: 0px;
+        padding-right: 20px;
+        text-decoration: none;
+    }
+
+    .publishnavbar {
+        position: relative;
+        left: -30px;
+        text-align: center;
+        width: 27%;
+    }
+
+    .navpublish {
+        padding-left: 20px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+}
+@media (max-width: 425px) {
+
+
+    .publishnavbar {
+        position: relative;
+        left: -30px;
+        text-align: center;
+        width: 50%;
+    }
+}
+@media (max-width: 375px) {
+    .publishnavbar {
+        position: relative;
+        left: -20px;
+        text-align: center;
+        width: 50%;
+    }
+}
+
+@media (max-width: 320px) {
+    .publishnavbar {
+        position: relative;
+        left: -10px;
+        text-align: center;
+        width: 55%;
+    }
+}
+.PostReviewButton:hover,.PostReviewButton:active,.PostReviewButton:focus{
+    color: #fff !important;
+}

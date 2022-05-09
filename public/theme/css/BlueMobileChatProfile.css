@@ -1,0 +1,307 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5rem;
+}
+
+
+.whitestar{
+    position: relative;
+    top: -1px;
+    left: -5px;
+}
+
+.requestnav {
+    padding-left: 25px;
+    text-decoration: none;
+}
+
+.servicesnav {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.navpublish {
+    padding-left: 20px;
+    background: linear-gradient(to right,#9bd6e2,#21beea);
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+.yajari-removebg-preview-1{
+    width: 200px;
+    padding-left: 50px;
+}
+#nav-publish{
+    margin-left: 30px;
+    padding-left: 20px;
+    background:linear-gradient(to right,#9bd6e2,#21beea) ;
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+#nav-home{
+    color:palevioletred;
+}
+.ProfileDropdown p{
+    font-size: 14px;
+    font-weight: bold;
+}
+.ProfileDropdown{
+    width: 16rem;
+    border-radius: 10px;
+}
+.ProfileDropdown li{
+    list-style:none;
+    background-image:none;
+    background-repeat:none;
+    background-position:0;
+}
+.ProfileDropdown ul{
+    padding-left: 0;
+}
+.btn-check:focus+.btn, .btn:focus {
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed), .accordion-button:focus {
+    color: black;
+    background-color: white;
+    box-shadow: none;
+}
+.card{
+    border: none;
+    background: #9bd6e2,#21beea;
+}
+.card:active{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 10px 30px 1px #9bd6e2,#21beea;
+}
+.chatcardtext1{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+.chatcardtext2{
+    font-size: 13px;
+    color: #7B8793;
+    margin-bottom: 0;
+}
+.chatcardtext3{
+    font-size: 13px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.CardImg{
+    margin-top: 0.4rem;
+}
+
+.OnlineText a{
+    font-size: 14px;
+    color: #76C00D;
+    padding: 0 0 0 10px;
+}
+.onlineCard, .ReviewRow{
+    padding: 0.3rem 1rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 1px 10px 30px 1px #bfe8f1
+}
+.ReviewText1{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.ReportButton, .ReviewButton{
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #F9326D;
+    background: #ffd9e5;
+    width: 6rem;
+    height: 2rem;
+    padding-top: 0.4rem;
+    border-radius: 5px;
+    margin-left: 0.7rem;
+    text-align: center;
+}
+.ReviewButton{
+    width: 12rem;
+}
+.ReviewRow{
+    margin-top: 1.2rem;
+    padding: 2rem 0 9rem 3rem;
+}
+.chatThirdCol{
+    margin: auto;
+}
+.NoButton{
+    font-size: 16px;
+    text-decoration: none;
+    color: #F81D66;
+    border: 1px solid #F81D66;
+    padding: 0.5rem 4rem;
+    border-radius: 10px;
+}
+.YesButton{
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right,#ff6d9e,#ff0156) ;
+    padding: 0.5rem 4rem;
+    border-radius: 10px;
+}
+.NoButton:hover ,.YesButton:hover{
+    color: black;
+}
+textarea::placeholder{
+    font-size: 14px;
+    color: black;
+}
+.modal-body{
+    padding: 2rem 1rem;
+}
+.ReportModalBody{
+    padding: 1rem 1rem 3rem 1rem;
+}
+
+
+
+@media (max-width: 995px) {
+    .chatThirdCol{
+        margin-top: 3rem;
+    }
+}
+@media (min-width: 1200px) {
+    .flex-container {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+}
+}
+@media (max-width: 1199px) {
+    .flex-container{
+        position: relative;
+        left: 2rem;
+        margin-top: 1rem;
+    }
+}
+@media (max-width: 400px) {
+    .Publish-text1{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px){
+    .follow-img{
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+@media (min-width: 461px){
+    #nav-publish2{
+        display: none;
+    }
+}
+@media (min-width: 769px) {
+    .chatDIV2{
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .yajari-removebg-preview-1{
+        width: 120px;
+        padding-left: 20px;
+    }
+    #nav-publish1{
+        display: none;
+    }
+    #nav-publish2{
+        padding-bottom: 30vh;
+    }
+    #nav-publish{
+        margin-top: 0.8rem;
+    }
+    .nav-item2{
+        height: 3rem;
+        border-bottom: 1px solid gray;
+    }
+    .flex-container{
+        position: relative;
+    left: -2.8rem;
+    margin-top: 1rem;
+    } 
+    .chatDIV{
+        display: none;
+    }
+
+    .requestnav {
+    padding-left: 0px;
+    text-decoration: none;
+}
+
+.servicesnav {
+    padding-left: 0px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.nav-publish {
+    padding-left: 20px;
+    background: linear-gradient(to right,#ffacbf,#fa4d75);
+    width: 30%;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+.publishnavbar {
+    position: relative;
+    left: -50px;
+    text-align: center;
+    width: 32%;
+}
+}
+
+
+@media (max-width: 425px) {
+
+.publishnavbar {
+    position: relative;
+    left: -50px;
+    text-align: center;
+    width: 60%;
+}
+
+}
+@media (max-width: 375px) {
+
+
+
+.publishnavbar {
+    position: relative;
+    left: -35px;
+    text-align: center;
+    width: 60%;
+}
+
+}
+
+
+@media (max-width: 320px) {
+
+
+
+.publishnavbar {
+    position: relative;
+    left: -17px;
+    text-align: center;
+    width: 60%;
+}
+
+
+}

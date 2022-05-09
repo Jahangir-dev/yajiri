@@ -1,0 +1,248 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5rem;
+}
+.yajari-removebg-preview-1{
+    width: 200px;
+    padding-left: 50px;
+}
+#nav-publish{
+    margin-left: 30px;
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75) ;
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+#nav-home{
+    color:palevioletred;
+}
+.ProfileDropdown p{
+    font-size: 14px;
+    font-weight: bold;
+}
+.ProfileDropdown{
+    width: 16rem;
+    border-radius: 10px;
+}
+.ProfileDropdown li{
+    list-style:none;
+    background-image:none;
+    background-repeat:none;
+    background-position:0;
+}
+.ProfileDropdown ul{
+    padding-left: 0;
+}
+.btn-check:focus+.btn, .btn:focus {
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed), .accordion-button:focus {
+    color: black;
+    background-color: white;
+    box-shadow: none;
+}
+.card{
+    border: none;
+    background: #f8f9fa;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 10px 30px 1px #ffd6e0;
+}
+.chatcardtext1{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+.chatcardtext2{
+    font-size: 13px;
+    color: #7B8793;
+    margin-bottom: 0;
+}
+.chatcardtext3{
+    font-size: 13px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.CardImg{
+    margin-top: 0.4rem;
+}
+.ChatSearchButton{
+    background: #f8f9fa;
+    height: 2.5rem;
+    background-image: url(icons/search-24px.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+
+
+
+
+@media (max-width: 1199px) {
+    .flex-container{
+        position: relative;
+        left: 2rem;
+        margin-top: 1rem;
+    } 
+}
+@media (max-width: 400px) {
+    .Publish-text1{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px){
+    .follow-img{
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+@media (max-width: 460px){
+    .yajari-removebg-preview-1{
+        width: 120px;
+        padding-left: 20px;
+    }
+    #nav-publish1{
+        display: none;
+    }
+    #nav-publish2{
+        padding-bottom: 30vh;
+    }
+}
+@media (min-width: 461px){
+    #nav-publish2{
+        display: none;
+    }
+}
+@media (min-width: 769px) {
+    .chatDIV2{
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    #nav-publish{
+        margin-top: 0.8rem;
+    }
+    .nav-item2{
+        height: 3rem;
+        /*border-bottom: 1px solid gray;*/
+    }
+    .flex-container{
+        position: relative;
+        left: 0.2rem;
+        margin-top: 1rem;
+    } 
+    .chatDIV{
+        display: none;
+    }
+}
+
+
+
+@media all and (min-width: 1165px) {
+        .navalign{
+     padding-left: 240px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    display: inline-flex;
+    padding-right: .5rem;
+    }
+
+
+.flex-container {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+}
+
+
+
+
+
+    .ahre{
+            padding-left: 2rem;
+    }
+
+
+
+
+
+.navalign2{
+     padding-left: 200px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    display: inline-flex;
+    }    
+
+    .nav-publish{
+    
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75);
+  
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+  
+  }
+
+
+
+  @media only screen and (max-width: 425px) {
+ .navalign{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+    
+
+
+
+
+.messageside{
+        position: relative;
+    left: -72px;
+
+}
+
+
+.languagesside{
+    position: relative;
+    left: 45px;
+}
+
+    
+
+    .navalign2{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+
+    .nav-publish{
+    
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75);
+    width: 56%;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+
+
+}
+
+
+

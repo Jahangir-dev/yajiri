@@ -1,0 +1,642 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5rem;
+}
+.yajari-removebg-preview-1{
+    width: 200px;
+    padding-left: 50px;
+}
+
+@media (min-width: 1200px) {
+    #nav-login{
+        position: absolute;
+        right: 160px;
+    }
+    .flex-container {
+        position: absolute;
+        right: 50px;
+        top: 20px;
+    }
+}
+.showcase-text1{
+    font-size: 26px; font-weight: 900; padding-top: 2rem;
+}
+.showcase-text2{
+    font-size: 18px; font-weight:500;
+}
+.Publish-text1{
+    font-size: 25px; font-weight: 900; padding-top: 2rem;
+}
+@media (max-width: 400px) {
+    .Publish-text1{
+        font-size: 22px;
+    }
+}
+.background-image{
+    width: 100%;
+    height: 200px;
+    border-radius: 2%;
+    background-image: url(pictures/Group\ 2381.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+@media (max-width: 766px) {
+    .showcase-text1{
+        font-size: 16px;
+    }
+    .showcase-text2{
+        font-size: 14px;
+    }
+}
+@media (max-width: 1000px) and (min-width: 767px) {
+    .showcase-text1{
+        font-size: 20px;
+    }
+}
+.RequestContactButton{
+    height: 1.65rem;
+    background-image: linear-gradient(to right,#FD9C8D, #F81564);
+    border-radius: 5px;
+}
+#pagination-num{
+    width: 35px;
+    height: 35px;
+    color: #1EA6DF;
+    border: 1px solid #1EA6DF;
+    border-radius: 50%;
+}
+#pagination-num:active{
+    color: white;
+    background-color: #1EA6DF;
+    box-shadow: none;
+}
+#pagination-num:focus{
+    color: white;
+    background-color: #1EA6DF;
+    box-shadow: none;
+}
+.page-item{
+    text-decoration: none;
+}
+#nav-publish{
+    margin-left: 30px;
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75) ;
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+#Contact-b1{
+    height: 30px;
+    background:linear-gradient(to right, #76EDF9,#13B7E9);
+    width: 100px;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 6px;
+}
+@media (max-width: 560px) {
+    body{
+        padding-top: 3rem;
+    }
+    .background-image2{
+        height: 180px;
+    }
+    #responsesID2{
+        display: none;
+    }
+    #responsesID1{
+        display: flex;
+    }
+    #request-textID1{
+        font-size: 12px; margin: auto; padding-top: 10px;
+    }
+    #request-textID2{
+        font-size: 12px;font-weight: 500;
+    }
+    .requestFaceImg1{
+        width: 70px;padding-left: 10px;
+    }
+    .requestFaceImgTICK{
+        position: absolute; top: 1.4rem;left: 3.8rem;width: 1.3rem;
+    }
+    .Responses-Name1{
+        font-size: 13px;padding-top: 0;
+    }
+    .responses-star1{
+        width: 70px; height: 12px;
+    }
+    .responses-date1{
+        color: #15B8E9;padding-left: 10px;font-size: 12px;margin-bottom: 0;margin-top: 5px;
+    }
+    .Responses-starText{
+        padding-left: 5px; font-size: 11px;
+    }
+    .responses-heart1{
+        width: 0.8rem; height: 0.8rem;margin-right: 1px;padding-top: 0;
+    }
+    .responses-buttonQ1{
+        background-color: #a8ebff; color: #15B8E9; height: 20px;border: hidden;border-radius: 5px;
+    }
+    .responses-tQ1{
+        font-size: 12px;
+    }
+    .responses-buttons1234{
+        font-size: 11px;padding-left: 10px; padding-top: 3px;
+    }
+    .card-img-top{
+        width: 3rem;
+    }
+    .form-button1{
+        background-color: rgb(247, 244, 244);padding-top: 5px;
+    }
+}
+@media (min-width: 561px) {
+    #responsesID2{
+        display: flex;
+    }
+    #LineID1{
+        display: none;
+    }
+    #responsesID1{
+        display: none;
+    }
+    #request-textID1{
+        font-size: 14px; margin: auto;
+    }
+    #request-textID2{
+        font-size: 14px;font-weight: 500;
+    }
+    .requestFaceImg1{
+        width: 85px; padding-left: 10px;
+    }
+    .requestFaceImgTICK1{
+        position: absolute; top: 3.5rem;left: 4.7rem;width: 1.3rem;
+    }
+    .Responses-Name1{
+        font-size: 15px;
+    }
+    .responses-star1{
+        width: 90px; height: 15px;
+    }
+    .responses-date1{
+        color: #15B8E9;padding-left: 10px;font-size: 13px;margin-bottom: 0;
+    }
+    .Responses-starText{
+        padding-left: 5px; font-size: 12px;
+    }
+    .responses-heart1{
+        width: 1.2rem; height: 1.3rem; padding-top: 0.2rem;margin-right: 10px;
+    }
+    .responses-buttonQ1{
+        background-color: #9be8ff; color: #15B8E9; height: 25px;border: hidden;border-radius: 5px;
+    }
+    .responses-tQ1{
+        font-size: 15px;
+    }
+    .responses-buttons1234{
+        font-size: 13px;padding-left: 10px;
+    }
+    .card-img-top{
+        width: 4rem;
+    }
+}
+@media (max-width: 420px){
+    .follow-img{
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+@media (max-width: 460px){
+    #Logo-view1{
+        display: none;
+    }
+    .yajari-removebg-preview-1{
+        width: 120px;
+        padding-left: 20px;
+    }
+    #nav-publish1{
+        display: none;
+    }
+    #nav-publish2{
+        padding-bottom: 30vh;
+    }
+}
+@media (min-width: 461px){
+    #Logo-view2{
+        display: none;
+    }
+    #nav-publish2{
+        display: none;
+    }
+}
+
+
+
+.modal-content{
+    border-radius: 10px;
+    box-shadow: 1px 2px 30px 1px #ff99b8;
+}
+.MBText1{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff155b;
+}
+.MBText2{
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 2rem;
+    color: black;
+}
+.SendMessageButton, .CallButton ,.CallButton2{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    background: linear-gradient(to right,#ff719b,#ff155b);
+    padding: 0.6rem 2rem;
+    border-radius: 5px;
+}
+.CallButton{
+    background: gray;
+    padding: 0.6rem 3rem;
+}
+.CallButton2{
+    background: gray;
+    padding: 0.6rem 5rem;
+}
+.modal-body{
+    padding: 2rem 4rem 4rem 4rem;
+}
+.MBText3{
+    font-size: 22px;
+    text-align: center;
+    margin: 2rem auto;
+}
+.ReportCol{
+    text-align: end;
+    margin-right: 1rem;
+}
+.QuotationButton{
+    font-size: 13px;
+    padding: 0.1rem 0.7rem;
+    background: #96e6ff;
+    border-radius: 5px;
+    color: #15B8E9;
+    margin-left: 1rem;
+}
+.ReportContactFlex{
+
+    position: relative;
+
+
+}
+.RatingText1{
+    font-size: 13px;margin-left: 0.3rem;
+    margin-top: 0.2rem;
+}
+.RequestDIVP{
+    background-color: white; border-radius: 10px;
+    box-shadow: 1px 1px 100px 1px #eafaff;
+    padding: 1rem 2rem 0.5rem 3rem; margin: auto;
+}
+.CardNameStar{
+    margin-left: 3rem;
+}
+.NeighborsSText1{
+    font-size: 28px;
+    color: #16B9E9;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.form-control{
+    border-radius: 5px;
+}
+form input{
+    height: 3rem;
+    background: white;
+}
+.SearchButton{
+    position: relative;
+    width: 5rem;
+    height: 3rem;
+    background: white;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.SearchButtonImg{
+    position: absolute;
+    top: 0.8rem;
+    left: 1.5rem;
+}
+.SearchRow{
+    width: 92%;margin: auto; box-shadow: 1px 3px 5px 1px rgb(216, 216, 216); border-radius: 10px;
+}
+form input::placeholder{
+    font-weight: 600;
+    color: black;
+    font-size: 16px;
+}
+#dropdownMenuButton1{
+    width: 10rem;
+    height: 4rem;
+    box-shadow: 1px 3px 5px 1px rgb(216, 216, 216); border-radius: 10px;
+    font-size: 16px;
+    color: black;
+}
+.NoButton{
+    font-size: 16px;
+    text-decoration: none;
+    color: #F81D66;
+    border: 1px solid #F81D66;
+    padding: 0.5rem 4rem;
+    border-radius: 10px;
+}
+.YesButton{
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right,#ff6d9e,#ff0156) ;
+    padding: 0.5rem 4rem;
+    border-radius: 10px;
+}
+.NoButton:hover ,.YesButton:hover{
+    color: black;
+}
+textarea::placeholder{
+    font-size: 14px;
+    color: black;
+}
+.ReportModalBody{
+    padding: 1rem 7rem 3rem 7rem;
+}
+
+@media (max-width: 768px){
+    textarea::placeholder{
+        font-size: 13px;
+    }
+    .ReportModalBody{
+        padding: 1rem 1rem 3rem 1rem;
+    }
+    #dropdownMenuButton1{
+        margin-left: 1.3rem;
+            width: 9rem;
+    height: 3.5rem;
+    }
+    .NeighborsSText1{
+        font-size: 22px;
+    }
+    #request-textID2{
+        margin: 0.4rem 0.1rem;
+    }
+    .CardNameStar{
+        margin-left: 1rem;
+    }
+    .QuotationButton{
+        font-size: 11px;
+    }
+    .RequestDIVP{
+        padding: 0.1rem 0 0.1rem 0.5rem;
+    }
+    .RatingText1{
+        font-size: 11px;
+        margin-top: 0.1rem;
+    }
+    .ReportContactFlex{
+        justify-content: space-between;
+    }
+    .ReportCol{
+        text-align: start;
+    }
+    .SendMessageButton, .CallButton{
+        font-size: 12px;
+        padding: 0.2rem 1rem;
+        border-radius: 5px;
+    }
+    .CallButton{
+        padding: 0.2rem 2rem;
+    }
+    .Modelinput{
+        margin-right: 3%;
+    }
+    .MBText1{
+        font-size: 12px;
+        margin-bottom: 0.5rem;
+    }
+    .MBText2{
+        font-size: 12px;
+        margin-bottom: 0.5rem;
+    }
+    .modal-body{
+        padding: 2rem 1rem;
+    }
+    .responses-buttons1234{
+        margin-bottom: 0.5rem;
+    }
+    .publishnavbar{
+
+    position: relative;
+    left: -14px;
+    text-align: center;
+    width: 21%;
+}
+}
+
+
+ @media all and (min-width: 1165px) {
+        .navalign{
+     padding-left: 240px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    display: inline-flex;
+    padding-right: .5rem;
+    }
+
+    .ahre{
+            padding-left: 2rem;
+    }
+
+
+
+.navalign2{
+     padding-left: 200px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    display: inline-flex;
+    }
+
+    .nav-publish{
+
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75);
+
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+  }
+
+   @media only screen and (max-width: 425px) {
+ .navalign{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+
+    .SearchButton{
+    position: relative;
+    width: 5rem;
+    height: 3rem;
+    background: white;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.tickicon{
+position: relative;
+    left: -16px;
+    top: 20px;
+}
+
+
+    .navalign2{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+
+    .navpublish{
+
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75);
+    width: 45%;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+
+.SearchRow{
+
+    width: 75%;
+    margin: auto;
+    box-shadow: 1px 3px 5px 1px rgb(216 216 216);
+    border-radius: 10px;
+    position: relative;
+    left: -43px;
+        height: 57px;
+}
+
+.dropdownmobile{
+    position: relative;
+    top: -73px;
+    left: 275px;
+
+
+
+}
+
+
+
+.ReportContactFlex{
+
+    position: relative;
+
+
+}
+
+}
+
+
+ @media only screen and (max-width: 375px) {
+ .navalign{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+
+    .navalign2{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+
+    .navpublish{
+
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75);
+    width: 47%;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+
+.ReportContactFlex{
+
+    position: relative;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+  @media only screen and (max-width: 325px) {
+ .navalign{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+
+    .navalign2{
+        padding-left: 30px;
+    padding-top: 10px;
+    color: #ff6e9a;
+    font-weight: bold;
+    }
+
+    .navpublish{
+
+    padding-left: 20px;
+    background:linear-gradient(to right,#ffacbf,#fa4d75);
+    width: 60%;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+
+.ReportContactFlex{
+
+    position: relative;
+
+
+}
+
+
+
+}
+

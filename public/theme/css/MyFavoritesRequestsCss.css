@@ -1,0 +1,1461 @@
+
+ body {
+            font-family: 'Poppins', sans-serif;
+            padding-top: 5rem;
+            }
+            
+            .yajari-removebg-preview-1 {
+            width: 200px;
+            padding-left: 50px;
+            }
+            .requestnav {
+            padding-left: 25px;
+            text-decoration: none;
+            }
+            .servicesnav {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-decoration: none;
+            }
+            .navpublish {
+            padding-left: 20px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            color: white;
+            border-radius: 20px;
+            align-items: center;
+            padding-top: 10px;
+            }
+            .modal-backdrop.show {
+            opacity: 0;
+            }
+            .lookingformove {
+            position: relative;
+            left: -65px;
+            }
+            .LRMmobileB {
+            margin: auto;
+            border: 1px solid rgb(173, 173, 173);
+            border-radius: 10px;
+            height: 3rem;
+            margin-bottom: 7rem;
+            }
+            .LRM1Button {
+            margin: auto;
+            text-align: center;
+            height: 3rem;
+            background: linear-gradient(to right, #ff6388, #ff0b44);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            }
+            .Modal3IputDIV input {
+            height: 3rem;
+            }
+            .Model3input {
+            margin-right: 5%;
+            }
+            .Modal3Ftext {
+            font-size: 14px;
+            }
+            .Modal3footer {
+            display: block;
+            }
+            .modal-footer img {
+            width: 8rem;
+            margin: auto;
+            }
+            .modal-header p {
+            font-size: 14px;
+            font-weight: bolder;
+            }
+            .Modal4select1 {
+            height: 2.5rem;
+            border-radius: 10px;
+            background-position: right 2rem center;
+            }
+            .Modal4input3 {
+            height: 5rem;
+            border-radius: 10px;
+            font-size: 12px;
+            }
+            .Modal4input5 {
+            background-image: url(icons/ic_call_-1.png);
+            background-repeat: no-repeat;
+            background-size: 12px 12px;
+            font-size: 12px;
+            background-position: right 2rem center;
+            }
+            .Modal4input4,
+            .Modal4input5 {
+            height: 2.5rem;
+            }
+            .Modal4input2,
+            .Modal4input5 {
+            border-radius: 0 0 10px 10px;
+            }
+            .Modal4input6 {
+            height: 2.5rem;
+            border-radius: 10px;
+            background-image: url(icons/ic_visibility_24px.png);
+            background-repeat: no-repeat;
+            background-size: 16px 12px;
+            font-size: 12px;
+            background-position: right 2rem center;
+            }
+            .form-check-input {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 0.2rem;
+            margin-right: 10px;
+            }
+            .modal-body p a {
+            font-size: 14px;
+            }
+            .Modal4Form-Categoryt1 {
+            font-size: 13px;
+            margin: 0;
+            }
+            .Modal4Body {
+            padding: 1rem 3rem 0 3rem;
+            }
+            .modal-bodylogin {
+            padding: 1rem 3rem 0 3rem;
+            }
+            .modal-bodysignin {
+            padding: 3rem 3rem 0rem 3rem;
+            }
+            .Modal4footer {
+            border: none;
+            }
+            .modal-content {
+            border-radius: 20px;
+            }
+            .modal-header p {
+            font-size: 14px;
+            font-weight: bolder;
+            }
+            .Modal5Body {
+            padding: 2rem 3rem 2rem 3rem;
+            }
+            .Modal5Img {
+            width: 9rem;
+            height: 3rem;
+            margin: auto;
+            }
+            .Modal5Text1 {
+            font-size: 15px;
+            text-align: center;
+            }
+            .Modal5Text2 {
+            font-size: 13px;
+            text-align: center;
+            }
+            .Modal6Body {
+            padding: 2rem 3rem 0 3rem;
+            }
+            .FCselect1 {
+            border-radius: 10px 10px 10px 10px;
+            height: 3rem;
+            background-image: url(icons/ic_keyboard_arrow_right_-3.png), url(icons/1280px-Flag_of_France.svg.png);
+            background-repeat: no-repeat, no-repeat;
+            background-position: right .75rem center, left .75rem center;
+            background-size: 13px 7px, 30px 15px;
+            padding-left: 3rem;
+            }
+            .form-group{
+            margin-bottom: 15px
+            }
+            .FCinput1 {
+            border-radius: 10px 10px 10px 10px !important;
+            height: 3rem;
+            }
+            .Modal6Text2 {
+            font-size: 12px;
+            font-weight: 600;
+            }
+            .form-check-input {
+            width: 1.2rem;
+            margin-right: 10px;
+            }
+            .Modal6Text3 {
+            font-size: 12px;
+            font-weight: 600;
+            }
+            .Modal6Body {
+            padding: 2rem 3rem 0 3rem;
+            }
+            .Modal7Body {
+            padding: 1rem 3rem 0 3rem;
+            }
+            #nav-publish {
+            margin-left: 30px;
+            padding-left: 20px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 170px;
+            color: white;
+            border-radius: 20px;
+            align-items: center;
+            padding-top: 10px;
+            }
+            .modal-content {
+            border-radius: 10px;
+            box-shadow: 1px 2px 30px 1px #ff99b8;
+            }
+            .MBText1 {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff155b;
+            }
+            .MBText2 {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 2rem;
+            color: black;
+            }
+            .SendMessageButton,
+            .CallButton,
+            .CallButton2 {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            background: linear-gradient(to right, #ff719b, #ff155b);
+            padding: 0.6rem 2rem;
+            border-radius: 5px;
+            }
+            .CallButton {
+            background: gray;
+            padding: 0.6rem 3rem;
+            }
+            .CallButton2 {
+            background: gray;
+            padding: 0.6rem 5rem;
+            }
+            .modal-body {
+            padding: 2rem 4rem 4rem 4rem;
+            }
+            .MBText3 {
+            font-size: 22px;
+            text-align: center;
+            margin: 2rem auto;
+            }
+            .ReportCol {
+            text-align: end;
+            margin-right: 1rem;
+            }
+            .QuotationButton {
+            font-size: 13px;
+            padding: 0.1rem 0.7rem;
+            background: #ffd2e1;
+            border-radius: 5px;
+            color: #F82569;
+            }
+            .ReportContactFlex {
+            justify-content: right;
+            position: relative;
+            }
+            .RatingText1 {
+            font-size: 13px;
+            margin-left: 0.3rem;
+            margin-top: 0.2rem;
+            }
+            .RequestDIVP {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 1px 1px 100px 1px #ffe2eb;
+            padding: 1rem 2rem 0.5rem 3rem;
+            margin: auto;
+            }
+            .CardNameStar {
+            margin-left: 3rem;
+            }
+            .NeighborsSText1 {
+            font-size: 28px;
+            color: #F82569;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            }
+            .form-control {
+            border-radius: 5px;
+            }
+            form input {
+            height: 3rem;
+            background: white;
+            }
+            .SearchButton {
+            position: relative;
+            width: 5rem;
+            height: 3rem;
+            background: white;
+            border: 1px solid rgb(226, 226, 226);
+            }
+            .SearchButtonImg {
+            position: absolute;
+            top: 0.8rem;
+            left: 1.5rem;
+            }
+            .SearchRow {
+            width: 92%;
+            margin: auto;
+            box-shadow: 1px 3px 5px 1px rgb(216, 216, 216);
+            border-radius: 10px;
+            }
+            form input::placeholder {
+            font-weight: 600;
+            color: black;
+            font-size: 16px;
+            }
+            #dropdownMenuButton1 {
+            width: 10rem;
+            height: 4rem;
+            box-shadow: 1px 3px 5px 1px rgb(216, 216, 216);
+            border-radius: 10px;
+            font-size: 16px;
+            color: black;
+            }
+            .NoButton {
+            font-size: 16px;
+            text-decoration: none;
+            color: #F81D66;
+            border: 1px solid #F81D66;
+            padding: 0.5rem 4rem;
+            border-radius: 10px;
+            }
+            .YesButton {
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(to right, #ff6d9e, #ff0156);
+            padding: 0.5rem 4rem;
+            border-radius: 10px;
+            }
+            .NoButton:hover,
+            .YesButton:hover {
+            color: black;
+            }
+            textarea::placeholder {
+            font-size: 14px;
+            color: black;
+            }
+            .ReportModalBody {
+            padding: 1rem 7rem 3rem 7rem;
+            }
+            .background-image2 {
+            width: 100%;
+            height: 150px;
+            background-image: url(pictures/Group\ 2382.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            }
+            .PublishRequestROW {
+            margin-top: 2.5rem;
+            }
+            @media (min-width: 461px) {
+            #Logo-view2 {
+            display: none;
+            }
+            #nav-publish2 {
+            display: none;
+            }
+            }
+            @media (min-width: 561px) {
+            #responsesID2 {
+            display: flex;
+            }
+            #responsesID3 {
+            display: none;
+            }
+            #LineID1 {
+            display: none;
+            }
+            #responsesID1 {
+            display: none;
+            }
+            #request-textID1 {
+            font-size: 14px;
+            margin: auto;
+            }
+            #request-textID2 {
+            font-size: 14px;
+            font-weight: 500;
+            }
+            .requestFaceImg1 {
+            width: 85px;
+            padding-left: 10px;
+            }
+            .requestFaceImgTICK {
+            position: absolute;
+            top: 2rem;
+            left: 4.7rem;
+            width: 1.3rem;
+            }
+            .Responses-Name1 {
+            font-size: 15px;
+            position: relative;
+            left: -20px;
+            }
+            .responses-star1 {
+            width: 90px;
+            height: 15px;
+            position: relative;
+            left: -20px;
+            }
+            .responses-date1 {
+            color: #F82569;
+            padding-left: 10px;
+            font-size: 13px;
+            margin-bottom: 0;
+            }
+            .Responses-starText {
+            padding-left: 5px;
+            font-size: 12px;
+            }
+            .responses-heart1 {
+            width: 1.2rem;
+            height: 1.3rem;
+            padding-top: 0.2rem;
+            margin-right: 15px;
+            }
+            .responses-tQ1 {
+            font-size: 15px;
+            }
+            .responses-buttons1234 {
+            font-size: 13px;
+            padding-left: 10px;
+            }
+            .card-img-top {
+            width: 4rem;
+            }
+            }
+
+@media (max-width: 400px) {
+    .Publish-text1 {
+        font-size: 22px;
+    }
+}
+
+
+@media (max-width: 766px) {
+    .showcase-text1 {
+        font-size: 16px;
+    }
+
+    .showcase-text2 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 767px) {
+    .showcase-text1 {
+        font-size: 20px;
+    }
+}
+
+.RequestContactButton {
+    height: 1.65rem;
+    background-image: linear-gradient(to right, #FD9C8D, #F81564);
+    border-radius: 5px;
+}
+
+#pagination-num {
+    width: 35px;
+    height: 35px;
+    color: #F81564;
+    border: 1px solid #F81564;
+    border-radius: 50%;
+}
+
+#pagination-num:active {
+    color: white;
+    background-color: #F81564;
+    box-shadow: none;
+}
+
+#pagination-num:focus {
+    color: white;
+    background-color: #F81564;
+    box-shadow: none;
+}
+
+.page-item {
+    text-decoration: none;
+}
+
+#nav-publish {
+    margin-left: 30px;
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#Contact-b1 {
+    height: 30px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 100px;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+@media (max-width: 560px) {
+    body {
+        padding-top: 3rem;
+    }
+
+    .background-image2 {
+        height: 180px;
+    }
+
+    #responsesID2 {
+        display: none;
+    }
+
+    #responsesID3 {
+        display: flex;
+    }
+
+    #responsesID1 {
+        display: flex;
+    }
+
+    #request-textID1 {
+        font-size: 12px;
+        margin: auto;
+        padding-top: 10px;
+    }
+
+    #request-textID2 {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .requestFaceImg1 {
+        width: 70px;
+        padding-left: 10px;
+    }
+
+    .requestFaceImgTICK {
+        position: absolute;
+        top: 1.4rem;
+        left: 3.8rem;
+        width: 1.3rem;
+    }
+
+    .Responses-Name1 {
+        font-size: 13px;
+        padding-top: 0;
+    }
+
+    .responses-star1 {
+        width: 70px;
+        height: 12px;
+    }
+
+    .responses-date1 {
+        color: #F82569;
+        padding-left: 10px;
+        font-size: 12px;
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
+    .Responses-starText {
+        padding-left: 5px;
+        font-size: 11px;
+    }
+
+    .responses-heart1 {
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-right: 12px;
+        padding-top: 0;
+    }
+
+    .responses-tQ1 {
+        font-size: 12px;
+    }
+
+    .responses-buttons1234 {
+        font-size: 11px;
+        padding-left: 10px;
+        padding-top: 3px;
+    }
+
+    .card-img-top {
+        width: 3rem;
+    }
+
+    .form-button1 {
+        background-color: rgb(247, 244, 244);
+        padding-top: 5px;
+    }
+}
+
+@media (max-width: 800px) {
+            .PublishRequestROW {
+            margin-top: 1rem;
+            }
+            textarea::placeholder {
+            font-size: 13px;
+            }
+            .categoriestop {
+            position: relative;
+            top: 1px;
+            }
+            .responsetop {
+            position: relative;
+            top: 2px;
+            }
+            .ReportModalBody {
+            padding: 1rem 1rem 3rem 1rem;
+            }
+            #dropdownMenuButton1 {
+            margin-left: 1.3rem;
+            width: 7rem;
+            height: 3.5rem;
+            }
+            .NeighborsSText1 {
+            font-size: 22px;
+            position: relative;
+            top: -15px;
+            }
+            #request-textID2 {
+            margin: 0.4rem 0.1rem;
+            }
+            .CardNameStar {
+            margin-left: 2rem;
+            }
+            .QuotationButton {
+            font-size: 11px;
+            }
+            .RequestDIVP {
+            padding: 0.1rem 0 0.1rem 0.5rem;
+            height: 180px;
+            width: 105%;
+            position: relative;
+            left: -15px;
+            }
+            .RatingText1 {
+            font-size: 11px;
+            margin-top: 0.1rem;
+            }
+            .ReportContactFlex {
+            justify-content: space-between;
+            }
+            .ReportCol {
+            text-align: start;
+            }
+            .SendMessageButton,
+            .CallButton {
+            font-size: 12px;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            }
+            .CallButton {
+            padding: 0.2rem 2rem;
+            }
+            .Modelinput {
+            margin-right: 3%;
+            }
+            .MBText1 {
+            font-size: 12px;
+            margin-bottom: 0.5rem;
+            }
+            .MBText2 {
+            font-size: 12px;
+            margin-bottom: 0.5rem;
+            }
+            .modal-body {
+            padding: 2rem 1rem;
+            }
+            .responses-buttons1234 {
+            margin-bottom: 0.5rem;
+            }
+            .navalign {
+            padding-left: 20px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            padding-right: .5rem;
+            }
+            .navalign2 {
+            padding-left: 34px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            }
+            .nav-publish {
+            padding-left: 20px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 35%;
+            color: white;
+            border-radius: 20px;
+            align-items: center;
+            padding-top: 10px;
+            }
+            .SearchRow {
+            position: relative;
+            left: 12px;
+            top: -1px;
+            height: 62px;
+            }
+            .Contact-b1 {
+            display: none;
+            }
+            .Contactmobile {
+            height: 30px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 100px;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 7px;
+            position: relative;
+            left: 50px;
+            top: 3px;
+            display: block;
+            }
+            .Publish-text1 {
+            font-size: 25px;
+            font-weight: 900;
+            position: relative;
+            left: 79px;
+            top: 5px;
+            }
+            .smallbutton {
+            position: relative;
+            left: -199px;
+            top: 60px;
+            }
+            .background-image2 {
+            width: 93%;
+            height: 150px;
+            background-image: url(pictures/Group\ 2382.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            left: 35px;
+            }
+            .requestnav {
+            padding-left: 0px;
+            text-decoration: none;
+            }
+            .servicesnav {
+            padding-left: 0px;
+            padding-right: 20px;
+            text-decoration: none;
+            }
+            .publishnavbar {
+            position: relative;
+            left: -30px;
+            text-align: center;
+            width: 27%;
+            }
+            }
+
+@media (max-width: 420px) {
+    .follow-img {
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+
+@media (max-width: 460px) {
+    #Logo-view1 {
+        display: none;
+    }
+
+    .yajari-removebg-preview-1 {
+        width: 120px;
+        padding-left: 20px;
+    }
+
+    #nav-publish1 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        padding-bottom: 30vh;
+    }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .text-end {
+        padding-right: 15px !important
+    }
+
+    .buttontop {
+        position: relative;
+        top: 0px;
+    }
+            .PublishRequestROW {
+            margin-top: 1rem;
+            }
+            textarea::placeholder {
+            font-size: 13px;
+            }
+            .categoriestop {
+            position: relative;
+            top: 1px;
+            }
+            .responsetop {
+            position: relative;
+            top: 2px;
+            }
+            .ReportModalBody {
+            padding: 1rem 1rem 3rem 1rem;
+            }
+            #dropdownMenuButton1 {
+            margin-left: 1.3rem;
+            width: 7rem;
+            height: 3.5rem;
+            }
+            .NeighborsSText1 {
+            font-size: 22px;
+            position: relative;
+            top: -15px;
+            }
+            #request-textID2 {
+            margin: 0.4rem 0.1rem;
+            }
+            .CardNameStar {
+            margin-left: 2rem;
+            }
+            .QuotationButton {
+            font-size: 11px;
+            }
+            .RequestDIVP {
+            padding: 0.1rem 0 0.1rem 0.5rem;
+            height: 180px;
+            width: 105%;
+            position: relative;
+            left: -15px;
+            }
+            .RatingText1 {
+            font-size: 11px;
+            margin-top: 0.1rem;
+            }
+            .ReportContactFlex {
+            justify-content: space-between;
+            }
+            .ReportCol {
+            text-align: start;
+            }
+            .SendMessageButton,
+            .CallButton {
+            font-size: 12px;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            }
+            .CallButton {
+            padding: 0.2rem 2rem;
+            }
+            .Modelinput {
+            margin-right: 3%;
+            }
+            .MBText1 {
+            font-size: 12px;
+            margin-bottom: 0.5rem;
+            }
+            .MBText2 {
+            font-size: 12px;
+            margin-bottom: 0.5rem;
+            }
+            .modal-body {
+            padding: 2rem 1rem;
+            }
+            .responses-buttons1234 {
+            margin-bottom: 0.5rem;
+            }
+            .navalign {
+            padding-left: 20px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            padding-right: .5rem;
+            }
+            .navalign2 {
+            padding-left: 34px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            }
+            .nav-publish {
+            padding-left: 20px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 35%;
+            color: white;
+            border-radius: 20px;
+            align-items: center;
+            padding-top: 10px;
+            }
+            .SearchRow {
+            position: relative;
+            left: 12px;
+            top: -1px;
+            height: 62px;
+            }
+            .Contact-b1 {
+            display: none;
+            }
+            .Contactmobile {
+            height: 30px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 100px;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 7px;
+            position: relative;
+            left: 37px;
+            top: 3px;
+            display: block;
+            }
+            .Publish-text1 {
+            font-size: 25px;
+            font-weight: 900;
+            position: relative;
+            left: 79px;
+            top: 5px;
+            }
+            .smallbutton {
+            position: relative;
+            left: -199px;
+            top: 60px;
+            }
+            .background-image2 {
+            width: 93%;
+            height: 150px;
+            background-image: url(theme/pictures/Group\ 2382.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            left: 35px;
+            }
+            .requestnav {
+            padding-left: 0px;
+            text-decoration: none;
+            }
+            .servicesnav {
+            padding-left: 0px;
+            padding-right: 20px;
+            text-decoration: none;
+            }
+            .publishnavbar {
+            position: relative;
+            left: -30px;
+            text-align: center;
+            width: 27%;
+            }
+            .background-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            background-image: url(theme/pictures/Group\ 12.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            }
+            }
+            @media only screen and (max-width: 425px) {
+              .buttontop {
+    position: relative;
+    top: -25px;
+}
+
+
+            .SendMessageButton{
+            font-size: 12px;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            }
+            .publishnavbar {
+            position: relative;
+            left: -30px;
+            text-align: center;
+            width: 50%;
+            }
+            .myrequesttop {
+            position: relative;
+            top: -15px;
+            }
+            .RequestDIVP {
+            padding: 0.1rem 0 0.1rem 0.5rem;
+            height: 307px;
+            width: 100%;
+            position: relative;
+            left: 0px;
+            }
+            .showcase-text1 {
+            font-size: 16px!important;
+            position: relative;
+            top: -12px;
+            }
+            .showcase-text2 {
+            font-size: 14px!important;
+            position: relative;
+            top: -20px;
+            }
+            .dropdown {
+            display: none;
+            }
+            .CallButton {
+            font-size: 12px;
+            padding: 0.5rem 2rem;
+            border-radius: 5px;
+            }
+            .modalbody {
+            width: 90%;
+            position: relative;
+            left: 25px;
+            }
+            .navalign {
+            padding-left: 30px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            }
+            .navalign2 {
+            padding-left: 37px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            }
+            .nav-publish {
+            padding-left: 20px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 56%;
+            color: white;
+            border-radius: 20px;
+            align-items: center;
+            padding-top: 10px;
+            }
+            .Contact-b1 {
+            height: 30px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 100px;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 6px;
+            position: relative;
+            left: 135px;
+            display: none;
+            }
+            .lookingformove {
+            padding-top: 12px;
+            padding-left: 25px;
+            position: relative;
+            left: 0px;
+            }
+            .SearchRow {
+            position: relative;
+            left: 11px;
+            top: -25px;
+            width: 26.5rem;
+            height: 57px;
+            }
+            .SearchButton {
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+            background: white;
+            }
+            .dropdownMenuButton1 {
+            width: 7rem;
+            height: 3.5rem;
+            box-shadow: 1px 3px 5px 1px rgb(216 216 216);
+            border-radius: 10px;
+            font-size: 16px;
+            color: black
+            }
+            .status {
+            position: relative;
+            top: 1px;
+            left: -10px;
+            }
+            .Contactmobile {
+            height: 30px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 100px;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 6px;
+            position: relative;
+            left: 13px;
+            top: 3px;
+            display: block;
+            }
+            .lebardo {
+            position: relative;
+            }
+            .categoriestext {
+            position: relative;
+            left: 0px;
+            top: -35px;
+            }
+            .hr {
+            width: 92%;
+            margin: auto;
+            height: 2px;
+            position: relative;
+            left: -5px;
+            }
+            .lastlogo {
+            position: relative;
+            top: -80px;
+            }
+            .paginationtop {
+            position: relative;
+            top: -50px;
+            }
+            .paginationdown {
+            position: relative;
+            top: -104px;
+            }
+            .categoriesicon {
+            width: 16px;
+            height: 15px;
+            margin-top: 5px;
+            position: relative;
+            left: 1px;
+            top: -37px;
+            }
+            .responseicon {
+            position: relative;
+            left: 270px;
+            }
+            .responsetext {
+            position: relative;
+            left: 271px;
+            }
+            .arrow {
+            position: relative;
+            left: -60px;
+            }
+            .distance {
+            position: relative;
+            left: -65px;
+            }
+            .responsetop {
+            position: relative;
+            top: 38px;
+            }
+            .background-image2 {
+            height: 130px;
+            width: 90%;
+            position: relative;
+            left: 27px;
+            }
+            .Publish-text1 {
+            font-size: 15px!important;
+            font-weight: 900!important;
+            padding-top: 2rem;
+            position: relative;
+            left: 80px;
+            top: -25px;
+            }
+            .smallbutton {
+            position: relative;
+            left: -130px;
+            top: 48px;
+            }
+            .background-image2 {
+            height: 130px;
+            width: 90%;
+            position: relative;
+            left: 20px;
+            }
+            .background-image{
+            
+            height: 165px!important;
+            margin-top: 15px;
+            }
+            }
+            @media only screen and (max-width: 411px) {
+            .categoriestext {
+            position: relative;
+            top: -35px;
+            }
+            .publishnavbar {
+            position: relative;
+            left: -30px;
+            text-align: center;
+            width: 50%;
+            }
+            .responseicon {
+            position: relative;
+            left: 258px;
+            }
+            .responsetext {
+            position: relative;
+            left: 258px;
+            }
+            .arrow {
+            position: relative;
+            left: -60px;
+            }
+            .distance {
+            position: relative;
+            left: -65px;
+            }
+            .responsetop {
+            position: relative;
+            top: 38px;
+            }
+            .SearchRow {
+                position: relative;
+    left: 11px;
+    top: -25px;
+    width: 25.5rem;
+    height: 57px;
+            }
+            }
+            @media only screen and (max-width: 375px) {
+            .arrow {
+            position: relative;
+            left: -54px;
+            }
+            .publishnavbar {
+            position: relative;
+            left: -18px;
+            text-align: center;
+            width: 50%;
+            }
+            .hr {
+            width: 91%;
+            margin: auto;
+            height: 2px;
+            position: relative;
+            left: -5px;
+            }
+            .distance {
+            position: relative;
+            left: -55px;
+            }
+            .SearchRow {
+            height: 56px;
+            width: 21rem;
+            position: relative;
+            left: 20px;
+            }
+            .dropdown {
+            position: relative;
+            left: 120px;
+            }
+            .categoriesicon {
+            width: 16px;
+            height: 15px;
+            margin-top: 5px;
+            position: relative;
+            top: -35px;
+            }
+            .categoriestext {
+            position: relative;
+            top: -33px;
+            }
+            .responseicon {
+            position: relative;
+            left: 220px;
+            }
+            .responsetext {
+            position: relative;
+            left: 222px;
+            }
+            .arrow {
+            position: relative;
+            left: -60px;
+            }
+            .distance {
+            position: relative;
+            left: -65px;
+            }
+            .responsetop {
+            position: relative;
+            top: 38px;
+            }
+            .Publish-text1 {
+            font-size: 15px;
+            font-weight: 900;
+            padding-top: 2rem;
+            position: relative;
+            left: 0px;
+            top: -25px;
+            }
+            .smallbutton {
+            position: relative;
+            left: -5px;
+            top: -35px;
+            }
+            }
+            @media only screen and (max-width: 360px) {
+            .categoriesicon {
+            width: 16px;
+            height: 15px;
+            margin-top: 5px;
+            position: relative;
+            top: -38px;
+            }
+            .categoriestext {
+            position: relative;
+            top: -35px;
+            }
+            .publishnavbar {
+            position: relative;
+            left: -13px;
+            text-align: center;
+            width: 50%;
+            }
+            .responseicon {
+            position: relative;
+            left: 207px;
+            }
+            .responsetext {
+            position: relative;
+            left: 206px;
+            }
+            .arrow {
+            position: relative;
+            left: -60px;
+            }
+            .distance {
+            position: relative;
+            left: -65px;
+            }
+            .responsetop {
+            position: relative;
+            top: 38px;
+            }
+            .background-image {
+    height: 150px!important;
+    margin-top: 15px;
+}
+            }
+            @media only screen and (max-width: 320px) {
+            .publishnavbar {
+            position: relative;
+            left: -15px;
+            text-align: center;
+            width: 50%;
+            }
+            .categoriestext {
+            position: relative;
+            left: 222px;
+            top: -71px;
+            }
+            .background-image2 {
+            height: 130px;
+            width: 90%;
+            position: relative;
+            left: 20px;
+            }
+            .responseicon {
+            position: relative;
+            left: 169px;
+            }
+            .responsetext {
+            position: relative;
+            left: 167px;
+            }
+            .arrow {
+            position: relative;
+            left: -60px;
+            }
+            .distance {
+            position: relative;
+            left: -65px;
+            }
+            .responsetop {
+            position: relative;
+            top: 38px;
+            }
+            .SearchRow {
+            height: 56px;
+            width: 92%;
+            position: relative;
+            left: 9px;
+            }
+            .dropdown {
+            position: relative;
+            left: 100px;
+            }
+            .categoriesicon {
+            width: 16px;
+            height: 15px;
+            margin-top: 5px;
+            position: relative;
+            top: -35px;
+            }
+            .categoriestext {
+            position: relative;
+            left: 0px;
+            top: -33px;
+            }
+            .navalign {
+            padding-left: 30px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            }
+            .navalign2 {
+            padding-left: 30px;
+            padding-top: 10px;
+            color: #ff6e9a;
+            font-weight: bold;
+            }
+            .nav-publish {
+            padding-left: 20px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 56%;
+            color: white;
+            border-radius: 20px;
+            align-items: center;
+            padding-top: 10px;
+            }
+            }
+            .background-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            background-image: url(pictures/Group\ 12.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            }
+            .Contact-b1 {
+            height: 30px;
+            background: linear-gradient(to right, #ffacbf, #fa4d75);
+            width: 100px;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 7px;
+            position: relative;
+            left: 160px;
+            display: none;
+            }
+            }

@@ -1,0 +1,183 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5rem;
+}
+.yajari-removebg-preview-1{
+    width: 200px;
+    padding-left: 10px;
+}
+
+.form-button2{
+    background: white;
+    border-color: #ff3b72;
+       border: 1px solid;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 8px;
+    color: #ff4b7e;
+       margin: auto;
+    text-align: center;
+    padding-top: 7px;
+    width: 8rem;
+     height: 2.5rem;
+}
+
+.background-image{
+    width: 100%;
+    height: 138px;
+    background-image: url(../pictures/Group\ 3.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;padding-top: 2.5rem;margin: auto;
+}
+.CCimg1, .CCimg2{
+    width: 8rem;
+}
+.CCShowtext1{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.CCdropdown{
+    position: relative;top: 25%;
+}
+.CCDIVcontainer{
+    width: 70%;
+    box-shadow: 1px 10px 50px 1px #ffdee4;
+    border-radius: 20px;
+}
+.ChoseCText1{
+    font-size: 18px;
+    font-weight: bolder;
+}
+.ChoseCText2{
+    font-size: 14px;
+}
+.ChoseAddEditC{
+    width: 65%;
+    height: 250px;
+    margin: auto;
+    border-radius: 20px;
+}
+.ChoseAddEditB{
+    width: 67%;
+    margin: auto;
+}
+.CCButton a{
+    text-decoration: none;
+    color: white;
+    margin-top: 0.5rem;
+}
+.CCButton{
+    margin: auto;
+    text-align: center;
+    height: 2.5rem;
+    background: linear-gradient(to right,#ff89a4,#ff0b44);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: 8rem;
+}
+.CDtext p{
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+.CDtext{
+    width: 67%;
+    margin: auto;
+}
+.CDtext input{
+    width: 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+    background: #F9376E;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    top: -200%;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 0.2rem;
+   background: rgb(105, 105, 105);
+}
+
+
+
+@media (max-width:900px) and (min-width:769px) {
+    .CCShowtext1{
+        font-size: 22px;
+    }
+    .ChoseAddEditC{
+        width: 70%;
+    }
+    .ChoseAddEditB{
+        width: 72%;
+    }
+    .CCDIVcontainer{
+        width: 80%;
+    }
+    .CCcontainer{
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .CDtext p{
+        font-size: 14px;
+    }
+    .CDtext{
+        width: 95%;
+        margin: auto;
+    }
+    .CDtext input{
+        width: 90%;
+    }
+    .background-image{
+        height: 100px;
+        padding-top: 1.5rem;
+    }
+    .SCimg{
+        width: 1.5rem;
+    }    
+    .yajari-removebg-preview-1{
+        width: 120px;
+        padding-left: 20px;
+    }
+    .CCdropdown{
+        top: 5%;
+    }
+    .CCimg1, .CCimg2{
+        margin-top: 0.7rem;
+        width: 4rem;
+    }
+    .CCShowtext1{
+        font-size: 18px;
+    }
+    .ChoseAddEditC{
+        width: 90%;
+    }
+    .ChoseAddEditB{
+        width: 92%;
+    }
+    .CCDIVcontainer{
+        width: 95%;
+    }
+    .CCcontainer{
+        width: 95%;
+    }
+    .CCDIVimg{
+        width: 2rem;
+    }
+    .ChoseCText1{
+        font-size: 14px;
+    }
+    .ChoseCText2{
+        font-size: 12px;
+    }
+    body{
+        padding-top: 3rem;
+    }
+}
+
+

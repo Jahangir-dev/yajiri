@@ -1,0 +1,466 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5.4rem;
+}
+
+.yajari-removebg-preview-1 {
+    width: 200px;
+    padding-left: 50px;
+}
+
+#nav-publish {
+    margin-left: 30px;
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#nav-home {
+    color: palevioletred;
+}
+
+.BackgroundImg {
+    margin-top: 0.51rem;
+    width: 100%;
+    height: 200px;
+    background-image: url(pictures/Group\ 4.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.ShowCasetext1 {
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+    margin-left: 1rem;
+}
+
+.ShowCasetext2 {
+    font-size: 26px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.ShowCasetext3 {
+    font-size: 16px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.ShowCaseImg {
+    width: 2rem;
+    height: 2.5rem;
+    margin-top: 0.3rem;
+}
+
+.ShowCaseRow1 {
+    transform: translateX(40%);
+}
+
+.ContactInfotext1 {
+    font-size: 26px;
+    color: #F82168;
+}
+
+.ContactInfotext2 {
+    font-size: 26px;
+    font-weight: bolder;
+}
+
+.ContactInfotext3 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.ContactInfotext4 {
+    font-size: 26px;
+    font-weight: bolder;
+}
+
+.ContactInfoContainer {
+    width: 70%;
+    margin: auto;
+}
+
+.ContactInfotext5 {
+    font-size: 14px;
+}
+
+.ContactInfoImg {
+    width: 2rem;
+    margin-top: 0.4rem;
+}
+
+.ContactInfoImg1 {
+    width: 1.7rem;
+}
+
+.ContactSocialContainer {
+    padding: 3rem 7rem;
+    border-radius: 20px;
+}
+
+.MessageUsCol {
+    box-shadow: 1px 3px 20px 1px #ffe0ea;
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+.MessageUsCol input {
+    height: 3rem;
+    border-radius: 10px;
+    background-color: #F3F7F8;
+    box-shadow: 1px 7px 5px 1px #F3F7F8;
+}
+
+.MessageUsCol input::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#exampleInputtext13::placeholder {
+    position: absolute;
+    top: 0.7rem;
+    left: 0, 7rem;
+}
+
+.SendMessageButton {
+    background: linear-gradient(to right, #ff93b5, #F82168);
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    height: 2.5rem;
+    border-color: #ff87af;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.MessageMapContainer {
+    width: 70%;
+}
+
+.WhoAreWeContainer {
+    padding: 5rem 5rem;
+    border-radius: 20px;
+}
+
+.WhoAreWeButton {
+    background: linear-gradient(to right, #ff93b5, #F82168);
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    width: 9rem;
+    height: 2.5rem;
+    border-color: #ff87af;
+    margin-top: 2rem;
+}
+
+.WhoAreWetext2 {
+    font-size: 20px;
+}
+
+.WhoAreWetext3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.WhoAreWeImg {
+    width: 35rem;
+    height: 25rem;
+}
+
+.BecomeProfessionalButton {
+    background: linear-gradient(to right, #ff93b5, #F82168);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 12rem;
+    height: 3rem;
+    border-color: #ff87af;
+    margin-top: 3rem;
+}
+
+.BecomeProfessionalContainer {
+    padding: 5rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.follow-img {
+    width: 4rem;
+}
+
+@media (max-width: 420px) {
+    .follow-img {
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+
+@media (max-width: 460px) {
+    #Logo-view1 {
+        display: none;
+    }
+
+    .yajari-removebg-preview-1 {
+        width: 120px;
+        padding-left: 20px;
+    }
+
+    #nav-publish1 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        padding-bottom: 30vh;
+    }
+}
+
+@media (min-width: 461px) {
+    #Logo-view2 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-item2 {
+        height: 3rem;
+        border-bottom: 1px solid gray;
+    }
+
+    #nav-publish {
+        margin-top: 1rem;
+    }
+
+    .ShowCasetext1 {
+        font-size: 18px;
+    }
+
+    .ShowCasetext2 {
+        font-size: 16px;
+    }
+
+    .ShowCasetext3 {
+        font-size: 14px;
+    }
+
+    .ShowCaseImg {
+        width: 1.3rem;
+        height: 1.7rem;
+        margin-top: 0;
+    }
+
+    .ShowCaseRow1 {
+        transform: translateX(32%);
+    }
+
+    .ContactInfotext4 {
+        font-size: 18px;
+    }
+
+    .ContactInfoContainer {
+        width: 95%;
+    }
+
+    .ContactInfoImg1 {
+        width: 1.3rem;
+    }
+
+    .ContactInfoImg {
+        width: 1.5rem;
+    }
+
+    .ContactInfotext1 {
+        font-size: 18px;
+    }
+
+    .ContactInfotext2 {
+        font-size: 18px;
+    }
+
+    .ContactSocialContainer {
+        padding: 2rem 1rem;
+    }
+
+    .MessageMapContainer {
+        width: 90%;
+    }
+
+    .MessageUsCol {
+        padding: 2rem 1rem;
+    }
+
+    .WhoAreWetext2 {
+        font-size: 16px;
+    }
+
+    .WhoAreWetext3 {
+        font-size: 14px;
+    }
+
+    .WhoAreWeImg {
+        width: 18rem;
+        height: 12rem;
+    }
+
+    .WhoAreWeContainer,
+    .BecomeProfessionalContainer {
+        padding: 3rem 2rem;
+    }
+
+    .BecomeProfessionalButton {
+        height: 2.5rem;
+        width: 9rem;
+        font-size: 14px;
+    }
+
+    body {
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .nav-item2 {
+        height: 3rem;
+        border-bottom: 1px solid gray;
+    }
+
+    #nav-publish {
+        margin-top: 1rem;
+    }
+
+    .ShowCasetext1 {
+        font-size: 18px;
+    }
+
+    .ShowCasetext2 {
+        font-size: 16px;
+    }
+
+    .ShowCasetext3 {
+        font-size: 14px;
+    }
+
+    .ShowCaseImg {
+        width: 1.3rem;
+        height: 1.7rem;
+        margin-top: 0;
+    }
+
+    .ShowCaseRow1 {
+        transform: translateX(32%);
+    }
+
+    .ContactInfotext4 {
+        font-size: 18px;
+    }
+
+    .ContactInfoContainer {
+        width: 95%;
+    }
+
+    .ContactInfoImg1 {
+        width: 1.3rem;
+    }
+
+    .ContactInfoImg {
+        width: 1.5rem;
+    }
+
+    .ContactInfotext1 {
+        font-size: 18px;
+    }
+
+    .ContactInfotext2 {
+        font-size: 18px;
+    }
+
+    .ContactSocialContainer {
+        padding: 2rem 1rem;
+    }
+
+    .MessageMapContainer {
+        width: 90%;
+    }
+
+    .MessageUsCol {
+        padding: 2rem 1rem;
+    }
+
+    .WhoAreWetext2 {
+        font-size: 16px;
+    }
+
+    .WhoAreWetext3 {
+        font-size: 14px;
+    }
+
+    .WhoAreWeImg {
+        width: 18rem;
+        height: 12rem;
+    }
+
+    .WhoAreWeContainer,
+    .BecomeProfessionalContainer {
+        padding: 3rem 2rem;
+    }
+
+    .BecomeProfessionalButton {
+        height: 2.5rem;
+        width: 9rem;
+        font-size: 14px;
+    }
+
+    body {
+        padding-top: 4rem;
+    }
+}
+
+.pading-top {
+    padding-top: 0rem
+}
+
+@media(max-width:768px) {
+
+    .socialicon {
+        transform: translateX(-40%) !important;
+    }
+
+    .followus {
+        position: relative;
+        left: 10px !important;
+        top: -50px;
+    }
+}
+
+.socialicon {
+    transform: translateX(65%);
+}
+
+.followus {
+   position: relative;
+    left: 0px;
+    top: -50px;
+}
+.ml-auto{
+    margin-left: auto
+}
+.ContactInfotext1{
+    padding-top: 2.5rem
+}

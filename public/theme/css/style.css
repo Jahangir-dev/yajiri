@@ -1,0 +1,741 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5.4rem;
+}
+
+.Contacthome{
+    display: block;
+    width: 80px;
+    height: 27px;
+
+    background: linear-gradient(to right, #ff7a97, #ff3161);
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 6px;
+    float: right;
+    margin-right: 20px;
+    display: none;
+}
+
+
+.navpublish {
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.requestnav {
+    padding-left: 25px;
+    text-decoration: none;
+}
+
+.servicesnav {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.modal-backdrop.show {
+    opacity: 0;
+}
+
+.modal-content {
+
+    box-shadow: 1px 2px 30px 1px #ff99b8;
+}
+
+
+.particularcard {
+
+    color: #2bbcea;
+    padding: 0.2rem .5rem;
+    width: 4.8rem;
+    height: 1.5rem;
+    position: relative;
+    border: 2px solid #08B1E7;
+    border-radius: 5px;
+    font-size: 12px;
+    top: 6px;
+}
+
+.particularinner {
+    position: relative;
+    top: -6px;
+}
+
+
+
+
+
+.yajari-removebg-preview-1 {
+    width: 200px;
+    padding-left: 50px;
+}
+
+#nav-publish {
+    margin-left: 30px;
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#nav-home {
+    color: #fa4d75;
+}
+
+@media (min-width: 1200px) {
+    #nav-login {
+        position: absolute;
+        right: 160px;
+    }
+    .flex-container {
+        position: absolute;
+        right: 60px;
+        top: 20px;
+    }
+}
+
+.showcase-p1 {
+    padding-top: 11rem;
+    font-weight: bold;
+    font-size: 55px;
+}
+
+.showcase-p2 {
+    padding-top: 2rem;
+    font-size: 20px;
+}
+
+@media (max-width: 720px) {
+    .showcase-p1 {
+        font-size: 25px;
+    }
+
+    .showcase-p2 {
+        font-size: 12px;
+    }
+}
+
+.background-image {
+    width: 100%;
+    height: 90vh;
+    background-image: url('../icons/homebackground.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.m-see-more {
+    width: 14.5rem;
+    background-image: url('../icons/Group 2384.png');
+    background-position: center;
+    position: relative;
+}
+
+.m-see-more-2 {
+    width: 14.5rem;
+    background-image: url('../icons/Group 2385.png');
+    background-position: center;
+    position: relative;
+}
+
+#Exchange-con {
+    width: 71%;
+}
+
+@media (max-width: 420px) {
+    #Exchange-con {
+        width: 100%;
+    }
+}
+
+.follow-img {
+    width: 4rem;
+}
+
+@media (max-width: 420px) {
+    .follow-img {
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+
+@media (max-width: 460px) {
+    #Logo-view1 {
+        display: none;
+    }
+
+    .yajari-removebg-preview-1 {
+        width: 120px;
+        padding-left: 20px;
+    }
+
+    #nav-publish1 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        padding-bottom: 30vh;
+    }
+}
+
+@media (min-width: 461px) {
+    #Logo-view2 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        display: none;
+    }
+}
+
+
+
+/* Models */
+
+
+/* Model1 */
+
+
+.FCinput1 {
+    border-radius: 10px 10px 10px 10px;
+    height: 3rem;
+}
+
+.FCselect1 {
+    border-radius: 10px 10px 10px 10px;
+    height: 3rem;
+    background-image: url('../icons/ic_keyboard_arrow_right_-3.png), url('../icons/1280px-Flag_of_France.svg.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: right .75rem center, left .75rem center;
+    background-size: 13px 7px, 30px 15px;
+    padding-left: 3rem;
+}
+
+.FCselect1 option {
+    margin-left: 3rem;
+}
+
+
+
+
+
+/* Model2 */
+
+.OrText {
+    font-size: 12px;
+    margin-top: 0.4rem;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    justify-content: center;
+}
+
+.modal-header p {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.modal-body {
+    padding: 3rem;
+}
+
+.modal-body p a {
+    font-size: 14px;
+}
+
+.FCinput2 {
+    height: 3rem;
+    border-radius: 10px;
+}
+
+.LRM1Button a {
+    text-decoration: none;
+    color: white;
+    margin-top: 0.8rem;
+}
+
+.LRM1Button {
+    margin: auto;
+    text-align: center;
+    height: 3rem;
+    background: linear-gradient(to right, #ff6388, #ff0b44);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.LRMmobileB {
+    margin: auto;
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 10px;
+    height: 3rem;
+    margin-bottom: 2rem;
+}
+
+.LRMmobileB a {
+    text-decoration: none;
+    color: black;
+}
+
+.LRMmobileB p {
+    margin-top: 0.7rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+}
+
+.LRMmobileB img {
+    margin-top: 0.7rem;
+    margin-left: 1rem;
+}
+
+.modal-footer img {
+    width: 8rem;
+    margin: auto;
+}
+
+/* Model3 */
+
+
+.MHmodel3 {
+    justify-content: unset;
+    border-bottom: 1px solid #dee2e6;
+    --bs-gutter-x: 0;
+}
+
+.Moda3Text1 {
+    font-size: 14px;
+    text-align: center;
+}
+
+.Modal3Body {
+    padding: 2.5rem;
+}
+
+.Model3input {
+    margin-right: 5%;
+}
+
+.Modal3IputDIV input {
+    height: 3rem;
+}
+
+.Modal3IputDIV input::placeholder {
+    text-align: center;
+}
+
+.Modal3Ftext {
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.Modal3footer {
+    display: block;
+}
+
+.Modal3footer a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Modal4 */
+
+.Modal4Body {
+    padding: 1rem 3rem 0 3rem;
+}
+
+.Modal4input1 {
+    border-radius: 9px;
+}
+
+.Modal4input4 {
+    border-radius: 9px;
+}
+
+.Modal4input2 {
+    border-radius: 0 0 10px 10px;
+}
+
+.Modal4input5 {
+    border-radius: 10px 10px 0 0;
+}
+
+.Modal4input1,
+.Modal4input2 {
+    height: 2.5rem;
+    background-image: url('../icons/ic_person_-1.png');
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: right 1rem center;
+}
+
+.Modal4input1::placeholder,
+.Modal4input2::placeholder,
+.Modal4input3::placeholder,
+.Modal4input4::placeholder,
+.Modal4input5::placeholder,
+.Modal4input6::placeholder {
+    font-size: 12px;
+    color: black;
+}
+
+.Modal4input3 {
+    height: 5rem;
+    border-radius: 10px;
+}
+
+.Modal4input3::placeholder {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+.Modal4select1 {
+    height: 2.5rem;
+    border-radius: 10px;
+    background-position: right 1rem center;
+}
+
+.Modal4input4,
+.Modal4input5 {
+    height: 2.5rem;
+}
+
+.Modal4input5 {
+    background-image: url('../icons/ic_person_-1.png');
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: right 1rem center;
+}
+
+.Modal4input6 {
+    height: 2.5rem;
+    border-radius: 10px;
+    background-image: url('../icons/ic_visibility_24px.png');
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    background-position: right 1rem center;
+    border-radius: 0 0 10px 10px;
+}
+
+.Modal4Form-Categoryt1 {
+    font-size: 13px;
+    margin: 0;
+}
+
+.form-check-input:checked {
+    background-color: #F82268;
+    border-color: #F82268;
+    border-radius: 0.2rem;
+}
+
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 0.2rem;
+    margin-right: 10px;
+}
+
+.Modal4footer {
+    border: none;
+}
+
+.Modal4select1::placeholder {
+    font-size: 12px;
+}
+
+
+
+/* Modal5 */
+
+.Modal5Img {
+    width: 9rem;
+    height: 3rem;
+    margin: auto;
+}
+
+.Modal5Body {
+    padding: 2rem 3rem 2rem 3rem;
+}
+
+.Modal5Text1 {
+    font-size: 15px;
+    text-align: center;
+}
+
+.Modal5Text2 {
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/*  Modal6 */
+
+.Modal6Body {
+    padding: 2rem 3rem 0 3rem;
+}
+
+.Modal6Text1 {
+    font-size: 14px;
+}
+
+.Modal6Text2 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.Modal6Text3 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Modal7 */
+
+
+.Modal7Body {
+    padding: 1rem 3rem 0 3rem;
+}
+
+.Modal7Body input {
+    border-radius: 10px;
+    height: 3rem;
+}
+
+
+@media (max-width: 800px) {
+    .Modal5Text1 {
+        font-size: 13px;
+    }
+
+    .Modal5Text2 {
+        font-size: 11px;
+    }
+
+    .Modal4Form-Categoryt1 {
+        font-size: 11px;
+    }
+
+    .modal-dialog {
+        width: 80%;
+        margin: auto;
+
+    }
+
+    .OrText {
+        font-size: 11px;
+    }
+
+    .modal-header p {
+        font-size: 12px;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-body p a {
+        font-size: 12px;
+    }
+
+    .modal-body input {
+        height: 3rem;
+    }
+
+    .Modal4Body input {
+        height: 2.5rem;
+    }
+
+    .LRM1Button a {
+        margin-top: 0.8rem;
+    }
+
+    .LRM1Button {
+        height: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .LRMmobileB p {
+        font-size: 12px;
+        margin-top: 0.9rem;
+    }
+
+    .modal-footer img {
+        width: 6rem;
+    }
+
+    .Modal3Ftext,
+    .Moda3Text1 {
+        font-size: 11px;
+    }
+
+    .Modal3IputDIV input {
+        height: 2.2rem;
+        padding: 0.5rem;
+    }
+
+    .Modal3IputDIV input::placeholder {
+        font-size: 11px;
+    }
+
+
+    .navpublish {
+        padding-left: 20px;
+        width: 200px;
+        background: linear-gradient(to right, #ffacbf, #fa4d75);
+        color: white;
+        border-radius: 20px;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+
+
+    .Contact-b1 {
+        height: 25px;
+        background: linear-gradient(to right, #ff7a97, #ff3161);
+        width: 80px;
+        color: white;
+        border-radius: 5px;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 4px;
+        float: right;
+        position: relative;
+        left: -6px;
+        top: -5px;
+    }
+
+    .seemore {
+        padding-bottom: 4rem;
+    }
+
+    .Contactblue {
+        height: 25px;
+        background: linear-gradient(to right, #76EDF9, #13B7E9);
+        width: 80px;
+        color: white;
+        border-radius: 5px;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 3px;
+        position: relative;
+        top: -5px;
+    }
+
+    .modal-content {
+        box-shadow: 1px 2px 30px 1px #ff99b8;
+    }
+
+    .MBText1 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ff155b;
+    }
+
+    .MBText2 {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .SendMessageButton {
+        font-size: 12px;
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+        background: linear-gradient(to right, #ff719b, #ff155b);
+        text-decoration: none;
+        color: white;
+    }
+
+    .CallButton {
+        padding: 0.6rem 2rem;
+        font-size: 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+        background: grey;
+    }
+
+    .MBText3 {
+        font-size: 22px;
+        text-align: center;
+        margin: 2rem auto;
+    }
+
+    .CallButton2 {
+        background: gray;
+        padding: 0.6rem 5rem;
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        background: grey;
+        padding: 0.6rem 2rem;
+        border-radius: 5px;
+    }
+
+    .SendMessageButtonblue {
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+        background: linear-gradient(to right, #9bd6e2, #21beea);
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+    }
+
+
+    .buttontop {
+        padding-bottom: 10px;
+        padding-top: 12px;
+    }
+
+    .cardcontent {
+        border-radius: 10px;
+        box-shadow: 1px 2px 30px 1px #71e6e6;
+    }
+
+    .socialicon {
+        transform: translateX(10%);
+    }
+
+    .followus {
+        position: relative;
+    }
+
+
+    .requestnav {
+        padding-left: 0px;
+        text-decoration: none;
+    }
+
+    .servicesnav {
+        padding-left: 0px;
+        padding-right: 20px;
+        text-decoration: none;
+    }
+
+    .publishnavbar {
+        position: relative;
+        left: -13px;
+        text-align: center;
+        width: 20%;
+    }
+
+}
+
+

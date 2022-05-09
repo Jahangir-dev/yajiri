@@ -1,0 +1,793 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5rem;
+}
+
+.modal-backdrop.show {
+    opacity: 0;
+}
+
+.requestnav {
+    padding-left: 25px;
+    text-decoration: none;
+}
+
+.servicesnav {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.navpublish {
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.socialicon {
+    transform: translateX(65%);
+}
+
+.followus {
+    position: relative;
+    left: 285px;
+    top: -50px;
+}
+
+.LRM1Button {
+    margin: auto;
+    text-align: center;
+    height: 3rem;
+    background: linear-gradient(to right, #ff6388, #ff0b44);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.Modal3IputDIV input {
+    height: 3rem;
+}
+
+.Model3input {
+    margin-right: 5%;
+}
+
+.Modal3Ftext {
+    font-size: 14px;
+}
+
+.Modal3footer {
+    display: block;
+}
+
+.modal-footer img {
+    width: 8rem;
+    margin: auto;
+}
+
+.modal-header p {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.Modal4select1 {
+    height: 2.5rem;
+    border-radius: 10px;
+    background-position: right 2rem center;
+}
+
+.Modal4input3 {
+    height: 5rem;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.Modal4input5 {
+    background-image: url(icons/ic_call_-1.png);
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    font-size: 12px;
+    background-position: right 2rem center;
+}
+
+.Modal4input4,
+.Modal4input5 {
+    height: 2.5rem;
+}
+
+.Modal4input2,
+.Modal4input5 {
+    border-radius: 0 0 10px 10px;
+}
+
+
+.Modal4input6 {
+    height: 2.5rem;
+    border-radius: 10px;
+    background-image: url(icons/ic_visibility_24px.png);
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    font-size: 12px;
+    background-position: right 2rem center;
+}
+
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 0.2rem;
+    margin-right: 10px;
+}
+
+.modal-body p a {
+    font-size: 14px;
+}
+
+.Modal4Form-Categoryt1 {
+    font-size: 13px;
+    margin: 0;
+}
+
+.Modal4Body {
+    padding: 1rem 3rem 0 3rem;
+}
+
+.modal-bodylogin {
+    padding: 1rem 3rem 0 3rem;
+}
+
+
+
+
+.modal-bodysignin {
+    padding: 3rem 3rem 0rem 3rem;
+}
+
+.Modal4footer {
+    border: none;
+}
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal-header p {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.Modal5Body {
+    padding: 2rem 3rem 2rem 3rem;
+}
+
+.Modal5Img {
+    width: 9rem;
+    height: 3rem;
+    margin: auto;
+}
+
+.Modal5Text1 {
+    font-size: 15px;
+    text-align: center;
+}
+
+.Modal5Text2 {
+    font-size: 13px;
+    text-align: center;
+}
+
+.Modal6Body {
+    padding: 2rem 3rem 0 3rem;
+}
+
+.FCselect1 {
+    border-radius: 10px 10px 10px 10px;
+    height: 3rem;
+    background-image: url(icons/ic_keyboard_arrow_right_-3.png), url(icons/1280px-Flag_of_France.svg.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right .75rem center, left .75rem center;
+    background-size: 13px 7px, 30px 15px;
+    padding-left: 3rem;
+}
+
+.FCinput1 {
+    border-radius:  10px 10px 10px 10px;
+    height: 3rem;
+}
+
+.Modal6Text2 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-check-input {
+    width: 1.2rem;
+
+    margin-right: 10px;
+}
+
+.Modal6Text3 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.Modal6Body {
+    padding: 2rem 3rem 0 3rem;
+}
+
+.Modal7Body {
+    padding: 1rem 3rem 0 3rem;
+}
+
+
+
+
+
+
+
+
+.yajari-removebg-preview-1 {
+    width: 200px;
+    padding-left: 50px;
+}
+
+#nav-publish {
+    margin-left: 30px;
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+@media (min-width: 1200px) {
+    #nav-login {
+        position: absolute;
+        right: 160px;
+    }
+    .flex-container {
+        position: absolute;
+        right: 70px;
+        top: 20px;
+    }
+}
+
+.showcase-text1 {
+    font-size: 26px;
+    font-weight: 900;
+    padding-top: 2rem;
+}
+
+.showcase-text2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.Publish-text1 {
+    font-size: 25px;
+    font-weight: 900;
+    padding-top: 2rem;
+}
+
+@media (max-width: 400px) {
+    .Publish-text1 {
+        font-size: 22px;
+    }
+}
+
+.background-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 2%;
+    background-image: url(pictures/Group\ 2381.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 766px) {
+    .showcase-text1 {
+        font-size: 16px;
+        position: relative;
+        top: -12px;
+    }
+
+    .showcase-text2 {
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 767px) {
+    .showcase-text1 {
+        font-size: 20px;
+    }
+}
+
+.RequestContactButton {
+    height: 1.65rem;
+    background-image: linear-gradient(to right, #FD9C8D, #F81564);
+    border-radius: 5px;
+}
+
+#pagination-num {
+    width: 35px;
+    height: 35px;
+    color: #1EA6DF;
+    border: 1px solid #1EA6DF;
+    border-radius: 50%;
+}
+
+#pagination-num:active {
+    color: white;
+    background-color: #1EA6DF;
+    box-shadow: none;
+}
+
+#pagination-num:focus {
+    color: white;
+    background-color: #1EA6DF;
+    box-shadow: none;
+}
+
+.page-item {
+    text-decoration: none;
+}
+
+#nav-publish {
+    margin-left: 30px;
+    padding-left: 20px;
+    background: linear-gradient(to right, #ffacbf, #fa4d75);
+    width: 170px;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#Contact-b1 {
+    height: 30px;
+    background: linear-gradient(to right, #76EDF9, #13B7E9);
+    width: 100px;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+@media (max-width: 560px) {
+    body {
+        padding-top: 3rem;
+    }
+
+    .background-image2 {
+        height: 180px;
+    }
+
+    #responsesID2 {
+        display: none;
+    }
+
+    #responsesID1 {
+        display: flex;
+    }
+
+    #request-textID1 {
+        font-size: 12px;
+        margin: auto;
+        padding-top: 10px;
+    }
+
+    #request-textID2 {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .requestFaceImg1 {
+        width: 70px;
+        padding-left: 10px;
+    }
+
+    .requestFaceImgTICK {
+        position: absolute;
+        top: 1.4rem;
+        left: 3.8rem;
+        width: 1.3rem;
+    }
+
+    .Responses-Name1 {
+        font-size: 13px;
+        padding-top: 0;
+    }
+
+    .responses-star1 {
+        width: 70px;
+        height: 12px;
+    }
+
+    .responses-date1 {
+        color: #15B8E9;
+        padding-left: 10px;
+        font-size: 12px;
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
+    .Responses-starText {
+        padding-left: 5px;
+        font-size: 11px;
+    }
+
+    .responses-heart1 {
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-right: 1px;
+        padding-top: 0;
+    }
+
+    .responses-buttonQ1 {
+        background-color: #a8ebff;
+        color: #15B8E9;
+        height: 20px;
+        border: hidden;
+        border-radius: 5px;
+    }
+
+    .responses-tQ1 {
+        font-size: 12px;
+    }
+
+    .responses-buttons1234 {
+        font-size: 11px;
+        padding-left: 10px;
+        padding-top: 3px;
+    }
+
+    .card-img-top {
+        width: 3rem;
+    }
+
+    .form-button1 {
+        background-color: rgb(247, 244, 244);
+        padding-top: 5px;
+    }
+}
+
+@media (min-width: 561px) {
+    #responsesID2 {
+        display: flex;
+    }
+
+    #LineID1 {
+        display: none;
+    }
+
+    #responsesID1 {
+        display: none;
+    }
+
+    #request-textID1 {
+        font-size: 14px;
+        margin: auto;
+    }
+
+    #request-textID2 {
+        font-size: 14px;
+        font-weight: 500;
+        position: relative;
+        left: -60px;
+    }
+
+    .requestFaceImg1 {
+        width: 85px;
+        padding-left: 10px;
+    }
+
+    .requestFaceImgTICK1 {
+        position: absolute;
+        top: 3.5rem;
+        left: 4.7rem;
+        width: 1.3rem;
+    }
+
+    .Responses-Name1 {
+        font-size: 15px;
+        margin-left: -15px;
+    }
+
+    .responses-star1 {
+        width: 90px;
+        height: 15px;
+        margin-left: 19px;
+        position: relative;
+        left: -33px;
+    }
+
+    .responses-date1 {
+        color: #15B8E9;
+        padding-left: 10px;
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    .Responses-starText {
+        padding-left: 5px;
+        font-size: 12px;
+    }
+
+    .responses-heart1 {
+        width: 1.2rem;
+        height: 1.3rem;
+        padding-top: 0.2rem;
+        margin-right: -15px;
+    }
+
+    .responses-buttonQ1 {
+        background-color: #9be8ff;
+        color: #15B8E9;
+        height: 25px;
+        border: hidden;
+        border-radius: 5px;
+    }
+
+    .responses-tQ1 {
+        font-size: 15px;
+    }
+
+    .responses-buttons1234 {
+        font-size: 13px;
+        padding-left: 10px;
+    }
+
+    .card-img-top {
+        width: 4rem;
+    }
+
+
+}
+
+@media (max-width: 420px) {
+    .follow-img {
+        width: 40px;
+        padding-top: 0.6rem;
+    }
+}
+
+@media (max-width: 460px) {
+    #Logo-view1 {
+        display: none;
+    }
+
+    .yajari-removebg-preview-1 {
+        width: 120px;
+        padding-left: 20px;
+    }
+
+    #nav-publish1 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        padding-bottom: 30vh;
+    }
+}
+
+@media (min-width: 461px) {
+    #Logo-view2 {
+        display: none;
+    }
+
+    #nav-publish2 {
+        display: none;
+    }
+}
+
+
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 1px 2px 30px 1px #2fc6ed;
+
+}
+
+.MBText1 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff155b;
+}
+
+.MBText2 {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 2rem;
+    color: black;
+}
+
+.SendMessageButton,
+.CallButton,
+.CallButton2 {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    background: linear-gradient(to right, #2fc6ed, #2fc6ed);
+    padding: 0.6rem 2rem;
+    border-radius: 5px;
+}
+
+.CallButton {
+    background: gray;
+    padding: 0.6rem 3rem;
+}
+
+.CallButton2 {
+    background: gray;
+    padding: 0.6rem 5rem;
+}
+
+.modal-body {
+    padding: 2rem 4rem 4rem 4rem;
+}
+
+.MBText3 {
+    font-size: 22px;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.ReportCol {
+    text-align: end;
+    margin-right: 1rem;
+}
+
+.QuotationButton {
+    font-size: 13px;
+    padding: 0.1rem 0.7rem;
+    background: #96e6ff;
+    border-radius: 5px;
+    color: #15B8E9;
+    margin-left: 1rem;
+}
+
+.ReportContactFlex {
+
+    position: relative;
+
+}
+
+.RatingText1 {
+    font-size: 13px;
+    margin-left: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+.RequestDIVP {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 100px 1px #eafaff;
+    padding: 1rem 2rem 0.5rem 3rem;
+    margin: auto;
+}
+
+.CardNameStar {
+    margin-left: 3rem;
+}
+
+.NeighborsSText1 {
+    font-size: 28px;
+    color: #16B9E9;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 10px !important;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+
+form input {
+    height: 3rem;
+    background: white;
+}
+
+.SearchButton {
+    position: relative;
+    width: 5rem;
+    height: 3rem;
+    background: white;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.SearchButtonImg {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.5rem;
+}
+
+.SearchRow {
+    width: 92%;
+    margin: auto;
+    box-shadow: 1px 3px 5px 1px rgb(216, 216, 216);
+    border-radius: 10px;
+}
+
+form input::placeholder {
+    font-weight: 600;
+    color: black;
+    font-size: 16px;
+}
+
+#dropdownMenuButton1 {
+    width: 10rem;
+    height: 4rem;
+    box-shadow: 1px 3px 5px 1px rgb(216, 216, 216);
+    border-radius: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.NoButton {
+    font-size: 16px;
+    text-decoration: none;
+    color: #F81D66;
+    border: 1px solid #F81D66;
+    padding: 0.5rem 4rem;
+    border-radius: 10px;
+}
+
+.YesButton {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #ff6d9e, #ff0156);
+    padding: 0.5rem 4rem;
+    border-radius: 10px;
+}
+
+.NoButton:hover,
+.YesButton:hover {
+    color: black;
+}
+
+textarea::placeholder {
+    font-size: 14px;
+    color: black;
+}
+
+.ReportModalBody {
+    padding: 1rem 7rem 3rem 7rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ptt-3 {
+    padding-top: 1rem;
+}
