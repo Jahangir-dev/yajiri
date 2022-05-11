@@ -330,7 +330,7 @@
                         position: { lat: lat, lng: lng },
                         map
                       });       
-
+var range_default = $('#customRange1').val()*100;
                   $('#lat').val(lat);
                   $('#lng').val(lng);                  
                     console.log(lat,lng);
@@ -343,7 +343,7 @@
                         fillOpacity: 0.35,
                         map: map,
                         center: new google.maps.LatLng(marker.getPosition()),
-                        radius: 1000 * 0.621371,
+                        radius: range_default,
                     });
                 }   
 
@@ -354,18 +354,21 @@
 
           $(document).on('input', '#customRange1', function() {
             $('#distance_m').html( $(this).val() );
+            // wellCircle.setMap(null);
+            wellCircle.setRadius($(this).val()*100);
 
-          /*  wellCircle = new google.maps.Circle({
-                        strokeColor: '#FF0000',
-                        strokeOpacity: 0.8,
-                        strokeWeight: 2,
-                        fillColor: '#FF0000',
-                        fillOpacity: 0.35,
-                        map: map,
-                        center: new google.maps.LatLng(marker.getPosition()),
-                        radius: $(this).val() * 0.621371,
-                    });
-                  */
+
+            // wellCircle = new google.maps.Circle({
+            //             strokeColor: '#FF0000',
+            //             strokeOpacity: 0.8,
+            //             strokeWeight: 2,
+            //             fillColor: '#FF0000',
+            //             fillOpacity: 0.35,
+            //             map: map,
+            //             center: new google.maps.LatLng(marker.getPosition()),
+            //             radius: $(this).val() * 100,
+            //         });
+                  
 
         });   
 
