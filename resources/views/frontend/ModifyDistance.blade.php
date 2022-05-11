@@ -223,7 +223,7 @@
                                     <input type="hidden" name="lat" id="lat" value="{{isset($distance)?$distance->lat:0.00000}}">
                                     <input type="hidden" name="lng" id="lng" value="{{isset($distance)?$distance->lng:0.00000}}">
                                     <div class="col-12 col-sm-12">
-                                    <input type="range" class="form-range" id="customRange1" name="distance_range" step="0.1" value="{{isset($distance)?$distance->distance:5}}" min="5" max="10">
+                                    <input type="range" class="form-range" id="customRange1" name="distance_range" step="0.1" value="{{isset($distance)?$distance->distance:5}}" min="5" max="20">
                                 </div>
                             
                                 </form>
@@ -277,10 +277,10 @@
 
          <script type="text/javascript">
         
-        let map;
+        // let map;
         var lat1='{{isset($distance)?$distance->lat:NULL}}';var lng1='{{isset($distance)?$distance->lng:NULL}}';
         function initMap() {
-            
+            console.log('lat: '+lat1);
           lat = Number(lat1?lat1:33.604544); lng = Number(lng1?lng1:73.604544);  
 
           map = new google.maps.Map(document.getElementById("map"), {
