@@ -213,9 +213,10 @@ var circle;
                 }
 
                 function showPosition(position) {
-
-                            lat = 36.83901
-                            lng = 10.23931;
+lat = position.coords.latitude;
+lng = position.coords.longitude;
+                            // lat = 36.83901
+                            // lng = 10.23931;
                   marker = new google.maps.Marker({
                         position: { lat: lat, lng: lng },
                         map
@@ -259,11 +260,14 @@ var circle;
 
 
 
+$(document).ready(function(){
+    getLocation();
 
-        $(window).on('load', function(){
-            getLocation();
+});
+        // $(window).on('load', function(){
+        //     getLocation();
 
-        })
+        // })
 
 
         $('#submitForm').click(function(){
