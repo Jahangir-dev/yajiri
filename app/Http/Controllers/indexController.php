@@ -32,9 +32,12 @@ class indexController extends Controller
                 return view('frontend.ChoseCategory',compact('category'));
             }   
             $d = UserDistance::where('user_id',Auth::user()->id)->first();
-            if(empty($d)){
-                 return view('frontend.ChoseDistance');
+            if($d->distance == 0)
+            {
+            return view('frontend.ChoseDistance', ['lat' => $d->lat, 'lng' => $d->lng]);
             }
+            // if(empty($d)){
+            // }
 
             
         }

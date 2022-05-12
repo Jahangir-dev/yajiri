@@ -9,4 +9,11 @@ class UserDistance extends Model
 {
     use HasFactory;
     protected $table = 'user_distance';
+
+    public $fillable = [
+        'user_id',
+        'lat',
+        'lng',
+        'distance'
+    ];
 }

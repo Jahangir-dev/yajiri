@@ -92,7 +92,13 @@ class UserController extends Controller
         $user->login_status = 0;
         $user->verifypass = 0;
         $user->is_active = 0;
-        $user->save();    
+        $user->save();  
+        UserDistance::create([
+            'user_id' => $user_id,
+            'lat' => $request->registerLat,
+            'lng' => $request->registerLng,
+            'distance' => 0
+        ]);
         $email = $request->registerEmail;
         $token=$token;
         $data = ['email'=>$email,'token'=>$token];
@@ -321,9 +327,9 @@ class UserController extends Controller
         if(empty($d)){
             $d = new UserDistance();            
         }
-        $d->user_id = Auth::user()->id;
-        $d->lat = $request->lat;
-        $d->lng = $request->lng;
+        // $d->user_id = Auth::user()->id;
+        // $d->lat = $request->lat;
+        // $d->lng = $request->lng;
         $d->distance = $request->distance_range;
         $d->save();
 
