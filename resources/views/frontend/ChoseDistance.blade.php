@@ -171,8 +171,8 @@
 var circle;
         function initMap() {
 
-lat = $('#lat').val();
-lng = $('#lng').val();
+lat = parseFloat($('#lat').val());
+lng = parseFloat($('#lng').val());
 console.log(lat,lng);
           map = new google.maps.Map(document.getElementById("map"), {
             center: { lat: lat, lng: lng },
@@ -217,8 +217,8 @@ console.log(lat,lng);
                 function showPosition(position) {
 //                     lat_ = position.coords.latitude;
 // lng_ = position.coords.longitude;
-                    lat = $('#lat').val();
-                    lng = $('#lng').val();
+                    lat = parseFloat($('#lat').val());
+                    lng = parseFloat($('#lng').val());
 
                             // lat = 36.83901
                             // lng = 10.23931;
