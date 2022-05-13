@@ -100,8 +100,8 @@
                     <div class="col-6 col-sm-6 text-end">
                         <p style="font-size: 18px;font-weight: bolder;margin-bottom: 0;"><strong><span id="distance_m">20</span> km</strong></p>
                     </div>
-                    <input type="hidden" name="lat" id="lat">
-                    <input type="hidden" name="lng" id="lng">
+                    <input type="hidden" name="lat" value="{{isset($lat) ? $lat : ''}}" id="lat">
+                    <input type="hidden" name="lng" value="{{isset($lng) ? $lng : ''}}" id="lng">
                     <div class="col-12 col-sm-12">
                     <input type="range" class="form-range" id="customRange1" name="distance_range" step="1" value="5" min="5" max="20">
                 </div>
@@ -171,7 +171,9 @@
 var circle;
         function initMap() {
 
-
+lat = parseFloat($('#lat').val());
+lng = parseFloat($('#lng').val());
+console.log(lat,lng);
           map = new google.maps.Map(document.getElementById("map"), {
             center: { lat: lat, lng: lng },
             zoom: 12,
@@ -213,8 +215,11 @@ var circle;
                 }
 
                 function showPosition(position) {
-lat = position.coords.latitude;
-lng = position.coords.longitude;
+//                     lat_ = position.coords.latitude;
+// lng_ = position.coords.longitude;
+                    lat = parseFloat($('#lat').val());
+                    lng = parseFloat($('#lng').val());
+
                             // lat = 36.83901
                             // lng = 10.23931;
                   marker = new google.maps.Marker({
@@ -222,9 +227,9 @@ lng = position.coords.longitude;
                         map
                       });
 
-                  $('#lat').val(lat);
+                //   $('#lat').val(lat);
 
-                  $('#lng').val(lng);
+                //   $('#lng').val(lng);
                   console.log(lat,lng);
                     map.setCenter(marker.getPosition());
 
