@@ -102,7 +102,7 @@ class UserController extends Controller
                     $mail->to($email,'Email Verification')->from("info@yajiri.com")->subject("New Registration Email Verification");
             });
 
-            toast('Registration successfully, verification Email Sent','success');
+            toast('Registration successful, verification email sent to email, please verify');
         // alert()->success('Registration successfully');
         return redirect()->back()->with('success','Registration successfully');
     }

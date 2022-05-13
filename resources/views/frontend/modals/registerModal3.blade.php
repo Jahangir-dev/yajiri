@@ -107,7 +107,7 @@
                             <span class="col-md-12 inputError" for="userLastName">Last name field is required</span>
                         </div>
                         <div class="input-group mb-1 professional" style="display:none;">
-                            <input type="text" class="Modal4input1 form-control inputField_c alpha_type" placeholder="Company Name" id="userCompanyName" aria-label="Company Name" aria-describedby="basic-addon1">
+                            <input type="text" class="Modal4input1 form-control alpha_type" placeholder="Company Name" id="userCompanyName" aria-label="Company Name" aria-describedby="basic-addon1">
                             <span class="col-md-12 inputError" for="userCompanyName">Company Name field is required</span>
                         </div>
 
@@ -145,6 +145,7 @@
 
                             <input type="text" oninput="this.type='email'"  class="form-control inputField" placeholder="Email" id="userEmailS" aria-label="email" aria-describedby="basic-addon1">
                             <span class="col-md-12 inputError" style="font-size:12px;" id="userEmailSalert" for="userEmailS">Enter valid email address</span>
+                            <span class="col-md-12 inputError" style="font-size:12px;" id="userEmailexist" for="userEmailS">Email already exist</span>
 
                         </div>
                         <div class="input-group mb-1">
@@ -160,7 +161,7 @@
                             <input type="text" oninput="this.type='password'"  class="form-control inputField" onkeyup="checksPassword()" placeholder="Password" id="userPassword" aria-label="password" aria-describedby="basic-addon1">
                             <span class="Modal4input6" onclick="Modal4input6('userPassword')" style="width: 41px;z-index: 9999999999;position: absolute;right: 0;cursor: pointer;"></span>
                             <span class="col-md-12 inputError" style="font-size:12px;" for="userPassword">Password field is required</span>
-                            <span class="error_message spassword_error" style="display: none;font-size: 10px;color: red;">* Password must include 1 UPPER CASE letter, 1 special character and length must be less than 10 characters</span>
+                            <span class="error_message spassword_error" style="display: none;font-size: 10px;color: red;">* Password must include 1 UPPER CASE letter, 1 special character and minimum 5 characters required</span>
                         </div>
                         <div class="">
                             <div class="form-check">
