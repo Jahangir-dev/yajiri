@@ -4,7 +4,7 @@
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 
  <script type="text/javascript">
@@ -61,335 +61,335 @@
      });
 
      $('#registerModal3Continuebtn').click(function() {
-                 $('.inputError').hide();
+         $('.inputError').hide();
 
-                 var email = $('#userEmailS').val();
-                 var password, userCompanyName, inputField_c, userFirstName, inputField, userEmailS, terms_and_conditions = 0;
+         var email = $('#userEmailS').val();
+         var password, userCompanyName, inputField_c, userFirstName, inputField, userEmailS, terms_and_conditions = 0;
 
-                 if ($('#userType').val() == 1) {
-                     if ($('#userCompanyName').val() == '' || $('#userCompanyName').val() == null) {
-                         $('.inputError[for="userCompanyName"]').show();
-                         userCompanyName = 1;
+         if ($('#userType').val() == 1) {
+             if ($('#userCompanyName').val() == '' || $('#userCompanyName').val() == null) {
+                 $('.inputError[for="userCompanyName"]').show();
+                 userCompanyName = 1;
+             } else {
+                 userCompanyName = 0;
+             }
+             $('#LoginRegisterModal4 .inputField_c').each(function() {
+                 var forType = $(this).attr('id');
+                 if ($(this).val() == '' || $(this).val() == null) {
+                     $('.inputError[for="' + forType + '"]').show();
+                     inputField_c = 1;
+
+                 } else {
+                     inputField_c = 0;
+                 }
+             });
+
+         } else {
+             if ($('#userFirstName').val() == '' || $('#userFirstName').val() == null) {
+                 $('.inputError[for="userFirstName"]').show();
+                 userFirstName = 1;
+
+             } else {
+                 userFirstName = 0;
+             }
+
+             if ($('#userLastName').val() == '' || $('#userLastName').val() == null) {
+                 $('.inputError[for="userLastName"]').show();
+                 userLastName = 1;
+             } else {
+                 userLastName = 0;
+             }
+
+             $('#LoginRegisterModal4 .inputField').each(function() {
+                 var forType = $(this).attr('id');
+                 if ($(this).val() == '' || $(this).val() == null) {
+                     $('.inputError[for="' + forType + '"]').show();
+                     inputField = 1;
+                 } else {
+                     inputField = 0;
+                 }
+             });
+
+
+         }
+
+         var mailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+         if (!$('#userEmailS').val().match(mailValidation)) {
+             $('#userEmailSalert').show();
+             $('#userEmailexist').hide();
+             userEmailS = 1;
+         } else {
+             $.ajax({
+                 type: 'POST',
+                 url: '{{route("email-check")}}',
+                 data: {
+                     _token: "{{ csrf_token() }}",
+                     email: email
+                 },
+                 success: function(msg) {
+                     if (msg == 1) {
+                         $('#userEmailexist').show();
+                         $('#userEmailSalert').hide();
+                         userEmailS = 1;
                      } else {
-                         userCompanyName = 0;
+                         $('#userEmailexist').hide();
+                         $('#userEmailSalert').hide();
+                         userEmailS = 0;
                      }
-                     $('#LoginRegisterModal4 .inputField_c').each(function() {
-                         var forType = $(this).attr('id');
-                         if ($(this).val() == '' || $(this).val() == null) {
-                             $('.inputError[for="' + forType + '"]').show();
-                             inputField_c = 1;
-
-                         } else {
-                             inputField_c = 0;
-                         }
-                     });
-
-                 } else {
-                     if ($('#userFirstName').val() == '' || $('#userFirstName').val() == null) {
-                         $('.inputError[for="userFirstName"]').show();
-                         userFirstName = 1;
-
-                     } else {
-                         userFirstName = 0;
-                     }
-
-                     if ($('#userLastName').val() == '' || $('#userLastName').val() == null) {
-                         $('.inputError[for="userLastName"]').show();
-                         userLastName = 1;
-                     } else {
-                         userLastName = 0;
-                     }
-
-                     $('#LoginRegisterModal4 .inputField').each(function() {
-                         var forType = $(this).attr('id');
-                         if ($(this).val() == '' || $(this).val() == null) {
-                             $('.inputError[for="' + forType + '"]').show();
-                             inputField = 1;
-                         } else {
-                             inputField = 0;
-                         }
-                     });
-
-
                  }
+             });
+         }
 
-                 var mailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+         // Password check validation
+         var passwordCheck = checksPassword();
+         if (passwordCheck == false) {
+             password = 1;
+             $('.spassword_error').show();
 
-                 if (!$('#userEmailS').val().match(mailValidation)) {
-                     $('#userEmailSalert').show();
-                     $('#userEmailexist').hide();
-                     userEmailS = 1;
-                 } else {
-                    $.ajax({
-                        type: 'POST',
-                        url: '{{route("email-check")}}',
-                        data: {
-                            _token: "{{ csrf_token() }}",
-                            email: email
-                        },
-                        success: function(msg) {
-                            if (msg == 1) {
-                                $('#userEmailexist').show();
-                                $('#userEmailSalert').hide();
-                                userEmailS = 1;
-                            } else {
-                                $('#userEmailexist').hide();
-                                $('#userEmailSalert').hide();
-                                userEmailS = 0;
-                            }
-                        }
-                    });
-                 }
+         } else {
+             password = 0;
+             $('.spassword_error').hide();
 
-                  // Password check validation
-                  var passwordCheck = checksPassword();
-                 if (passwordCheck == false) {
-                     password = 1;
-                     $('.spassword_error').show();
+         }
 
-                 } else {
-                     password = 0;
-                     $('.spassword_error').hide();
+         if ($('.terms_and_conditions').prop('checked') == false) {
+             $('#terms_and_conditions_checkbox').show();
+             terms_and_conditions = 1;
+         }
 
-                 }
+         if ($('#userType').val() == "Professional" && (password == 1 || userCompanyName == 1 || inputField_c == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
+             return false;
+         } else if ($('#userType').val() == "Private" && (password == 1 || userFirstName == 1 || inputField == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
+             return false;
+         } else {
 
-                 if ($('.terms_and_conditions').prop('checked') == false) {
-                     $('#terms_and_conditions_checkbox').show();
-                     terms_and_conditions = 1;
-                 }
-              
-                 if ($('#userType').val() == "Professional" && (password == 1 || userCompanyName == 1 || inputField_c == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
-                     return false;
-                 } else if ($('#userType').val() == "Private" && (password == 1 || userFirstName == 1 || inputField == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
-                     return false;
-                 } else {
+             $('#registerEmail').val($('#userEmailS').val());
+             $('#LoginRegisterModal4').modal('hide');
+             $('#registerFirstName').val($('#userFirstName').val());
+             $('#registerLastName').val($('#userLastName').val());
+             $('#registerCompanyName').val($('#userCompanyName').val());
+             $('#registerAddress').val($('.formated_address_first').val());
+             $('#registerSiretNumber').val($('#userSiretNumber').val());
+             $('#registerPhoneNumber').val($('#userPhoneNumber').val());
+             $('#registerPassword').val($('#userPassword').val());
+             $('#registerLat').val($('#lat'));
+             $('#registerLng').val($('#lng'));
+             if ($('#continueWith').val() == 'continueWithPhone') {
+                 $('#LoginRegisterModal7').modal('show');
+             } else {
+                 $('#LoginRegisterModal6').modal('show');
+             }
 
-                    $('#registerEmail').val($('#userEmailS').val());
-                    $('#LoginRegisterModal4').modal('hide');
-                    $('#registerFirstName').val($('#userFirstName').val());
-                    $('#registerLastName').val($('#userLastName').val());
-                    $('#registerCompanyName').val($('#userCompanyName').val());
-                    $('#registerAddress').val($('.formated_address_first').val());
-                    $('#registerSiretNumber').val($('#userSiretNumber').val());
-                    $('#registerPhoneNumber').val($('#userPhoneNumber').val());
-                    $('#registerPassword').val($('#userPassword').val());
-                    $('#registerLat').val($('#lat'));
-                    $('#registerLng').val($('#lng'));
-                    if ($('#continueWith').val() == 'continueWithPhone') {
-                        $('#LoginRegisterModal7').modal('show');
-                    } else {
-                        $('#LoginRegisterModal6').modal('show');
-                    }
+             $('.registrationPhoneNumber').val($('#userPhoneNumber').val());
 
-                    $('.registrationPhoneNumber').val($('#userPhoneNumber').val());
-               
-                }
+         }
      });
 
 
-                 $('#registerModal5Continuebtn').click(function() {
+     $('#registerModal5Continuebtn').click(function() {
 
 
-                     $('.inputError').hide();
-                     if ($('#userPhoneNumber1').val() == '' || $('#userPhoneNumber1').val() == undefined) {
-                         $('.inputError[for="userPhoneNumber1"]').show();
+         $('.inputError').hide();
+         if ($('#userPhoneNumber1').val() == '' || $('#userPhoneNumber1').val() == undefined) {
+             $('.inputError[for="userPhoneNumber1"]').show();
+         } else {
+             $('#LoginRegisterModal6').modal('hide');
+             $('#registerCountrySelect').val($('#userCountrySelect').val());
+             $('#registerPhoneNumber1').val($('#userPhoneNumber1').val());
+             $('#registerSendCodeViaSMS').val($('#userSendCodeViaSMS').val());
+             $('#LoginRegisterModal7').modal('show');
+         }
+
+
+
+     });
+
+     $('#registerModal6Continuebtn').click(function() {
+         $('#registrationForm').submit();
+     });
+
+
+
+     $('.continueWithPhone').click(function() {
+
+         $('#lastModal').val('LoginRegisterModal1');
+         $('#continueWith').val('continueWithPhone');
+         if ($('.registrationPhoneNumber').val() != '') {
+
+             var phone_number = $('.registrationPhoneNumber').val();
+
+
+             var pre_phone_number = $('.registrationPhoneNumber').val();
+             var registrationCountrySelect = $('.registrationCountrySelect').val();
+             phone_number = registrationCountrySelect + '' + phone_number;
+
+             $('#userPhoneNumber').val(pre_phone_number);
+             $('#registerPhoneNumberCode').val(registrationCountrySelect);
+
+
+
+
+             $.ajax({
+                 type: 'POST',
+                 url: '{{route("phone_number_check")}}',
+                 data: {
+                     _token: "{{ csrf_token() }}",
+                     phone_number: phone_number,
+                     pre_phone_number: pre_phone_number
+                 },
+                 success: function(msg) {
+
+                     if (msg == 1) {
+                         $('#registrationPhoneNumberAlert').html('* Phone Number Exists');
+                         $('#registrationPhoneNumberAlert').show();
                      } else {
-                         $('#LoginRegisterModal6').modal('hide');
-                         $('#registerCountrySelect').val($('#userCountrySelect').val());
-                         $('#registerPhoneNumber1').val($('#userPhoneNumber1').val());
-                         $('#registerSendCodeViaSMS').val($('#userSendCodeViaSMS').val());
-                         $('#LoginRegisterModal7').modal('show');
-                     }
 
 
-
-                 });
-
-                 $('#registerModal6Continuebtn').click(function() {
-                     $('#registrationForm').submit();
-                 });
-
-
-
-                 $('.continueWithPhone').click(function() {
-
-                     $('#lastModal').val('LoginRegisterModal1');
-                     $('#continueWith').val('continueWithPhone');
-                     if ($('.registrationPhoneNumber').val() != '') {
-
-                         var phone_number = $('.registrationPhoneNumber').val();
-
-
-                         var pre_phone_number = $('.registrationPhoneNumber').val();
-                         var registrationCountrySelect = $('.registrationCountrySelect').val();
-                         phone_number = registrationCountrySelect + '' + phone_number;
-
-                         $('#userPhoneNumber').val(pre_phone_number);
-                         $('#registerPhoneNumberCode').val(registrationCountrySelect);
-
-
-
+                         $('#LoginRegisterModal1').modal('hide');
+                         $('#LoginRegisterModal3').modal('show');
+                         $('.registrationPhoneNumberAlert').hide();
+                         $('#twillio_code_verification').show();
 
                          $.ajax({
                              type: 'POST',
-                             url: '{{route("phone_number_check")}}',
+                             url: '{{route("send-twillio-code")}}',
                              data: {
                                  _token: "{{ csrf_token() }}",
-                                 phone_number: phone_number,
-                                 pre_phone_number: pre_phone_number
+                                 phone_number: phone_number
                              },
                              success: function(msg) {
 
                                  if (msg == 1) {
-                                     $('#registrationPhoneNumberAlert').html('* Phone Number Exists');
-                                     $('#registrationPhoneNumberAlert').show();
-                                 } else {
-
-
-                                     $('#LoginRegisterModal1').modal('hide');
-                                     $('#LoginRegisterModal3').modal('show');
-                                     $('.registrationPhoneNumberAlert').hide();
                                      $('#twillio_code_verification').show();
-
-                                     $.ajax({
-                                         type: 'POST',
-                                         url: '{{route("send-twillio-code")}}',
-                                         data: {
-                                             _token: "{{ csrf_token() }}",
-                                             phone_number: phone_number
-                                         },
-                                         success: function(msg) {
-
-                                             if (msg == 1) {
-                                                 $('#twillio_code_verification').show();
-                                                 $('#phoneNumbersent').html(phone_number);
-                                                 $('#wentwrongtwillio').hide();
-                                                 $('#notmatchedsendedphoneNumberAlert').hide();
-                                             } else {
-                                                 $('#wentwrongtwillio').show();
-                                                 $('#notmatchedsendedphoneNumberAlert').html(msg);
-                                                 $('#notmatchedsendedphoneNumberAlert').show();
-                                             }
-                                         }
-                                     });
-
-
-
-                                 }
-                             }
-                         });
-
-
-
-
-
-
-                     } else {
-                         $('.registrationPhoneNumberAlert').show();
-
-                         var code = -1;
-                         $('.email_Number_code').each(function() {
-                             if (code == -1) {
-                                 code = $(this).val();
-                             } else {
-                                 code = code + '' + $(this).val();
-                             }
-
-                         });
-
-                         var userEmail = $('#userEmail').val();
-                         userEmail = userEmail;
-
-                         $.ajax({
-                             type: 'POST',
-                             url: '{{route("verify-email-code")}}',
-                             data: {
-                                 _token: "{{ csrf_token() }}",
-                                 userEmail: userEmail,
-                                 code,
-                                 code
-                             },
-                             success: function(msg) {
-                                 if (msg == 1) {
-                                     $('.registrationPhoneNumberAlert').show();
+                                     $('#phoneNumbersent').html(phone_number);
+                                     $('#wentwrongtwillio').hide();
+                                     $('#notmatchedsendedphoneNumberAlert').hide();
                                  } else {
-                                     $('#notmatchedsendedemailAlert').show();
-                                     $('#matchedsendedemailAlert').hide();
+                                     $('#wentwrongtwillio').show();
+                                     $('#notmatchedsendedphoneNumberAlert').html(msg);
+                                     $('#notmatchedsendedphoneNumberAlert').show();
                                  }
                              }
                          });
 
 
 
-
                      }
+                 }
+             });
 
-                 });
 
 
-                 $(".phone_Number_code").keyup(function() {
-                     if (this.value.length == this.maxLength) {
-                         $(this).next('.phone_Number_code').focus();
+
+
+
+         } else {
+             $('.registrationPhoneNumberAlert').show();
+
+             var code = -1;
+             $('.email_Number_code').each(function() {
+                 if (code == -1) {
+                     code = $(this).val();
+                 } else {
+                     code = code + '' + $(this).val();
+                 }
+
+             });
+
+             var userEmail = $('#userEmail').val();
+             userEmail = userEmail;
+
+             $.ajax({
+                 type: 'POST',
+                 url: '{{route("verify-email-code")}}',
+                 data: {
+                     _token: "{{ csrf_token() }}",
+                     userEmail: userEmail,
+                     code,
+                     code
+                 },
+                 success: function(msg) {
+                     if (msg == 1) {
+                         $('.registrationPhoneNumberAlert').show();
+                     } else {
+                         $('#notmatchedsendedemailAlert').show();
+                         $('#matchedsendedemailAlert').hide();
                      }
-                 });
-
-                 $(".email_Number_code").keyup(function() {
-                     if (this.value.length == this.maxLength) {
-                         $(this).next('.email_Number_code').focus();
-                     }
-                 });
+                 }
+             });
 
 
-                 $('#phone_Number_code_verify').click(function() {
 
 
-                     /*                for testing*/
+         }
 
-                     /*$('#notmatchedsendedphoneNumberAlert').hide();
-                                                     $('#LoginRegisterModal3').modal('hide');
-                                                     $('#matchedsendedphoneNumberAlert').show();
-                                                     $('#LoginRegisterModal4').modal('show');   */
+     });
 
-                     /*                    for testing*/
 
-                     var code = -1;
-                     $('.phone_Number_code').each(function() {
-                         if (code == -1) {
-                             code = $(this).val();
-                         } else {
-                             code = code + '' + $(this).val();
-                         }
+     $(".phone_Number_code").keyup(function() {
+         if (this.value.length == this.maxLength) {
+             $(this).next('.phone_Number_code').focus();
+         }
+     });
 
-                     });
+     $(".email_Number_code").keyup(function() {
+         if (this.value.length == this.maxLength) {
+             $(this).next('.email_Number_code').focus();
+         }
+     });
 
-                     var phone_number = $('.registrationPhoneNumber').val();
-                     $('#userPhoneNumber').val(phone_number);
-                     var registrationCountrySelect = $('.registrationCountrySelect').val();
-                     phone_number = registrationCountrySelect + '' + phone_number;
 
-                     $.ajax({
-                         type: 'POST',
-                         url: '{{route("verify-twillio-code")}}',
-                         data: {
-                             _token: "{{ csrf_token() }}",
-                             phone_number: phone_number,
-                             code,
-                             code
-                         },
-                         success: function(msg) {
-                             if (msg == 1) {
-                                 $('#notmatchedsendedphoneNumberAlert').hide();
-                                 $('#LoginRegisterModal3').modal('hide');
-                                 $('#matchedsendedphoneNumberAlert').show();
-                                 $('#LoginRegisterModal4').modal('show');
-                             } else {
-                                 $('#notmatchedsendedphoneNumberAlert').show();
-                                 $('#matchedsendedphoneNumberAlert').hide();
-                             }
-                         }
-                     });
+     $('#phone_Number_code_verify').click(function() {
 
-                 });
+
+         /*                for testing*/
+
+         /*$('#notmatchedsendedphoneNumberAlert').hide();
+                                         $('#LoginRegisterModal3').modal('hide');
+                                         $('#matchedsendedphoneNumberAlert').show();
+                                         $('#LoginRegisterModal4').modal('show');   */
+
+         /*                    for testing*/
+
+         var code = -1;
+         $('.phone_Number_code').each(function() {
+             if (code == -1) {
+                 code = $(this).val();
+             } else {
+                 code = code + '' + $(this).val();
+             }
+
+         });
+
+         var phone_number = $('.registrationPhoneNumber').val();
+         $('#userPhoneNumber').val(phone_number);
+         var registrationCountrySelect = $('.registrationCountrySelect').val();
+         phone_number = registrationCountrySelect + '' + phone_number;
+
+         $.ajax({
+             type: 'POST',
+             url: '{{route("verify-twillio-code")}}',
+             data: {
+                 _token: "{{ csrf_token() }}",
+                 phone_number: phone_number,
+                 code,
+                 code
+             },
+             success: function(msg) {
+                 if (msg == 1) {
+                     $('#notmatchedsendedphoneNumberAlert').hide();
+                     $('#LoginRegisterModal3').modal('hide');
+                     $('#matchedsendedphoneNumberAlert').show();
+                     $('#LoginRegisterModal4').modal('show');
+                 } else {
+                     $('#notmatchedsendedphoneNumberAlert').show();
+                     $('#matchedsendedphoneNumberAlert').hide();
+                 }
+             }
+         });
+
+     });
  </script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js" integrity="sha512-DNeDhsl+FWnx5B1EQzsayHMyP6Xl/Mg+vcnFPXGNjUZrW28hQaa1+A4qL9M+AiOMmkAhKAWYHh1a+t6qxthzUw==" crossorigin="anonymous"></script>
@@ -917,6 +917,75 @@
      $('modal').on('shown.bs.modal', function() {
          $(".modal-backdrop.in").hide();
      })
+     toastr.options = {
+  "debug": false,
+  "positionClass": "toast-bottom-right",
+  "onclick": null,
+  "fadeIn": 300,
+  "fadeOut": 1000,
+  "timeOut": 5000,
+  "extendedTimeOut": 1000
+}
+     $('#login_btn').click(function() {
+
+        var email = $('#emailLogin').val();
+        var password = $('#passwordLogin').val();
+        var va_email, va_password = 0;
+
+        if(email.length == 0)
+        {
+            $('#semail_error_require').show();
+            va_email = 1;
+        } else {
+            $('#semail_error_require').hide();
+            va_email = 0;
+            var mailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            let isnum = /^\d+$/.test(email);
+            if(isnum)
+            {
+                va_email = 0;
+            } else if (!$('#emailLogin').val().match(mailValidation)) { 
+                $('#semail_error_require').text('* Please enter valid email');
+                $('#semail_error_require').show();
+                va_email = 1;
+            } else {
+                $('#semail_error_require').hide();
+                va_email = 0;
+            }
+        }
+       
+        if(password.length == 0)
+        {
+            $('#spassword_error_require').show();
+            va_password = 1;
+        } else {
+            $('#spassword_error_require').hide();
+            va_password = 0;
+        }
+        if(va_email == 0 && va_password == 0)
+        {
+            $.ajax({
+                type: 'POST',
+                url: '{{route("userLogin")}}',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    email: email,
+                    password:password
+                },
+                success: function(msg) {
+                    if(msg.login == 0)
+                    {
+                        toastr.error(msg.msg)
+                    } else if(msg.login == 1) {
+                        window.location.href = "{{ route('user_categories')}}";
+                    } else {
+                        window.location.href = "{{ route('admin-home')}}";
+                    }
+                    
+                }
+            });
+        }
+     });
  </script>
 
  @include('sweet::alert')
