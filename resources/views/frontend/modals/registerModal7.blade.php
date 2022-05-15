@@ -25,6 +25,9 @@
                             <span class="error_message spassword_error_login" style="display: none;font-size: 10px;color: red;">* {{__('messages.password_must_include_1_upper_case_letter_1_special_character_and_length_must_be_less_than_10_characters')}}</span>                                
                             </div>
                         </div>
+                        <div class="col-md-12 mb-3">
+                            <a data-bs-toggle="modal" role="button" href="#forget-modal" style="float: right;" class="nav-item nav-link">Forget Password</a>
+                        </div>
                     </div>
 
                     <div class="LRM1Button row">

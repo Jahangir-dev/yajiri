@@ -9,6 +9,38 @@
 
  <script type="text/javascript">
      $(document).ready(function() {
+         $('#forget-modal').click(function(){
+             console.log('hereeee');
+            $('#LoginRegisterModal8').modal('hide');
+         });
+         $('#send_forget_button').on('click', function(){
+             var emailorpassword = $('#emailorpassword').val();
+             if(emailorpassword != '')
+             {
+                $.ajax({
+                        type: 'POST',
+                        url: '{{route("forgetPassword")}}',
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            emailorpassword: emailorpassword
+                        },
+                        success: function(msg) {
+                            if (msg == 1) {
+                                $('#userEmailexist').show();
+                                $('#userEmailSalert').hide();
+                                userEmailS = 1;
+                            } else {
+                                $('#userEmailexist').hide();
+                                $('#userEmailSalert').hide();
+                                userEmailS = 0;
+                            }
+                        }
+                    });
+                }
+                else{
+                    console.log('empty validation goes here');
+                }
+         });
          $('.purpose').on('change', function() {
 
              if (this.value == 'Professional')

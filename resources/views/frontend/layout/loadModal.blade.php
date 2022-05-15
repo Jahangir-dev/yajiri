@@ -7,3 +7,4 @@
 @include('frontend.modals.registerModal6')
 @include('frontend.modals.registerModal7')
 @include('frontend.forms.registerForm')
+@include('frontend.modals.forgetModal')
