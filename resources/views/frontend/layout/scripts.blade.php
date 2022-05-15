@@ -15,6 +15,7 @@
          });
          $('#send_forget_button').on('click', function(){
              var emailorpassword = $('#emailorpassword').val();
+             console.log(emailorpassword);
              if(emailorpassword != '')
              {
                 $.ajax({
@@ -24,15 +25,60 @@
                             _token: "{{ csrf_token() }}",
                             emailorpassword: emailorpassword
                         },
-                        success: function(msg) {
-                            if (msg == 1) {
-                                $('#userEmailexist').show();
-                                $('#userEmailSalert').hide();
-                                userEmailS = 1;
+                        success: function(res) {
+                            if (res.status == 200) {
+                                $('#forget-modal').modal('hide');
+                                $('#forgetVerificationModal').modal('show');
+                                console.log('success true', res);
+                                // $('#userEmailexist').show();
+                                // $('#userEmailSalert').hide();
+                                // userEmailS = 1;
                             } else {
-                                $('#userEmailexist').hide();
-                                $('#userEmailSalert').hide();
-                                userEmailS = 0;
+                                console.log('false', res);
+                                // $('#userEmailexist').hide();
+                                // $('#userEmailSalert').hide();
+                                // userEmailS = 0;
+                            }
+                        }
+                    });
+                }
+                else{
+                    console.log('empty validation goes here');
+                }
+         });
+         $('#forget_verify_submit').on('click', function(){
+            var verify_code = -1;
+         $('.phone_Number_code').each(function() {
+             if (verify_code == -1) {
+                verify_code = $(this).val();
+             } else {
+                verify_code = verify_code + '' + $(this).val();
+             }
+
+         });
+             console.log(verify_code);
+             if(verify_code != '')
+             {
+                $.ajax({
+                        type: 'POST',
+                        url: '{{route("forgetPasswordVerification")}}',
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            verify_code: verify_code
+                        },
+                        success: function(res) {
+                            if (res.status == 200) {
+                                $('#forget-modal').modal('hide');
+                                $('#forgetVerificationModal').modal('show');
+                                console.log('success true', res);
+                                // $('#userEmailexist').show();
+                                // $('#userEmailSalert').hide();
+                                // userEmailS = 1;
+                            } else {
+                                console.log('false', res);
+                                // $('#userEmailexist').hide();
+                                // $('#userEmailSalert').hide();
+                                // userEmailS = 0;
                             }
                         }
                     });

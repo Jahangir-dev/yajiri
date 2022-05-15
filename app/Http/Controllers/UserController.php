@@ -10,6 +10,8 @@ use App\Models\SubCategory;
 use App\Models\UserCategory;
 use App\Models\UserDistance;
 use Spatie\Permission\Models\Role;
+use App\Models\TwillioVerificationCode;
+use Twilio\Rest\Client;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
@@ -111,6 +113,60 @@ class UserController extends Controller
             toast('Registration successful, verification email sent to email, please verify');
         // alert()->success('Registration successfully');
         return redirect()->back()->with('success','Registration successfully');
+    }
+
+    public function forgetPassword(Request $request)
+    {
+        if(is_numeric($request->get('emailorpassword'))){
+            $phone = '+92'.$request->get('emailorpassword');
+            if($this->sendTwillioCode($phone))
+            {
+                return response()->json([
+                    'success' => true,
+                    'status' => 200,
+                    'message' => 'verification code sent to your number'
+                ]); 
+            }
+            return response()->json(['status' => 500, 'success' => true, 'message' => 'something went wrong!']);
+          }
+          elseif (filter_var($request->get('emailorpassword'), FILTER_VALIDATE_EMAIL)) {
+            return response()->json(['status' => 200, 'phoneoremail'=> 'Email']);
+          }
+          else{
+            return response()->json(['status' => 200, 'phoneoremail'=> 'Not one']);
+          }
+        return response()->json([
+            'success' => true,
+            'status' => 200
+        ]);
+    }
+
+    function sendTwillioCode($phone)
+    {
+        try {
+            $smscode = random_int(100000, 999999);
+            $sid = 'ACbf529562473cae40e129ecbfcfca11c4';//getenv("TWILIO_ACCOUNT_SID");
+            $token = '2eb8e3dcd15d9b561d6a6f53f6717f52';//getenv("TWILIO_AUTH_TOKEN");
+            $twilio = new Client($sid, $token);
+    
+            $message = $twilio->messages
+            ->create($phone, // to
+                ["body" => "Verification Code is ".$smscode, "from" => "+17752524587"]
+            );
+    
+                $code = TwillioVerificationCode::where('phone_number',$request->phone_number)->where('verified',0)->first();
+                if(empty($code)){
+                    $code = new TwillioVerificationCode();                
+                }
+    
+                $code->phone_number = $phone;
+                $code->code= $smscode;
+                $code->save();
+                return 1;
+            }
+            catch(\Exception $e){
+                return $e->getMessage();
+            }
     }
     
     /**

@@ -145,7 +145,7 @@ Route::get('cancel/{id}', [RequestController::class, 'cancel'])->name('cancel');
 
 
 Route::post('/userRegister', [UserController::class, 'userRegister'])->name('userRegister');
-Route::post('/forgetPassword', [UserController::class, 'forgetPassword'])->name('forgetPassword');
+Route::post('forgetPassword', [UserController::class, 'forgetPassword'])->name('forgetPassword');
 Route::post('/userLogin', [AuthController::class, 'userLogin'])->name('userLogin');
 Route::get('/userDashboard', [HomeController::class, 'userDashboard'])->name('userDashboard');
 

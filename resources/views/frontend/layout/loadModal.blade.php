@@ -8,3 +8,4 @@
 @include('frontend.modals.registerModal7')
 @include('frontend.forms.registerForm')
 @include('frontend.modals.forgetModal')
+@include('frontend.modals.forgetVerification')
