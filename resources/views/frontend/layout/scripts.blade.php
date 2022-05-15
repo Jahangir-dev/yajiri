@@ -173,8 +173,8 @@
              $('#registerSiretNumber').val($('#userSiretNumber').val());
              $('#registerPhoneNumber').val($('#userPhoneNumber').val());
              $('#registerPassword').val($('#userPassword').val());
-             $('#registerLat').val($('#lat'));
-             $('#registerLng').val($('#lng'));
+             $('#registerLat').val($('#lat').val());
+             $('#registerLng').val($('#lng').val());
              if ($('#continueWith').val() == 'continueWithPhone') {
                  $('#LoginRegisterModal7').modal('show');
              } else {
