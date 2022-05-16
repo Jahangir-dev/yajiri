@@ -661,7 +661,7 @@ class RequestController extends Controller
                 $request = $request->where('request_title', 'like', '%'.$r->search.'%');
             }
 
-            $request = $request->where('close',0)->where('status',1)->with('user','category_rel','user_fvrt')->orderBy('id','DESC')->paginate(30);
+            $request = $request->where('close',0)->where('status',1)->with('user','category_rel')->orderBy('id','DESC')->paginate(30);
 
             foreach($request as $u){
 
