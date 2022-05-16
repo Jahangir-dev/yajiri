@@ -26,6 +26,9 @@
                             <span class="error_message semail_error_require" id="login_error_user" style="display: none;font-size: 15px;color: red;"></span>                                
                             </div>
                         </div>
+                        <div class="col-md-12 mb-3">
+                            <a id="forget-password" type="button" style="float: right;" class="nav-item nav-link">Forget Password</a>
+                        </div>
                     </div>
                     
                     <div class="LRM1Button row">
