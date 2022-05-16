@@ -57,6 +57,11 @@ class indexController extends Controller
             $distance = $data->distance;
 
             }
+            $distance = 50000000000;
+            $request = PublishRequest::select();
+       //dd($request);
+            $request = $request->where('close',0)->where('status',1)->with('user','category_rel','user_fvrt')->orderBy('id','DESC')->skip(0)->take(4)->get();
+            
            }else{
 
             // $lat = 33.6059770;
@@ -67,12 +72,14 @@ class indexController extends Controller
             $lng = $data->longitude;
             $distance = $data->distance;
 
-           }
-
             $distance = 50000000000;
             $request = PublishRequest::select();
        //dd($request);
             $request = $request->where('close',0)->where('status',1)->with('user','category_rel')->orderBy('id','DESC')->skip(0)->take(4)->get();
+            
+
+           }
+
             
             foreach($request as $u){
 

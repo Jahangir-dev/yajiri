@@ -24,4 +24,6 @@ class PublishRequest extends Model
     {
        return $this->hasOne('App\Models\FavRequestModel','request_id','id')->where('whomtoshow',\Auth::user()->id);
     }
+
+
 }
