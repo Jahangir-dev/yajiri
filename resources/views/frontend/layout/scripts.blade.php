@@ -929,7 +929,7 @@
      $('#login_btn').click(function() {
 
         var email = $('#emailLogin').val();
-        var password = $('#passwordLogin').val();
+        var password = $('#exampleInputPassword3').val();
         var va_email, va_password = 0;
 
         if(email.length == 0)
@@ -947,9 +947,11 @@
             } else if (!$('#emailLogin').val().match(mailValidation)) { 
                 $('#semail_error_require').text('* Please enter valid email');
                 $('#semail_error_require').show();
+                $('#login_error_user').hide();
                 va_email = 1;
             } else {
                 $('#semail_error_require').hide();
+                $('#login_error_user').hide();
                 va_email = 0;
             }
         }
@@ -957,9 +959,11 @@
         if(password.length == 0)
         {
             $('#spassword_error_require').show();
+            $('#login_error_user').hide();
             va_password = 1;
         } else {
             $('#spassword_error_require').hide();
+            $('#login_error_user').hide();
             va_password = 0;
         }
         if(va_email == 0 && va_password == 0)
@@ -975,7 +979,8 @@
                 success: function(msg) {
                     if(msg.login == 0)
                     {
-                        toastr.error(msg.msg)
+                        $('#login_error_user').text(msg.msg);
+                        $('#login_error_user').show();
                     } else if(msg.login == 1) {
                         window.location.href = "{{ route('user_categories')}}";
                     } else {
