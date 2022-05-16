@@ -9,3 +9,4 @@
 @include('frontend.forms.registerForm')
 @include('frontend.modals.forgetModal')
 @include('frontend.modals.forgetVerification')
+@include('frontend.modals.forgetNewPassword')

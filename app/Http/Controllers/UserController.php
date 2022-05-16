@@ -118,27 +118,107 @@ class UserController extends Controller
     public function forgetPassword(Request $request)
     {
         if(is_numeric($request->get('emailorpassword'))){
-            $phone = '+92'.$request->get('emailorpassword');
-            if($this->sendTwillioCode($phone))
+            if($this->phoneNumberCheck($request->get('emailorpassword')))
             {
-                return response()->json([
-                    'success' => true,
-                    'status' => 200,
-                    'message' => 'verification code sent to your number'
-                ]); 
+                $user = User::where('phone_number', $request->get('emailorpassword'))->first();
+                if(!is_null($user->country))
+                {
+                    $phone = $user->country . $request->get('emailorpassword');
+                }
+                else{
+                    $phone = '+92'.$request->get('emailorpassword');
+                }
+                if($this->sendTwillioCode($phone))
+                {
+                    return response()->json([
+                        'success' => true,
+                        'status' => 200,
+                        'message' => 'verification code sent to your phone number',
+                    ]); 
+                }
+                return response()->json(['status' => 500, 'success' => true, 'message' => 'something went wrong!']);
+          }
+        }
+        elseif (filter_var($request->get('emailorpassword'), FILTER_VALIDATE_EMAIL)) {
+            $emailcode = random_int(100000, 999999);
+            $email = $request->get('emailorpassword');
+            $data = ['email'=>$email, 'code' => $emailcode];
+            $mail = Mail::send('emails.send_forget_code',['data'=>$data],function($mail) use ($email){
+                    $mail->to($email,'Email Verification')->from("info@yajiri.com")->subject("Forget Password Code");
+            });
+            $code = TwillioVerificationCode::where('phone_number',$email)->where('verified',0)->first();
+            if(empty($code)){
+                $code = new TwillioVerificationCode();                
             }
-            return response()->json(['status' => 500, 'success' => true, 'message' => 'something went wrong!']);
-          }
-          elseif (filter_var($request->get('emailorpassword'), FILTER_VALIDATE_EMAIL)) {
-            return response()->json(['status' => 200, 'phoneoremail'=> 'Email']);
-          }
-          else{
+    
+            $code->phone_number = $email;
+            $code->code= $emailcode;
+            $code->save();
+            // toast('Registration successful, verification email sent to email, please verify');
+            return response()->json([
+                'success' => true,
+                'status' => 200,
+                'message' => 'verification code sent to your email',
+            ]); 
+        }
+        else{
             return response()->json(['status' => 200, 'phoneoremail'=> 'Not one']);
-          }
+        }
         return response()->json([
             'success' => true,
             'status' => 200
         ]);
+    }
+
+    public function forgetPasswordVerification(Request $request)
+    {
+        $emailorpassword = $request->get('emailorpassword');
+        if(is_numeric($request->get('emailorpassword')))
+        {
+            $user = User::where('phone_number', $request->get('emailorpassword'))->first();
+            if(is_null($user->country))
+            {
+                $country_code = '+92';
+            }
+            else{
+                $country_code = $user->country;
+            }
+            $emailorpassword = $country_code . $request->get('emailorpassword');
+        }
+        if($this->verifytwilliocode($emailorpassword, $request->verify_code))
+        {
+            return response()->json(['status' => 200, 'success' => true, 'message' => 'verified']);
+        }
+        else{
+            return response()->json(['status' => 500, 'success' => true, 'message' => 'not verified']);
+        }
+    }
+
+    public function forgetNewPassword(Request $request)
+    {
+        if(is_numeric($request->get('emailorpassword')))
+        {
+            $input_type = 'phone_number';
+        }
+        elseif (filter_var($request->get('emailorpassword'), FILTER_VALIDATE_EMAIL))
+        {
+            $input_type = 'email';
+        }
+        if(User::where($input_type, $request->emailorpassword)->update(['password' => Hash::make($request->password)]))
+        {
+            return response()->json([
+                'status' => 200,
+                'success' => true,
+                'message' => 'Password updated successfully'
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => 500,
+                'success' => true,
+                'message' => 'Something went wrong'
+            ]);
+        }
     }
 
     function sendTwillioCode($phone)
@@ -154,7 +234,7 @@ class UserController extends Controller
                 ["body" => "Verification Code is ".$smscode, "from" => "+17752524587"]
             );
     
-                $code = TwillioVerificationCode::where('phone_number',$request->phone_number)->where('verified',0)->first();
+                $code = TwillioVerificationCode::where('phone_number',$phone)->where('verified',0)->first();
                 if(empty($code)){
                     $code = new TwillioVerificationCode();                
                 }
@@ -167,6 +247,28 @@ class UserController extends Controller
             catch(\Exception $e){
                 return $e->getMessage();
             }
+    }
+
+    function verifytwilliocode($phone, $code){
+        $code_ = TwillioVerificationCode::where('phone_number',$phone)->where('code',$code)->first();
+        if(empty($code_)){
+             return 0;
+        }else{
+             $code_->verified=1;
+             $code_->save();                
+             return 1;    
+        }
+    }
+
+    function phoneNumberCheck($phone)
+    {
+        
+        $user = User::where('phone_number',$phone)->first();
+        if(!empty($user)){
+            return 1;
+        }else{
+            return 0;
+        }
     }
     
     /**

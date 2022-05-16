@@ -9,9 +9,9 @@
 
  <script type="text/javascript">
      $(document).ready(function() {
-         $('#forget-modal').click(function(){
-             console.log('hereeee');
+         $('#forget-password').click(function(){
             $('#LoginRegisterModal8').modal('hide');
+            $('#forget-modal').modal('show');
          });
          $('#send_forget_button').on('click', function(){
              var emailorpassword = $('#emailorpassword').val();
@@ -27,6 +27,9 @@
                         },
                         success: function(res) {
                             if (res.status == 200) {
+                                if (window.sessionStorage) {
+                                    sessionStorage.setItem("forget_input", emailorpassword);
+                                }
                                 $('#forget-modal').modal('hide');
                                 $('#forgetVerificationModal').modal('show');
                                 console.log('success true', res);
@@ -64,17 +67,20 @@
                         url: '{{route("forgetPasswordVerification")}}',
                         data: {
                             _token: "{{ csrf_token() }}",
-                            verify_code: verify_code
+                            verify_code: verify_code,
+                            emailorpassword: sessionStorage.getItem("forget_input")
                         },
                         success: function(res) {
                             if (res.status == 200) {
-                                $('#forget-modal').modal('hide');
-                                $('#forgetVerificationModal').modal('show');
+                                $('#forgetVerificationModal').modal('hide');
+                                $('#forgetNewPassword').modal('show');
+                                // $('#forgetVerificationModal').modal('show');
                                 console.log('success true', res);
                                 // $('#userEmailexist').show();
                                 // $('#userEmailSalert').hide();
                                 // userEmailS = 1;
                             } else {
+                                // $('#forget-modal').modal('hide');
                                 console.log('false', res);
                                 // $('#userEmailexist').hide();
                                 // $('#userEmailSalert').hide();
@@ -86,6 +92,37 @@
                 else{
                     console.log('empty validation goes here');
                 }
+         });
+         $('#send_new_password').click(function(){
+            if($('#new_password').val() != '')
+            {
+                $.ajax({
+                        type: 'POST',
+                        url: '{{route("forgetNewPassword")}}',
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            password: $('#new_password').val(),
+                            emailorpassword: sessionStorage.getItem("forget_input")
+                        },
+                        success: function(res) {
+                            if (res.status == 200) {
+                                // $('#forgetVerificationModal').modal('hide');
+                                $('#forgetNewPassword').modal('hide');
+                                // $('#forgetVerificationModal').modal('show');
+                                console.log('success true', res);
+                                // $('#userEmailexist').show();
+                                // $('#userEmailSalert').hide();
+                                // userEmailS = 1;
+                            } else {
+                                // $('#forget-modal').modal('hide');
+                                console.log('false', res);
+                                // $('#userEmailexist').hide();
+                                // $('#userEmailSalert').hide();
+                                // userEmailS = 0;
+                            }
+                        }
+                    });
+            }
          });
          $('.purpose').on('change', function() {
 
@@ -251,6 +288,7 @@
              $('#registerSiretNumber').val($('#userSiretNumber').val());
              $('#registerPhoneNumber').val($('#userPhoneNumber').val());
              $('#registerPassword').val($('#userPassword').val());
+             $('#registerCountrySelect').val($('#registrationCountrySelect').val());
              $('#registerLat').val($('#lat').val());
              $('#registerLng').val($('#lng').val());
              if ($('#continueWith').val() == 'continueWithPhone') {
@@ -273,7 +311,7 @@
              $('.inputError[for="userPhoneNumber1"]').show();
          } else {
              $('#LoginRegisterModal6').modal('hide');
-             $('#registerCountrySelect').val($('#userCountrySelect').val());
+             $('#registerCountrySelect').val($('#registrationCountrySelect').val());
              $('#registerPhoneNumber1').val($('#userPhoneNumber1').val());
              $('#registerSendCodeViaSMS').val($('#userSendCodeViaSMS').val());
              $('#LoginRegisterModal7').modal('show');

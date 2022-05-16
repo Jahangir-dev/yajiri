@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <a data-bs-toggle="modal" role="button" href="#forget-modal" style="float: right;" class="nav-item nav-link">Forget Password</a>
+                            <a id="forget-password" type="button" style="float: right;" class="nav-item nav-link">Forget Password</a>
                         </div>
                     </div>
 
