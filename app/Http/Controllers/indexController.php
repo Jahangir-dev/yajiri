@@ -69,11 +69,11 @@ class indexController extends Controller
 
            }
 
-           $distance = 50000000000;
+            $distance = 50000000000;
             $request = PublishRequest::select();
-
-            $request = $request->where('close',0)->where('status',1)->with('user','category_rel','user_fvrt')->orderBy('id','DESC')->skip(0)->take(4)->get();
-
+       //dd($request);
+            $request = $request->where('close',0)->where('status',1)->with('user','category_rel')->orderBy('id','DESC')->skip(0)->take(4)->get();
+            
             foreach($request as $u){
 
                 $actual = 6371 * acos(
