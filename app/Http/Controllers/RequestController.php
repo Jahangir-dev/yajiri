@@ -615,6 +615,8 @@ class RequestController extends Controller
     public function requests(Request $r)
 
     {
+        $distance = 50000000000;
+        $request = PublishRequest::select();
 
            if(Auth::check()){
 
@@ -631,6 +633,8 @@ class RequestController extends Controller
             $distance = $data->distance;
 
             }
+            $request = $request->where('close',0)->where('status',1)->with('user','category_rel','user_fvrt')->orderBy('id','DESC')->paginate(30);
+
            }else{
 
             // $lat = 33.6059770;
@@ -641,10 +645,11 @@ class RequestController extends Controller
             $lng = $data->longitude;
             $distance = $data->distance;
 
+            $request = $request->where('close',0)->where('status',1)->with('user','category_rel')->orderBy('id','DESC')->paginate(30);
+
            }
 
-           $distance = 50000000000;
-            $request = PublishRequest::select();
+          
 
 
             if($r->status){
@@ -661,7 +666,7 @@ class RequestController extends Controller
                 $request = $request->where('request_title', 'like', '%'.$r->search.'%');
             }
 
-            $request = $request->where('close',0)->where('status',1)->with('user','category_rel')->orderBy('id','DESC')->paginate(30);
+            
 
             foreach($request as $u){
 
