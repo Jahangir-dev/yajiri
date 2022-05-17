@@ -8,21 +8,23 @@
                             </button>
                         </div>
                         <div class="col-9 col-sm-9">
-                            <p class="modal-title text-start" id="forgetVerificationModalLabel">Confirm Telephone Number</p>
+                            <p class="modal-title text-start" id="forgetVerificationModalLabel">Confirm Email or Phone Number</p>
                         </div>
                     </div>
                     <div class="Modal3Body modal-body">
-                        <span id="sendedphoneNumberAlert" style="color:green;font-size: 11px;">Verification code has been sent to phone number <span id="phoneNumbersent"></span></span>
-                        <p class="Moda3Text1">Enter the code sent to your Telephone number through SMS </p>
+                        <span id="sendedphoneNumberAlert" style="color:green;font-size: 11px;">Verification code has been sent <span id="phoneNumbersent"></span></span>
+                        <p class="Moda3Text1">Enter the code </p>
                         <div class="Modal3IputDIV d-flex">
-                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" autofocus="1" size="1" maxlength="1" class="phone_Number_code Model3input form-control" placeholder="1" aria-label="1">
-                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code Model3input form-control" placeholder="2" aria-label="2">
-                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code Model3input form-control" placeholder="3" aria-label="3">
-                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code Model3input form-control" placeholder="4" aria-label="4">
-                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code Model3input form-control" placeholder="5" aria-label="5">
-                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code Model3input form-control" placeholder="6" aria-label="6">
+                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" autofocus="1" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="1" aria-label="1">
+                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="2" aria-label="2">
+                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="3" aria-label="3">
+                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="4" aria-label="4">
+                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="5" aria-label="5">
+                            <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="6" aria-label="6">
                         </div>
-                        <span id="notmatchedsendedphoneNumberAlert" style="color:red;font-size: 11px;display: none;">Verification doesnot match</span> <span id="matchedsendedphoneNumberAlert" style="color:green;font-size: 11px;display: none;">Verification matched</span>                        
+                        <div id="invalid-code" class="errors">
+                                </div>
+                        <!-- <span id="notmatchedsendedphoneNumberAlert" style="color:red;font-size: 11px;display: none;">Verification doesnot match</span> <span id="matchedsendedphoneNumberAlert" style="color:green;font-size: 11px;display: none;">Verification matched</span>                         -->
                     </div>
                     <div class="row LRM1Button" style="width:30%;">
                        
