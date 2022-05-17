@@ -10,6 +10,7 @@
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <input type="password" required class="form-control" id="new_password"  name="password" placeholder="{{__('messages.new_password')}}" style="height: 3rem;border-radius: 10px 10px 10px 10px;">
+                                <div id="invalid-new-password" class="errors"></div>
                             </div>
                         </div>
                     </div>

@@ -10,6 +10,9 @@
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <input type="text" required class="form-control" id="emailorpassword"  name="emailorpassword" placeholder="{{__('messages.telephone_number_or_email_address')}}" style="height: 3rem;border-radius: 10px 10px 10px 10px;">
+                                <div id="invalid-emailorpassword" class="errors">
+                                </div>
+                                <div id="valid-emailorpassword" class="successess"></div>
                             </div>
                         </div>
                     </div>

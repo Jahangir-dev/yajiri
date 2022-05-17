@@ -118,7 +118,7 @@ class UserController extends Controller
     public function forgetPassword(Request $request)
     {
         if(is_numeric($request->get('emailorpassword'))){
-            if($this->phoneNumberCheck($request->get('emailorpassword')))
+            if($this->phoneNumberCheck($request->get('emailorpassword'), 'phone_number'))
             {
                 $user = User::where('phone_number', $request->get('emailorpassword'))->first();
                 if(!is_null($user->country))
@@ -138,35 +138,50 @@ class UserController extends Controller
                 }
                 return response()->json(['status' => 500, 'success' => true, 'message' => 'something went wrong!']);
           }
+          else{
+              return response()->json([
+                  'success' => true,
+                  'status' => 500,
+                  'message' => 'phone number not found'
+              ]);
+          }
         }
         elseif (filter_var($request->get('emailorpassword'), FILTER_VALIDATE_EMAIL)) {
-            $emailcode = random_int(100000, 999999);
-            $email = $request->get('emailorpassword');
-            $data = ['email'=>$email, 'code' => $emailcode];
-            $mail = Mail::send('emails.send_forget_code',['data'=>$data],function($mail) use ($email){
-                    $mail->to($email,'Email Verification')->from("info@yajiri.com")->subject("Forget Password Code");
-            });
-            $code = TwillioVerificationCode::where('phone_number',$email)->where('verified',0)->first();
-            if(empty($code)){
-                $code = new TwillioVerificationCode();                
+            if($this->phoneNumberCheck($request->get('emailorpassword'), 'email'))
+            {
+                $emailcode = random_int(100000, 999999);
+                $email = $request->get('emailorpassword');
+                $data = ['email'=>$email, 'code' => $emailcode];
+                $mail = Mail::send('emails.send_forget_code',['data'=>$data],function($mail) use ($email){
+                        $mail->to($email,'Email Verification')->from("info@yajiri.com")->subject("Forget Password Code");
+                });
+                $code = TwillioVerificationCode::where('phone_number',$email)->where('verified',0)->first();
+                if(empty($code)){
+                    $code = new TwillioVerificationCode();                
+                }
+        
+                $code->phone_number = $email;
+                $code->code= $emailcode;
+                $code->save();
+                // toast('Registration successful, verification email sent to email, please verify');
+                return response()->json([
+                    'success' => true,
+                    'status' => 200,
+                    'message' => 'verification code sent to your email',
+                ]); 
             }
-    
-            $code->phone_number = $email;
-            $code->code= $emailcode;
-            $code->save();
-            // toast('Registration successful, verification email sent to email, please verify');
-            return response()->json([
-                'success' => true,
-                'status' => 200,
-                'message' => 'verification code sent to your email',
-            ]); 
-        }
-        else{
-            return response()->json(['status' => 200, 'phoneoremail'=> 'Not one']);
+            else{
+                return response()->json([
+                    'success' => true,
+                    'status' => 500,
+                    'message' => 'email not found'
+                ]);
+            }
         }
         return response()->json([
             'success' => true,
-            'status' => 200
+            'status' => 500,
+            'message' => 'something went wrong'
         ]);
     }
 
@@ -187,10 +202,10 @@ class UserController extends Controller
         }
         if($this->verifytwilliocode($emailorpassword, $request->verify_code))
         {
-            return response()->json(['status' => 200, 'success' => true, 'message' => 'verified']);
+            return response()->json(['status' => 200, 'success' => true, 'message' => 'Code verified']);
         }
         else{
-            return response()->json(['status' => 500, 'success' => true, 'message' => 'not verified']);
+            return response()->json(['status' => 500, 'success' => true, 'message' => 'Code not verified']);
         }
     }
 
@@ -206,6 +221,7 @@ class UserController extends Controller
         }
         if(User::where($input_type, $request->emailorpassword)->update(['password' => Hash::make($request->password)]))
         {
+            toast('Your password updated successfully', 'success');
             return response()->json([
                 'status' => 200,
                 'success' => true,
@@ -260,10 +276,10 @@ class UserController extends Controller
         }
     }
 
-    function phoneNumberCheck($phone)
+    function phoneNumberCheck($phone, $input_type)
     {
         
-        $user = User::where('phone_number',$phone)->first();
+        $user = User::where($input_type, $phone)->first();
         if(!empty($user)){
             return 1;
         }else{

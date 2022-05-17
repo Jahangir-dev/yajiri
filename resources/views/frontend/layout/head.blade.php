@@ -25,7 +25,14 @@
                 margin-bottom: 55px;
           }
 
-
+.errors{
+    color: red;
+    padding-top: 20px;
+}
+.successess{
+    color: green;
+    padding-top: 20px;
+}
     .Contact-b1 {
         height: 25px;
         background: linear-gradient(to right, #ff7a97, #ff3161);
