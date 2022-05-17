@@ -8,12 +8,12 @@
                             </button>
                         </div>
                         <div class="col-9 col-sm-9">
-                            <p class="modal-title text-start" id="forgetVerificationModalLabel">Confirm Telephone Number</p>
+                            <p class="modal-title text-start" id="forgetVerificationModalLabel">Confirm Email or Phone Number</p>
                         </div>
                     </div>
                     <div class="Modal3Body modal-body">
-                        <span id="sendedphoneNumberAlert" style="color:green;font-size: 11px;">Verification code has been sent to phone number <span id="phoneNumbersent"></span></span>
-                        <p class="Moda3Text1">Enter the code sent to your Telephone number through SMS </p>
+                        <span id="sendedphoneNumberAlert" style="color:green;font-size: 11px;">Verification code has been sent <span id="phoneNumbersent"></span></span>
+                        <p class="Moda3Text1">Enter the code </p>
                         <div class="Modal3IputDIV d-flex">
                             <input type="text"  onkeypress='validate(event)' style="text-align:center;" autofocus="1" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="1" aria-label="1">
                             <input type="text"  onkeypress='validate(event)' style="text-align:center;" size="1" maxlength="1" class="phone_Number_code code_field Model3input form-control" placeholder="2" aria-label="2">
