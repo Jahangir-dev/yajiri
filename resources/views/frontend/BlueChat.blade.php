@@ -264,13 +264,13 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <p class="chatcardtext1">{{$user->first_name}}{{$user->last_name}}</p>
+                                                <p class="chatcardtext1">{{isset($user->first_name)}}{{isset($user->last_name)}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <p style="color: #08c8f9;font-weight: 500;margin-left: 0.7rem;margin-bottom: 0;margin-top: 0.5rem;">
-                                                {{$user->services}}</p>
+                                                {{isset($user->services)}}</p>
                                             </div>
                                         </div>
                                     </div>
