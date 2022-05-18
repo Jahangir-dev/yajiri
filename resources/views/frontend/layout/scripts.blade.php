@@ -13,11 +13,19 @@
             $('#LoginRegisterModal8').modal('hide');
             $('#forget-modal').modal('show');
          });
+         $('#emailorpassword').keyup(function(){
+            $('#invalid-emailorpassword').text('');
+         });
+         $('.phone_Number_code').keyup(function(){
+            $('#invalid-code').text('');
+         });
          $('#send_forget_button').on('click', function(){
              var emailorpassword = $('#emailorpassword').val();
              console.log(emailorpassword);
              if(emailorpassword != '')
              {
+                 $('#valid-emailorpassword').text('Please wait! Your request is processing');
+                 $('#send_forget_button').attr('disabled', true);
                 $.ajax({
                         type: 'POST',
                         url: '{{route("forgetPassword")}}',
@@ -33,35 +41,33 @@
                                 $('#forget-modal').modal('hide');
                                 $('#forgetVerificationModal').modal('show');
                                 console.log('success true', res);
-                                // $('#userEmailexist').show();
-                                // $('#userEmailSalert').hide();
-                                // userEmailS = 1;
                             } else {
-                                console.log('false', res);
-                                // $('#userEmailexist').hide();
-                                // $('#userEmailSalert').hide();
-                                // userEmailS = 0;
+                                $('#invalid-emailorpassword').text(res.message);
                             }
                         }
-                    });
+                    }).done(function() {
+                        $('#valid-emailorpassword').text('');
+                        $('#send_forget_button').attr('disabled', false);
+
+                    });;
                 }
                 else{
+                    $('#invalid-emailorpassword').text('Email or phone field is required');
                     console.log('empty validation goes here');
                 }
          });
          $('#forget_verify_submit').on('click', function(){
             var verify_code = -1;
-         $('.phone_Number_code').each(function() {
+         $('.code_field').each(function() {
              if (verify_code == -1) {
                 verify_code = $(this).val();
              } else {
                 verify_code = verify_code + '' + $(this).val();
              }
-
          });
-             console.log(verify_code);
-             if(verify_code != '')
+             if(verify_code != '' && verify_code.length > 5)
              {
+                 console.log(verify_code);
                 $.ajax({
                         type: 'POST',
                         url: '{{route("forgetPasswordVerification")}}',
@@ -74,22 +80,15 @@
                             if (res.status == 200) {
                                 $('#forgetVerificationModal').modal('hide');
                                 $('#forgetNewPassword').modal('show');
-                                // $('#forgetVerificationModal').modal('show');
-                                console.log('success true', res);
-                                // $('#userEmailexist').show();
-                                // $('#userEmailSalert').hide();
-                                // userEmailS = 1;
                             } else {
-                                // $('#forget-modal').modal('hide');
+                                $('#invalid-code').text(res.message);
                                 console.log('false', res);
-                                // $('#userEmailexist').hide();
-                                // $('#userEmailSalert').hide();
-                                // userEmailS = 0;
                             }
                         }
                     });
                 }
                 else{
+                    $('#invalid-code').text('Please enter complete code!');
                     console.log('empty validation goes here');
                 }
          });
@@ -106,22 +105,17 @@
                         },
                         success: function(res) {
                             if (res.status == 200) {
-                                // $('#forgetVerificationModal').modal('hide');
-                                $('#forgetNewPassword').modal('hide');
-                                // $('#forgetVerificationModal').modal('show');
+                                location.reload();
                                 console.log('success true', res);
-                                // $('#userEmailexist').show();
-                                // $('#userEmailSalert').hide();
-                                // userEmailS = 1;
                             } else {
-                                // $('#forget-modal').modal('hide');
+                                $('#invalid-new-password').text(res.message);
                                 console.log('false', res);
-                                // $('#userEmailexist').hide();
-                                // $('#userEmailSalert').hide();
-                                // userEmailS = 0;
                             }
                         }
                     });
+            }
+            else{
+                $('#invalid-new-password').text('Password field is required');
             }
          });
          $('.purpose').on('change', function() {
