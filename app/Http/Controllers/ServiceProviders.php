@@ -93,7 +93,7 @@ class ServiceProviders extends Controller
            }
 
            if($req->has('category') && $req->category){
-               $st = Category::where('slug',$req->category)->first();
+               $st = Category::where('id',$req->category)->first();
                $request = $request->where('category',$st->id);
            }
 
@@ -158,7 +158,7 @@ class ServiceProviders extends Controller
 
             $subCategory = NULL;$Scategory = NULL;
             if($req->has('subcategory')){
-                $Scategory = Category::where('slug',$req->category)->first();
+                $Scategory = Category::where('id',$req->category)->first();
                 $subCategory = SubCategory::where('slug',$req->subcategory)->where('category_id',$Scategory->id)->get();                            
             }
 
