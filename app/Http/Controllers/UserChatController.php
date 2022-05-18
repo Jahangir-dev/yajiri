@@ -25,7 +25,7 @@ class UserChatController extends Controller
     {   
 
 
- $chat = Message::where('user_id',Auth::user()->id)->orWhere('to_user_id',Auth::user()->id)->with('from_user')->get();
+        $chat = Message::where('user_id',Auth::user()->id)->orWhere('to_user_id',Auth::user()->id)->with('from_user')->get();
 
         $user_list = [];
         $user_list_c = [];
