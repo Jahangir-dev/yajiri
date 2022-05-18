@@ -60,7 +60,7 @@ class UserChatController extends Controller
 
         }else{
 
-        $user= User::find($id);
+            $user= User::find(Auth::user()->id);
 
         }
 
