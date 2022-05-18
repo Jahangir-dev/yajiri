@@ -202,7 +202,7 @@
         }
     }
 
-    }
+
 
     @media (min-width: 1600px) {
         .previews {

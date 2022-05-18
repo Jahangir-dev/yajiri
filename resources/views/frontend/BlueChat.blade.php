@@ -169,7 +169,7 @@
                 <div class="col-md-6 col-sm-12 col-12 mr-l_00">
                     <div class="LookingForMoveRow1 row" style="position: relative;">
                         <p class="chattext1">Looking for a move</p>
-                        <p class="chattext2">{{$user->aboutme}}</p>
+                        <p class="chattext2">{{$user->aboutme ?? ''}}</p>
                         <a class="ChatViewRequestButton" href="ViewRequest.html">
                             <img src="{{asset('icons/blueeyes.png')}}" alt="">
                         </a>
