@@ -310,7 +310,7 @@
                                 <p class="CP2text2">Complete your profile now</p>
                             </div>
                             <div class="row text-center">
-                                <a href="ProfessionalProfile.html" class="viewmyprofile" style="text-decoration: none;"><span class="ViewProfileButton">View My Profile</span></a>
+                                <a href="{{route('professionalProfile')}}" class="viewmyprofile" style="text-decoration: none;"><span class="ViewProfileButton">View My Profile</span></a>
                             </div>
                         </div>
                     </div>
