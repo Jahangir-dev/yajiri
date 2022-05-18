@@ -1299,18 +1299,18 @@
     </script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
     <script>
-        var lat = <?php echo $lat ?>;
-        var lng = <?php echo $lat ?>;
+        var lat = "<?php echo $lat ?>";
+        var lng = "<?php echo $lat ?>";
         mapboxgl.accessToken =
             'pk.eyJ1IjoiYW1tYXIxMjMxMjMiLCJhIjoiY2tydzJsMm9jMGNpajJucnh4M2pmaTVsZCJ9.ZxNGpJR7Qw9t3ONgdZmbQA';
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [parseFloat($lat), parseFloat($lng)],
+            center: [parseFloat(lat), parseFloat(lng)],
             zoom: 15,
         });
         const marker1 = new mapboxgl.Marker()
-            .setLngLat([parseFloat($lat), parseFloat($lng)])
+            .setLngLat([parseFloat(lat), parseFloat(lng)])
             .addTo(map);
 
     </script>
