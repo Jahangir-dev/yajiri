@@ -703,9 +703,11 @@
 
                                     <script type="text/javascript">
                                         function initMap() {
+                                            var lat = "<?php echo $lat ?>";
+                                            var lng = "<?php echo $lat ?>";
                                             const myLatlng = {
-                                                lat: {{Auth::user()->position}},
-                                                lng: {{Auth::user()->position2}}
+                                                lat: lat,
+                                                lng: lng
                                             };
                                             const map = new google.maps.Map(document.getElementById("map"), {
                                                 zoom: 13,
