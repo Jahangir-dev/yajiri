@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\userprofileservice;
+use App\Models\UserDistance;
 use Auth;
 use DB;
 use App\Models\PhotoGallery;
@@ -25,8 +26,9 @@ class professionalProfileController extends Controller
         $category = DB::select('select * from category  ORDER BY id DESC');
         $userprofileservice = userprofileservice::orderBy('id','desc')->where('userid',Auth::user()->id)->get();//DB::select('select * from userprofileservice  ORDER BY id DESC');
         $gallery = PhotoGallery::where('user_id',Auth::user()->id)->get();
+        $d = UserDistance::where('user_id',Auth::user()->id)->first();
             return view('frontend.professionalProfile', [  'usersdetail' => $usersdetail , 'usersdetailroles' => $usersdetailroles
-        , 'category' => $category , 'userprofileservice' => $userprofileservice,'gallery'=>$gallery
+        , 'category' => $category , 'userprofileservice' => $userprofileservice,'gallery'=>$gallery, 'lat' => $d->lat, 'lng' => $d->lng
         ]);
         
     }
