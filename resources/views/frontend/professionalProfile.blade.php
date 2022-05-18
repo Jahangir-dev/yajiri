@@ -706,8 +706,8 @@
                                             var lat = "<?php echo $lat ?>";
                                             var lng = "<?php echo $lat ?>";
                                             const myLatlng = {
-                                                lat: lat,
-                                                lng: lng
+                                                lat: parseFloat(lat),
+                                                lng: parseFloat(lng)
                                             };
                                             const map = new google.maps.Map(document.getElementById("map"), {
                                                 zoom: 13,
