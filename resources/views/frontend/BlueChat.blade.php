@@ -169,7 +169,7 @@
                 <div class="col-md-6 col-sm-12 col-12 mr-l_00">
                     <div class="LookingForMoveRow1 row" style="position: relative;">
                         <p class="chattext1">Looking for a move</p>
-                        <p class="chattext2">{{$user->aboutme ?? ''}}</p>
+                        <p class="chattext2">{{$user->aboutme}}</p>
                         <a class="ChatViewRequestButton" href="ViewRequest.html">
                             <img src="{{asset('icons/blueeyes.png')}}" alt="">
                         </a>
@@ -264,13 +264,13 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <p class="chatcardtext1">{{isset($user->first_name)}}{{isset($user->last_name)}}</p>
+                                                <p class="chatcardtext1">{{$user->first_name}}{{$user->last_name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <p style="color: #08c8f9;font-weight: 500;margin-left: 0.7rem;margin-bottom: 0;margin-top: 0.5rem;">
-                                                {{isset($user->services)}}</p>
+                                                {{$user->services}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -282,7 +282,7 @@
                         <div class="row mb-2">
                             <div class="col d-flex">
                                 <img src="{{asset('icons/ic_place_-8.png')}}" style="width: 1rem; height: 1.5rem;">
-                                <p class="ReviewText1">{{isset($user->address)}}</p>
+                                <p class="ReviewText1">{{$user->address}}</p>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -294,7 +294,7 @@
                         <div class="row mb-3">
                             <div class="col d-flex">
                                 <img src="{{asset('icons/ic_date_range_-1.png')}}" style="width: 1rem; height: 1.2rem;">
-                                <p class="ReviewText1">{{isset($user->created_at->diffForHumans())}}</p>
+                                <p class="ReviewText1">{{$user->created_at->diffForHumans()}}</p>
                             </div>
                         </div>
                         <div class="row mb-4">
