@@ -591,7 +591,7 @@
                                 style="width: 14rem;height: 3rem; color: #61aceb;border-color: lightgray; border-radius: 0px 5px 5px 0px; border-width: 1px;border-left:5px solid #7faceb;text-align-last: left;background-color: white;">
                                     <option value="{{Null}}">Categories</option>
                                 @foreach($category as $cate)
-                                    <option <?php if(\Request::has('category') && \Request::get('category')==$cate->slug) echo 'selected="selected"'; ?> value="{{$cate->slug}}">{{$cate->name}}</option>
+                                    <option <?php if(\Request::has('category') && \Request::get('category')==$cate->id) echo 'selected="selected"'; ?> value="{{$cate->id}}">{{$cate->name}}</option>
                                 @endforeach
 
                             </select>
@@ -616,7 +616,7 @@
                                 <div style="padding-top: 1rem;">
                                         <div class="form-check subcategoryallign">
                                             <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck" value="{{$sc->slug}}" checked onclick="loadCategories('{{$Scategory->slug}}','{{$sc->slug}}')">
+                                                id="FieldsetCheck" value="{{$sc->id}}" checked onclick="loadCategories('{{$Scategory->id}}','{{$sc->id}}')">
                                             <label class="form-check-label inputlabel" for="FieldsetCheck">
                                                 <p class="Form-Categoryt1" style="padding-top: 0.2rem;">{{$sc->subcategory_name}}</p>
                                             </label>
@@ -1528,10 +1528,10 @@
     @include('frontend.layout.footer')
 
     @include('frontend.layout.scripts')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="{{asset('js/showmoreless.js')}}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -1655,7 +1655,7 @@
                             x = `<div style="padding-top: 1rem;">
                                         <div class="form-check subcategoryallign">
                                             <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck" value="`+msg[i].slug+`" onclick="loadCategories('`+val+`','`+msg[i].slug+`')">
+                                                id="FieldsetCheck" value="`+msg[i].id+`" onclick="loadCategories('`+val+`','`+msg[i].id+`')">
                                             <label class="form-check-label inputlabel" for="FieldsetCheck">
                                                 <p class="Form-Categoryt1" style="padding-top: 0.2rem;">`+msg[i].subcategory_name+`</p>
                                             </label>
@@ -1666,7 +1666,7 @@
                             x = x + `<div style="padding-top: 1rem;">
                                         <div class="form-check subcategoryallign">
                                             <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck" value="`+msg[i].slug+`" onclick="loadCategories('`+val+`','`+msg[i].slug+`')">
+                                                id="FieldsetCheck" value="`+msg[i].id+`" onclick="loadCategories('`+val+`','`+msg[i].id+`')">
                                             <label class="form-check-label inputlabel" for="FieldsetCheck">
                                                 <p class="Form-Categoryt1" style="padding-top: 0.2rem;">`+msg[i].subcategory_name+`</p>
                                             </label>
