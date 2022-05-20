@@ -174,7 +174,7 @@
 
          var email = $('#userEmailS').val();
          var password, userCompanyName,userformattedAddress, inputField_c, userFirstName, inputField, userEmailS, terms_and_conditions = 0;
-
+            
          if ($('#userType').val() == 'Professional') {
              if ($('#userCompanyName').val() == '' || $('#userCompanyName').val() == null) {
                  $('#userCompanyNameError').show();
@@ -184,11 +184,11 @@
                  userCompanyName = 0;
              }
 
-             if ($('#pac-input').val() == '' || $('#pac-input').val() == null) {
-                 $('#pac-input').show();
+             if ($('.prof_address').val() == '' || $('.prof_address').val() == null) {
+                 $('#prof_address_error').show();
                  userformattedAddress = 1;
              } else {
-                $('#pac-input').hide();
+                $('#prof_address_error').hide();
                 userformattedAddress = 0;
              }
 
@@ -219,15 +219,23 @@
                  userLastName = 0;
              }
 
-             $('#LoginRegisterModal4 .inputField').each(function() {
-                 var forType = $(this).attr('id');
-                 if ($(this).val() == '' || $(this).val() == null) {
-                     $('.inputError[for="' + forType + '"]').show();
-                     inputField = 1;
-                 } else {
-                     inputField = 0;
-                 }
-             });
+             if ($('.prof_address').val() == '' || $('.prof_address').val() == null) {
+                 $('#prof_address_error').show();
+                 userformattedAddress = 1;
+             } else {
+                $('#prof_address_error').hide();
+                userformattedAddress = 0;
+             }
+
+            //  $('#LoginRegisterModal4 .inputField').each(function() {
+            //      var forType = $(this).attr('id');
+            //      if ($(this).val() == '' || $(this).val() == null) {
+            //          $('.inputError[for="' + forType + '"]').show();
+            //          inputField = 1;
+            //      } else {
+            //          inputField = 0;
+            //      }
+            //  });
 
 
          }
@@ -338,6 +346,19 @@
                  return false;
         } else {
             $('#registrationPhoneNumberAlert').hide();
+        }
+           
+        });
+
+        $('#userPhoneNumber').keypress(function (e) {    
+        var charCode = (e.which) ? e.which : event.keyCode;
+        if (String.fromCharCode(charCode).match(/[^0-9]/g))
+        {
+            $('#userPhoneNumberAlert').html('* Please use number only');
+                 $('#userPhoneNumberAlert').show();
+                 return false;
+        } else {
+            $('#userPhoneNumberAlert').hide();
         }
            
         });
