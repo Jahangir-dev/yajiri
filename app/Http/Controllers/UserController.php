@@ -519,7 +519,7 @@ class UserController extends Controller
 
     public function get_subcategories(Request $request){
 
-        $category = Category::where('slug',$request->val)->first();
+        $category = Category::where('id',$request->val)->first();
         $sub_category = SubCategory::where('category_id',$category->id)->get();
         $x = '';
         return $sub_category;
