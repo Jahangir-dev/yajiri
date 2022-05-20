@@ -1288,7 +1288,11 @@
                                     </div>
                                 </div>
                             </div>
-                           <a href="{{route('view-detail',['id'=>$req->id])}}" style="text-decoration:none;color: black;"> 
+                            @if(Auth::user())
+                            <a href="{{route('view-detail',['id'=>$req->id])}}" style="text-decoration:none;color: black;"> 
+                            @else 
+                            <a href="#" style="text-decoration:none;color: black;"> 
+                            @endif
                             <div style="padding-left: 20px;padding-top: 1rem;">
                                 <p class="text-start" style="font-size: 12px;display: inline;"> <b>{{$req->request_title}}</b>
                                     </p>
@@ -1305,7 +1309,7 @@
                                         @if(Auth::user())
                                         <a style="color: white !important;padding-top: 4px;padding-bottom: 4px" class="nav-item2 nav-link Contact-b1" data-bs-toggle="modal" role="button" data-bs-target="#mobilechat{{$req->id}}" data-bs-dismiss="modal">{{__('messages.contact')}}</a>
                                         @else
-                                        <a data-bs-toggle="modal" role="button" href="#LoginRegisterModal8" style=" padding-top: 10px;color: #3B3B3B;font-weight: bold;padding-right: 20px;" class="nav-item nav-link">{{__('messages.contact')}}</a>
+                                        <a data-bs-toggle="modal" role="button" href="#LoginRegisterModal8" style="color: white !important;padding-top: 4px;padding-bottom: 4px" class="nav-item2 nav-link Contact-b1">{{__('messages.contact')}}</a>
                                         @endif
 
 
