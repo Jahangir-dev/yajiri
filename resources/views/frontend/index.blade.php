@@ -1302,10 +1302,11 @@
                                         <p class="text-start" style="font-size: 13px;padding-left: 10px;">{{$req->formated_address}}</p>
                                     </div>
                                     <div class="col d-flex">
-
+                                        @if(Auth::user())
                                         <a style="color: white !important;padding-top: 4px;padding-bottom: 4px" class="nav-item2 nav-link Contact-b1" data-bs-toggle="modal" role="button" data-bs-target="#mobilechat{{$req->id}}" data-bs-dismiss="modal">{{__('messages.contact')}}</a>
-
-
+                                        @else
+                                        <a data-bs-toggle="modal" role="button" href="#LoginRegisterModal8" style=" padding-top: 10px;color: #3B3B3B;font-weight: bold;padding-right: 20px;" class="nav-item nav-link">{{__('messages.contact')}}</a>
+                                        @endif
 
 
 
@@ -1380,7 +1381,11 @@
             <div class="row" style="align-items: center;">
             @foreach($users as $u)
                 <div class="col pb-5">
+                    @if(Auth::user())
                     <a href="{{route('profileuser', [ 'id' =>  $u->id])}}" style="text-decoration:none;">
+                    @else
+                    <a href="#" style="text-decoration:none;">
+                    @endif
                     <div class="pt-3 px-3" style="min-height: 230px;width: 14rem; background-color: white; border-radius: 10px; box-shadow: 10px 10px 100px 1px #dff2f7; margin: auto;">
                         <div class="row">
                             <div class="col-4" style="position: relative;">
@@ -1560,7 +1565,7 @@
     <!--Footer-->
     @include('frontend.layout.footer')
     @include('frontend.layout.scripts')
-
+    @include('frontend.layout.loadModal')
 
 
     <script type="text/javascript">

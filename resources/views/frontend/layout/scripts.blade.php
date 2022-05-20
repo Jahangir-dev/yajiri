@@ -173,15 +173,25 @@
          $('.inputError').hide();
 
          var email = $('#userEmailS').val();
-         var password, userCompanyName, inputField_c, userFirstName, inputField, userEmailS, terms_and_conditions = 0;
+         var password, userCompanyName,userformattedAddress, inputField_c, userFirstName, inputField, userEmailS, terms_and_conditions = 0;
 
-         if ($('#userType').val() == 1) {
+         if ($('#userType').val() == 'Professional') {
              if ($('#userCompanyName').val() == '' || $('#userCompanyName').val() == null) {
-                 $('.inputError[for="userCompanyName"]').show();
+                 $('#userCompanyNameError').show();
                  userCompanyName = 1;
              } else {
+                $('#userCompanyNameError').hide();
                  userCompanyName = 0;
              }
+
+             if ($('#pac-input').val() == '' || $('#pac-input').val() == null) {
+                 $('#pac-input').show();
+                 userformattedAddress = 1;
+             } else {
+                $('#pac-input').hide();
+                userformattedAddress = 0;
+             }
+
              $('#LoginRegisterModal4 .inputField_c').each(function() {
                  var forType = $(this).attr('id');
                  if ($(this).val() == '' || $(this).val() == null) {
@@ -267,7 +277,7 @@
              terms_and_conditions = 1;
          }
 
-         if ($('#userType').val() == "Professional" && (password == 1 || userCompanyName == 1 || inputField_c == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
+         if ($('#userType').val() == "Professional" && (password == 1 || userCompanyName == 1 || userformattedAddress == 1 || inputField_c == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
              return false;
          } else if ($('#userType').val() == "Private" && (password == 1 || userFirstName == 1 || inputField == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
              return false;
@@ -319,13 +329,31 @@
          $('#registrationForm').submit();
      });
 
-
+     $('#registrationPhoneNumber').keypress(function (e) {    
+        var charCode = (e.which) ? e.which : event.keyCode;
+        if (String.fromCharCode(charCode).match(/[^0-9]/g))
+        {
+            $('#registrationPhoneNumberAlert').html('* Please use number only');
+                 $('#registrationPhoneNumberAlert').show();
+                 return false;
+        } else {
+            $('#registrationPhoneNumberAlert').hide();
+        }
+           
+        });
 
      $('.continueWithPhone').click(function() {
 
          $('#lastModal').val('LoginRegisterModal1');
          $('#continueWith').val('continueWithPhone');
          if ($('.registrationPhoneNumber').val() != '') {
+
+            if($('.registrationPhoneNumber').val().length  < 10 || $('.registrationPhoneNumber').val().length  > 10
+            ){
+                $('#registrationPhoneNumberAlert').html('* Phone Number must be of 9 digits');
+                $('#registrationPhoneNumberAlert').show();
+                return false;
+            }
 
              var phone_number = $('.registrationPhoneNumber').val();
 

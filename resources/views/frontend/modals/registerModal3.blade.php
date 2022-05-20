@@ -108,7 +108,7 @@
                         </div>
                         <div class="input-group mb-1 professional" style="display:none;">
                             <input type="text" class="Modal4input1 form-control alpha_type" placeholder="Company Name" id="userCompanyName" aria-label="Company Name" aria-describedby="basic-addon1">
-                            <span class="col-md-12 inputError" for="userCompanyName">Company Name field is required</span>
+                            <span class="col-md-12 inputError" for="userCompanyName" id="userCompanyNameError">Company Name is required</span>
                         </div>
 
                         <div class="input-group mb-1" id="pac-card">
@@ -116,7 +116,7 @@
                                 <input type="text" class="Modal4input3 form-control inputField formated_address_first" placeholder="Address" id="pac-input" name="formated_address" aria-label="Address" aria-describedby="basic-addon1">
                             </div>
 
-                            <span class="col-md-12 inputError" for="pac-input">Address field is required</span>
+                            <span class="col-md-12 inputError" id="pac-input" for="pac-input">Address field is required</span>
 
                             <div class="pac-card" id="pac-card">
 
@@ -137,7 +137,7 @@
                         <input type="hidden" name="lng" id="lng">
 
                         <div class="input-group mb-1 professional" style="display:none;">
-                            <input type="text" class="Modal4input4 form-control inputField_c" placeholder="SIRET Number" id="userSiretNumber" aria-label="SIRET Number" aria-describedby="basic-addon1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="14" size="14">
+                            <input type="text" class="Modal4input4 form-control inputField_c" placeholder="SIRET Number" id="userSiretNumber" aria-label="SIRET Number" aria-describedby="basic-addon1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="13" size="13">
                             <span class="col-md-12 inputError" style="font-size:12px;" for="userSiretNumber">SIRET Number field is required</span>
                         </div>
 
