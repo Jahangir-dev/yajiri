@@ -117,7 +117,12 @@ class ServiceProviders extends Controller
            if($req->search){
             $users = $users->where('name', 'like', '%'.$req->search.'%');
            }
-
+           if($req->has('category'))
+           {
+               $users->whereHas('categories', function($query) use ($req){
+                    $query->where('category_id', $req->category);
+               });
+           }
             $users = $users->paginate(30);
            foreach($users as $u){
 

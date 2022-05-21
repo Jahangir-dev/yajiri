@@ -500,7 +500,7 @@
                     </form>
                 </div>
                 <div class="row pt-5 text-start searchbardown searchbarbottom">
-                    <div class="col-lg-4 col1" style="padding-bottom:5px;">
+                    <!-- <div class="col-lg-4 col1" style="padding-bottom:5px;">
                         <div class="dropdown">
                            
                               <button class="btn dropdown-toggle allstatus allstatusfont" type="button"
@@ -524,14 +524,14 @@
 
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-lg-4" style="padding-bottom:5px;">
+                    </div> -->
+                    <div class="col-lg-6" style="padding-bottom:5px;">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle allcategories" type="button" id="dropdownMenuButton3"
                                 data-bs-toggle="dropdown" aria-expanded="false" style="color: #14B7E9;">
                                 @if(\Request::has('category'))
                                 @foreach($category as $cate)
-                                 @if($cate->slug==\Request::get('category'))
+                                 @if($cate->id==\Request::get('category'))
                                      {{$cate->name}}
                                  @endif
                                 @endforeach
@@ -540,14 +540,14 @@
                              @endif                            </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                                 @foreach($category as $cate)
-                                <li value="{{$cate->name}}"><a class="dropdown-item <?php if(\Request::has("category") &&  \Request::get("category")==$cate->slug) echo "active"; ?>"
-                                        href='?category={{$cate->slug}}'>{{$cate->name}}</a></li>
+                                <li value="{{$cate->id}}"><a class="dropdown-item <?php if(\Request::has("category") &&  \Request::get("category")==$cate->id) echo "active"; ?>"
+                                        href='?category={{$cate->id}}'>{{$cate->name}}</a></li>
                                 @endforeach
 
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 col2" style="padding-bottom:5px;">
+                    <div class="col-lg-6 col2" style="padding-bottom:5px;">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle thebardos" type="button" id="dropdownMenuButton4"
                                 data-bs-toggle="dropdown" aria-expanded="false" style="color: #14B7E9;">
@@ -582,7 +582,7 @@
 
                 </div>
                 <div class="col-lg-3 cardtop">
-                    <div class="py-5 categoryicard" style="
+                    <!-- <div class="py-5 categoryicard" style="
                                 box-shadow: 0px 10px 50px 1px #dcf3ff;
                                 border-radius: 20px;
                                 margin: auto;">
@@ -629,7 +629,7 @@
                         </div>
                        @endif                         
                         
-                    </div>
+                    </div> -->
 
 
 

@@ -83,6 +83,11 @@ class User extends Authenticatable
        return $this->hasOne('App\Models\userprofileservice','userid','id');
     }
 
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'user_category');
+    }
+
    
 
 
