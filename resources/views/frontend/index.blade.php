@@ -1385,11 +1385,7 @@
             <div class="row" style="align-items: center;">
             @foreach($users as $u)
                 <div class="col pb-5">
-                    @if(Auth::user())
-                    <a href="{{route('profileuser', [ 'id' =>  $u->id])}}" style="text-decoration:none;">
-                    @else
-                    <a href="#" style="text-decoration:none;">
-                    @endif
+                <a <?php if(!Auth::check()) echo 'data-bs-toggle="modal" role="button" href="#LoginRegisterModal8"'; ?> href="{{Auth::user()!=NULL?route('profileuser', [ 'id' =>  $u->id]):'#'}}" style="text-decoration:none">
                     <div class="pt-3 px-3" style="min-height: 230px;width: 14rem; background-color: white; border-radius: 10px; box-shadow: 10px 10px 100px 1px #dff2f7; margin: auto;">
                         <div class="row">
                             <div class="col-4" style="position: relative;">
