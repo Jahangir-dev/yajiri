@@ -173,7 +173,7 @@
          $('.inputError').hide();
 
          var email = $('#userEmailS').val();
-         var password, userCompanyName,userformattedAddress, inputField_c, userFirstName, inputField, userEmailS, terms_and_conditions = 0;
+         var password,userSiretNumber, userCompanyName,userformattedAddress, inputField_c, userFirstName, inputField, userEmailS, terms_and_conditions = 0;
             
          if ($('#userType').val() == 'Professional') {
              if ($('#userCompanyName').val() == '' || $('#userCompanyName').val() == null) {
@@ -192,16 +192,26 @@
                 userformattedAddress = 0;
              }
 
-             $('#LoginRegisterModal4 .inputField_c').each(function() {
-                 var forType = $(this).attr('id');
-                 if ($(this).val() == '' || $(this).val() == null) {
-                     $('.inputError[for="' + forType + '"]').show();
-                     inputField_c = 1;
+             if ($('#userSiretNumber').val() == '' || $('#userSiretNumber').val() == null) {
+                 $('#userSiretNumberError').show();
+                 userSiretNumber = 1;
+             } else {
+                $('#userSiretNumberError').hide();
+                userSiretNumber = 0;
+             }
 
-                 } else {
-                     inputField_c = 0;
-                 }
-             });
+             
+
+            //  $('#LoginRegisterModal4 .inputField_c').each(function() {
+            //      var forType = $(this).attr('id');
+            //      if ($(this).val() == '' || $(this).val() == null) {
+            //          $('.inputError[for="' + forType + '"]').show();
+            //          inputField_c = 1;
+
+            //      } else {
+            //          inputField_c = 0;
+            //      }
+            //  });
 
          } else {
              if ($('#userFirstName').val() == '' || $('#userFirstName').val() == null) {
@@ -285,7 +295,7 @@
              terms_and_conditions = 1;
          }
 
-         if ($('#userType').val() == "Professional" && (password == 1 || userCompanyName == 1 || userformattedAddress == 1 || inputField_c == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
+         if ($('#userType').val() == "Professional" && (password == 1 || userCompanyName == 1 || userformattedAddress == 1 || inputField_c == 1 || userEmailS == 1 || terms_and_conditions == 1 || userSiretNumber == 1 )) {
              return false;
          } else if ($('#userType').val() == "Private" && (password == 1 || userFirstName == 1 || inputField == 1 || userEmailS == 1 || terms_and_conditions == 1)) {
              return false;
@@ -339,6 +349,13 @@
 
      $('#registrationPhoneNumber').keypress(function (e) {    
         var charCode = (e.which) ? e.which : event.keyCode;
+        if($('#registrationPhoneNumber').val().length  > 9 ){
+                $('#registrationPhoneNumberAlert').html('* Phone Number can be of 9 digits');
+                $('#registrationPhoneNumberAlert').show();
+                return false;
+            } else {
+                $('#registrationPhoneNumberAlert').hide();
+            }
         if (String.fromCharCode(charCode).match(/[^0-9]/g))
         {
             $('#registrationPhoneNumberAlert').html('* Please use number only');
@@ -351,15 +368,22 @@
         });
 
         $('#userPhoneNumber').keypress(function (e) {    
-        var charCode = (e.which) ? e.which : event.keyCode;
-        if (String.fromCharCode(charCode).match(/[^0-9]/g))
-        {
-            $('#userPhoneNumberAlert').html('* Please use number only');
-                 $('#userPhoneNumberAlert').show();
-                 return false;
-        } else {
-            $('#userPhoneNumberAlert').hide();
-        }
+            var charCode = (e.which) ? e.which : event.keyCode;
+            if($('#userPhoneNumber').val().length  < 1 || $('#userPhoneNumber').val().length > 10 ){
+                $('#userPhoneNumberAlert').html('* Phone Number must be of 9 digits');
+                $('#userPhoneNumberAlert').show();
+                return false;
+            } else {
+                $('#userPhoneNumberAlert').hide();
+            }
+            if (String.fromCharCode(charCode).match(/[^0-9]/g))
+            {
+                $('#userPhoneNumberAlert').html('* Please use number only');
+                    $('#userPhoneNumberAlert').show();
+                    return false;
+            } else {
+                $('#userPhoneNumberAlert').hide();
+            }
            
         });
 
@@ -376,6 +400,7 @@
                 return false;
             }
 
+            
              var phone_number = $('.registrationPhoneNumber').val();
 
 
@@ -385,8 +410,6 @@
 
              $('#userPhoneNumber').val(pre_phone_number);
              $('#registerPhoneNumberCode').val(registrationCountrySelect);
-
-
 
 
              $.ajax({

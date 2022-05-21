@@ -357,13 +357,14 @@
         }
 
     }
+
     .image-upload>input {
         display: none;
     }
 
-        .selected_image{
-                    padding: 10px;
-        }
+    .selected_image {
+        padding: 10px;
+    }
 </style>
 
 
@@ -378,51 +379,50 @@
     <section class="pding-topp text-center">
         <div class="container-fluid">
 
-             @php
-                                    if(isset($usersdetail->coverphoto)){
-                                        $cimage = asset($usersdetail->coverphoto);
-                                    }else{
-                                        $cimage = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
-                                    }    
+            @php
+            if(isset($usersdetail->coverphoto)){
+            $cimage = asset($usersdetail->coverphoto);
+            }else{
+            $cimage = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
+            }
 
-                                @endphp
+            @endphp
 
             <div class="background-image text-end" style="border-radius: 15px;background-image: url('{{$cimage}}');">
-                    <label for="file_input_c" class="BackgroundChangeImg" style="right: 10px;">
+                <label for="file_input_c" class="BackgroundChangeImg" style="right: 10px;">
                     <img src="{{asset('theme/icons/ic_photo_camera_24px.png')}}" class="BackgroundChangeImg">
-                                    </label>
+                </label>
 
-                    <form action="{{route('updatecoverpicture')}}" method="post" enctype="multipart/form-data">
-                                        @csrf
-                    <input id="file_input_c" accept="image/*" name="image" style="display:none"  onchange="this.form.submit()" type="file" />
-                    </form>
+                <form action="{{route('updatecoverpicture')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input id="file_input_c" accept="image/*" name="image" style="display:none" onchange="this.form.submit()" type="file" />
+                </form>
             </div>
 
-                            @php
-                                    if(isset($usersdetail->image)){
-                                        $image = asset($usersdetail->image);
-                                    }else{
-                                        $image = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
-                                    }    
+            @php
+            if(isset($usersdetail->image)){
+            $image = asset($usersdetail->image);
+            }else{
+            $image = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
+            }
 
-                                @endphp
-                                
+            @endphp
+
 
             <div class="row">
                 <div class="col-12 col-md-3 col-sm-12" style="height: 6rem;">
                     <div class="ProfilePicCard card">
-<!--                         <img src="{{ $usersdetail->image }} " class="profilepic"> -->
+                        <!--                         <img src="{{ $usersdetail->image }} " class="profilepic"> -->
                         <div class="card-img-overlay" style="padding: 0;">
                             <div class="text-center" style="background-image:url('{{ $image }}');background-repeat: no-repeat;background-position: center;height: 200px;border-radius: 50%;background-size: cover;">
                                 <img src="{{asset('theme/pictures/Scroll Group 1.png')}}" class="RealizeTextImg1">
                                 <div class="image-upload">
                                     <label for="file-input">
-                                    <img src="{{asset('theme/icons/ic_photo_camera_24px.png')}}"
-                                        class="RealizeTextImg2">
+                                        <img src="{{asset('theme/icons/ic_photo_camera_24px.png')}}" class="RealizeTextImg2">
                                     </label>
                                     <form action="{{route('updateprofilepicture')}}" method="post" enctype="multipart/form-data">
                                         @csrf
-                                    <input id="file-input" accept="image/*" name="image" style="display:none"  onchange="this.form.submit()" type="file" />
+                                        <input id="file-input" accept="image/*" name="image" style="display:none" onchange="this.form.submit()" type="file" />
                                     </form>
 
                                 </div>
@@ -434,34 +434,31 @@
 
 
                 <div class="col-12 col-md-9 col-sm-12">
-                    
+
 
 
                     <div class="row">
                         <div class="col-md-9 col-sm-12 col-lg-9">
 
                             <div class="mrgin_leftt">
-                                    <div class="row" style="text-align: left;margin-top: 1rem;">
-                                        <div class="col d-flex">
-                                            <p class="ProfileText1">{{ $usersdetail->first_name}} {{ $usersdetail->last_name}}</p>
-                                             @if($usersdetail->usertype)
-                                            <p class="mt-2" style="margin-left: 1rem;" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModalll"><span
-                                                    class="Privatetext">{{$usersdetail->usertype}}</span></p>
-                                            @else
-                                            <p class="mt-2" style="margin-left: 1rem;" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModalll"><span class="Privatetext">Private</span>
-                                            </p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="row addressofjohn">
-                                        <div class="col d-flex">
-                                            <img src="{{asset('theme/icons/ic_place_-1.png')}}" class="ProfileAddressImg">
-                                            <p class="ProfileText3">{{ $usersdetail->address}} {{ $usersdetail->country}} </p>
-                                        </div>
+                                <div class="row" style="text-align: left;margin-top: 1rem;">
+                                    <div class="col d-flex">
+                                        <p class="ProfileText1">{{ $usersdetail->first_name}} {{ $usersdetail->last_name}}</p>
+                                        @if($usersdetail->usertype)
+                                        <p class="mt-2" style="margin-left: 1rem;" data-bs-toggle="modal" data-bs-target="#exampleModalll"><span class="Privatetext">{{$usersdetail->usertype}}</span></p>
+                                        @else
+                                        <p class="mt-2" style="margin-left: 1rem;" data-bs-toggle="modal" data-bs-target="#exampleModalll"><span class="Privatetext">Private</span>
+                                        </p>
+                                        @endif
                                     </div>
                                 </div>
+                                <div class="row addressofjohn">
+                                    <div class="col d-flex">
+                                        <img src="{{asset('theme/icons/ic_place_-1.png')}}" class="ProfileAddressImg">
+                                        <p class="ProfileText3">{{ $usersdetail->address}} {{ $usersdetail->country}} </p>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -469,7 +466,7 @@
 
                             <div class="mt-3">
 
-                            <p style="text-align:end;" class="ProfileText2"><img src="{{asset('theme/icons/ic_date_range_-1.png')}}" class="ProfileDateImg" style="margin-top: 0px;"> {{date('F d, Y H:i A')}}</p>
+                                <p style="text-align:end;" class="ProfileText2"><img src="{{asset('theme/icons/ic_date_range_-1.png')}}" class="ProfileDateImg" style="margin-top: 0px;"> {{date('F d, Y H:i A')}}</p>
                             </div>
                             <div class="iconfb" style="top:0px;text-align: end;">
 
@@ -484,92 +481,83 @@
 
                         </div>
                     </div>
-                
-
-
-                </div>
-
-
 
 
 
                 </div>
+
+
+
+
+
+            </div>
+        </div>
+        </div>
+
+        <div class="modal fade" id="exampleModalll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form action="{{route('updateusertype')}}" method="post">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Update User Type</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            @csrf
+                            <div class="mb-3 form-check">
+                                <select class="form-select" name="usertype" aria-label="Default select example">
+                                    <option value="">Select</option>
+                                    <option value="Professional">Professional</option>
+                                    <option value="Private">Private</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 
-                <div class="modal fade" id="exampleModalll" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <form action="{{route('updateusertype')}}" method="post" >
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Update User Type</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
 
-                                                   @csrf
-                                                    <div class="mb-3 form-check">
-                                                    <select class="form-select" name="usertype" aria-label="Default select example">
-                                                    <option value="">Select</option>
-                                                    <option value="Professional">Professional</option>
-                                                    <option value="Private">Private</option>
+        <div class="modal fade" id="exampleModalf" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="{{route('updatenames')}}" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Update First Name and Last
+                                Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
 
-                                                    </select>
-                                                    </div>
+                            @csrf
+                            <div class="mb-3">
 
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                <input type="text" class="form-control" value="{{$usersdetail->first_name}}" name="firstname" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-                                            </div>
-                                        </div>
-                                    </form>
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="mb-3">
 
+                                <input type="text" class="form-control" value="{{$usersdetail->last_name}}" name="lastname" id="exampleInputPassword1">
+                            </div>
 
-                <div class="modal fade" id="exampleModalf" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                            <form action="{{route('updatenames')}}" method="post">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Update First Name and Last
-                                                Name</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-
-                                                @csrf
-                                                <div class="mb-3">
-
-                                                    <input type="text" class="form-control"
-                                                        value="{{$usersdetail->first_name}}" name="firstname"
-                                                        id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                                                </div>
-                                                <div class="mb-3">
-
-                                                    <input type="text" class="form-control"
-                                                        value="{{$usersdetail->last_name}}" name="lastname"
-                                                        id="exampleInputPassword1">
-                                                </div>
-
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Save</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                            <input type="hidden" name="lat" value="{{isset($lat) ? $lat : ''}}" id="lat">
+                    <input type="hidden" name="lng" value="{{isset($lng) ? $lng : ''}}" id="lng">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
     </section>
@@ -589,29 +577,24 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form method="POST"
-                                        action="{{route('updateuserprofile',['id' => $usersdetail->id])}}">
+                                    <form method="POST" action="{{route('updateuserprofile',['id' => $usersdetail->id])}}">
                                         <div class="modal-body">
                                             <div class="form-floating">
 
                                                 @csrf
-                                                <textarea name="aboutme" class="form-control"
-                                                    placeholder="Leave a comment here" id="floatingTextarea2"
-                                                    style="height: 200px">
-  {{ $usersdetail->aboutme}}
-</textarea>
+                                                <textarea name="aboutme" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px">
+                                                {{ $usersdetail->aboutme}}
+                                                </textarea>
 
 
                                             </div>
 
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-primary">Save </button>
                                     </form>
                                 </div>
@@ -634,8 +617,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -643,8 +625,7 @@
                                         <form method="POST" action="{{route('userprofileservice')}}">
                                             @csrf
                                     </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <input type="hidden" name="userid" value="{{$usersdetail->id}}">
@@ -655,8 +636,7 @@
                                     </select>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                                 </form>
@@ -666,20 +646,20 @@
                     <div class="row">
                         <div class="col-xs-12">
 
-                           <div class="row">
-                           @if($userprofileservice->count()) 
-                            @foreach($userprofileservice as $u)
-                                   <div class="col-md-3 mt-3" style="padding-right:0px;padding-left:0px;">
+                            <div class="row">
+                                @if($userprofileservice->count())
+                                @foreach($userprofileservice as $u)
+                                <div class="col-md-3 mt-3" style="padding-right:0px;padding-left:0px;">
                                     <span class="servicesicon " id="vechile2">{{$u->service}}</span>
                                 </div>
-                            @endforeach
-                           @else
+                                @endforeach
+                                @else
                                 <p style="text-align:center;">No Services Added</p>
-                           @endif 
-                        </div>
+                                @endif
+                            </div>
 
                         </div>
-<!--                         <div class="col-xs-12" style="padding-top:20px;padding-bottom: 30px;padding-right:0px;padding-left:0px;">
+                        <!--                         <div class="col-xs-12" style="padding-top:20px;padding-bottom: 30px;padding-right:0px;padding-left:0px;">
                                 <span class="servicesicon" id="vechile2">{{ $usersdetail->services}}</span>
                         </div> -->
                     </div>
@@ -687,60 +667,56 @@
             </div>
             <div class="col-12 col-md-1 col-sm-12"></div>
             <div class="col-12 col-md-4 col-sm-12 maptop">
-            <form method="POST" action="{{route('updatemapofuser')}}">
-                                            @csrf
-            <input type="hidden"  name="position" id="lat"
-                                        class="Position-fromImg form-control" placeholder="Le Berdo">
-                                    <input type="hidden" name="position2" onchange="this.form.submit()" id="lng"
-                                        class="Position-fromImg form-control" placeholder="Le Berdo">
+                <form method="POST" action="{{route('updatemapofuser')}}">
+                    @csrf
+                    <input type="hidden" name="position" id="lat" class="Position-fromImg form-control" placeholder="Le Berdo">
+                    <input type="hidden" name="position2" onchange="this.form.submit()" id="lng" class="Position-fromImg form-control" placeholder="Le Berdo">
 
-                                    <div id="map" style="height:500px;width: 500px;"></div>
+                    <div id="map" style="height:500px;width: 500px;"></div>
 
-                                    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-                                    <script
-                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBikMgCY_d1NwtVzeM4mIviqZBBDrAFEko&callback=initMap&v=weekly&channel=2"
-                                        async></script>
+                    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBikMgCY_d1NwtVzeM4mIviqZBBDrAFEko&callback=initMap&v=weekly&channel=2" async></script>
 
-                                    <script type="text/javascript">
-                                        function initMap() {
-                                            var lat = "<?php echo $lat ?>";
-                                            var lng = "<?php echo $lat ?>";
-                                            const myLatlng = {
-                                                lat: parseFloat(lat),
-                                                lng: parseFloat(lng)
-                                            };
-                                            const map = new google.maps.Map(document.getElementById("map"), {
-                                                zoom: 13,
-                                                center: myLatlng,
-                                            });
-                                            // Create the initial InfoWindow.
-                                            let infoWindow = new google.maps.InfoWindow({
-                                                content: "{{Auth::user()->address}}!",
-                                                position: myLatlng,
-                                            });
+                    <script type="text/javascript">
+                        function initMap() {
+                            var lat = "<?php echo $lat ?>";
+                            var lng = "<?php echo $lat ?>";
+                            const myLatlng = {
+                                lat: parseFloat(lat),
+                                lng: parseFloat(lng)
+                            };
+                            const map = new google.maps.Map(document.getElementById("map"), {
+                                zoom: 13,
+                                center: myLatlng,
+                            });
+                            // Create the initial InfoWindow.
+                            let infoWindow = new google.maps.InfoWindow({
+                                content: "{{Auth::user()->address}}!",
+                                position: myLatlng,
+                            });
 
-                                            infoWindow.open(map);
-                                            // Configure the click listener.
-                                           /* map.addListener("click", (mapsMouseEvent) => {
-                                                // Close the current InfoWindow.
-                                                infoWindow.close();
-                                                // Create a new InfoWindow.
-                                                infoWindow = new google.maps.InfoWindow({
-                                                    position: mapsMouseEvent.latLng,
-                                                });
+                            infoWindow.open(map);
+                            // Configure the click listener.
+                            /* map.addListener("click", (mapsMouseEvent) => {
+                                 // Close the current InfoWindow.
+                                 infoWindow.close();
+                                 // Create a new InfoWindow.
+                                 infoWindow = new google.maps.InfoWindow({
+                                     position: mapsMouseEvent.latLng,
+                                 });
 
-                                                document.getElementById('lat').value = mapsMouseEvent.latLng
-                                                    .lat();
-                                                document.getElementById('lng').value = mapsMouseEvent.latLng
-                                                    .lng();
-                                                infoWindow.setContent(
-                                                    JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
-                                                );
-                                                infoWindow.open(map);
-                                            });*/
-                                        }
-
-                                    </script></form>
+                                 document.getElementById('lat').value = mapsMouseEvent.latLng
+                                     .lat();
+                                 document.getElementById('lng').value = mapsMouseEvent.latLng
+                                     .lng();
+                                 infoWindow.setContent(
+                                     JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+                                 );
+                                 infoWindow.open(map);
+                             });*/
+                        }
+                    </script>
+                </form>
             </div>
         </div>
         </div>
@@ -759,14 +735,13 @@
 
                         </div>
                         <div class="row">
-                                
-    
+
+
                             <div class="col-md-4">
-                                
-                                <form method="post" action="{{route('updatephotogallary')}}"
-                                    enctype="multipart/form-data">
+
+                                <form method="post" action="{{route('updatephotogallary')}}" enctype="multipart/form-data">
                                     @csrf
-                                    
+
                                     <div class="col-md-12" style="width:650px;">
                                         <!-- <div class="row">                                               
                                                 @if($gallery->count())
@@ -780,7 +755,7 @@
                                                     @endforeach
                                                 @endif       
                                             </div> -->
-                                       <!--  <div id="myImg">
+                                        <!--  <div id="myImg">
                                                 
 
                                                <div class="upload-Picture" style="margin-left:0px !important;width: 10rem;display: inline-block; ">
@@ -795,29 +770,29 @@
 
 
                                         <div class="row" id="myImg">
-                                        @if($gallery->count())
-                                           @foreach($gallery as $img)
-                                          <div class="col-md-3" style="text-align: center;">
-                                                <img class="loaded_images" data-button="btnr{{$g->id}}" src="{{ $img->image}}"  style="width:100%;height: 150px;">
-                                                <a  href="{{route('delete_gallery',['id'=>$img->id])}}" id="btnr{{$img->id}}">Remove</a>
-                                          </div>
-                                         @endforeach
-                                         @endif
-                                         <div class="col-md-3 mt-1" id="uploader_div">
+                                            @if($gallery->count())
+                                            @foreach($gallery as $img)
+                                            <div class="col-md-3" style="text-align: center;">
+                                                <img class="loaded_images" data-button="btnr{{$g->id}}" src="{{ $img->image}}" style="width:100%;height: 150px;">
+                                                <a href="{{route('delete_gallery',['id'=>$img->id])}}" id="btnr{{$img->id}}">Remove</a>
+                                            </div>
+                                            @endforeach
+                                            @endif
+                                            <div class="col-md-3 mt-1" id="uploader_div">
                                                 <div class="upload-Picture" style="width:10rem">
-                                                    <img class="upload-PictureIMG" src="{{asset('theme/icons/ic_add_a_photo_24px.png')}}"><input type="file" name="image[]" id="file" accept="image/*" multiple  style="opacity: 0;
+                                                    <img class="upload-PictureIMG" src="{{asset('theme/icons/ic_add_a_photo_24px.png')}}"><input type="file" name="image[]" id="file" accept="image/*" multiple style="opacity: 0;
                                                     margin-left: 15px;
                                                     margin-top: 22px;">
-                                                    
+
                                                 </div>
                                             </div>
 
                                             <!-- <div id="newImages" class="row">
                                             </div> -->
-                                            
-                                     </div>
 
-                                        
+                                        </div>
+
+
 
                                     </div>
 
@@ -849,11 +824,9 @@
                                         privately</b></p>
                             </div>
                             <div class="row" style="position: relative;left: 12px;">
-                                <a class=" nav-item nav-link SendRequestButton" data-bs-toggle="modal" role="button"
-                                    data-bs-target="#staticBackdrop" data-bs-dismiss="modal">
+                                <a class=" nav-item nav-link SendRequestButton" data-bs-toggle="modal" role="button" data-bs-target="#staticBackdrop" data-bs-dismiss="modal">
                                     Connect Privately</a>
-                                <a class=" nav-item nav-link SendRequestButtonmobile" data-bs-toggle="modal"
-                                    role="button" data-bs-target="#mobilemodal" data-bs-dismiss="modal">
+                                <a class=" nav-item nav-link SendRequestButtonmobile" data-bs-toggle="modal" role="button" data-bs-target="#mobilemodal" data-bs-dismiss="modal">
                                     Connect Privately </a>
                             </div>
                         </div>
@@ -864,8 +837,7 @@
 
 
                         <div class="row" style="position: relative;top: 15px;">
-                            <a href="{{route('LeaveReviewBlue', 'id')}}" class=" nav-item nav-link previews"><img
-                                    src="{{asset('theme/icons/whitestar.png')}}" class="whitestar" alt="">
+                            <a href="{{route('LeaveReviewBlue', 'id')}}" class=" nav-item nav-link previews"><img src="{{asset('theme/icons/whitestar.png')}}" class="whitestar" alt="">
                                 Leave your review</a>
 
                         </div>
@@ -1157,8 +1129,7 @@
         </div>
     </section>
     <section>
-        <div class="modal fade" id="mobilemodal" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="mobilemodal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content modalbody">
                     <div class="modal-body">
@@ -1174,8 +1145,7 @@
                                 <a href="MobileChatBlueMessage.html" class="SendMessageButton">Send Message</a>
                             </div>
                             <div class="col text-center">
-                                <a href="" class="CallButton" data-bs-toggle="modal" data-bs-target="#callonmobile"
-                                    data-bs-dismiss="modal">Make Call</a>
+                                <a href="" class="CallButton" data-bs-toggle="modal" data-bs-target="#callonmobile" data-bs-dismiss="modal">Make Call</a>
                             </div>
                         </div>
                     </div>
@@ -1184,8 +1154,7 @@
         </div>
     </section>
     <section>
-        <div class="modal fade" id="callonmobile" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdrop2Label" aria-hidden="true">
+        <div class="modal fade" id="callonmobile" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop2Label" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content callonmobilebody">
                     <div class="modal-body">
@@ -1203,8 +1172,7 @@
     </section>
     <!--Send Request-->
     <section>
-        <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -1220,8 +1188,7 @@
                                 <a href="Chat.html" class="SendMessageButton">Send Message</a>
                             </div>
                             <div class="col text-center">
-                                <a href="" class="CallButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"
-                                    data-bs-dismiss="modal">Make Call</a>
+                                <a href="" class="CallButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-bs-dismiss="modal">Make Call</a>
                             </div>
                         </div>
                     </div>
@@ -1230,8 +1197,7 @@
         </div>
     </section>
     <section>
-        <div class="modal fade" id="staticBackdrop2" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdrop2Label" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop2" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop2Label" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -1250,81 +1216,136 @@
 
     <!--Footer-->
     @include('frontend.layout.footer')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        function previewImages() {
 
+            var preview = document.querySelector('#myImg');
+            $('.selected_image').remove();
+            if (this.files) {
+                [].forEach.call(this.files, readAndPreview);
+            }
 
-                            function previewImages() {
+            function readAndPreview(file) {
 
-                              var preview = document.querySelector('#myImg');
-                             $('.selected_image').remove();  
-                              if (this.files) {
-                                [].forEach.call(this.files, readAndPreview);
-                              }
+                // Make sure `file.name` matches our extensions criteria
+                if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                    return alert(file.name + " is not an image");
+                } // else...
 
-                              function readAndPreview(file) {
+                var reader = new FileReader();
 
-                                // Make sure `file.name` matches our extensions criteria
-                                if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
-                                  return alert(file.name + " is not an image");
-                                } // else...
-                                
-                                var reader = new FileReader();
-                                
-                                reader.addEventListener("load", function() {
-                                  var image = new Image();
-                                  image.height = 160;
-                                  image.width = 175;
-                                  image.className   ="selected_image";
-                                  image.title  = file.name;
-                                  image.src    = this.result;
-                                   image.style.height = '160px';
-                                   image.style.width = '10rem';
-                                   image.style.paddingLeft = '0px';
-                                   image.style.paddingRight = '0px';
-                                   image.style.marginRight = '10px';
-                                   preview.prepend(image);
-                                });
-                                
-                                reader.readAsDataURL(file);
-                                 document.getElementById("btnn").innerHTML =
-                "<button type='submit' class='btn btn-primary mt-1' >Submit</button>"; 
-                              }
+                reader.addEventListener("load", function() {
+                    var image = new Image();
+                    image.height = 160;
+                    image.width = 175;
+                    image.className = "selected_image";
+                    image.title = file.name;
+                    image.src = this.result;
+                    image.style.height = '160px';
+                    image.style.width = '10rem';
+                    image.style.paddingLeft = '0px';
+                    image.style.paddingRight = '0px';
+                    image.style.marginRight = '10px';
+                    preview.prepend(image);
+                });
 
-                            }
+                reader.readAsDataURL(file);
+                document.getElementById("btnn").innerHTML =
+                    "<button type='submit' class='btn btn-primary mt-1' >Submit</button>";
+            }
 
-                            document.querySelector('#file').addEventListener("change", previewImages);
+        }
 
+        document.querySelector('#file').addEventListener("change", previewImages);
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+   
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+
     <script>
         var lat = "<?php echo $lat ?>";
         var lng = "<?php echo $lat ?>";
+        console.log("lat");
+        console.log(lat);
         mapboxgl.accessToken =
             'pk.eyJ1IjoiYW1tYXIxMjMxMjMiLCJhIjoiY2tydzJsMm9jMGNpajJucnh4M2pmaTVsZCJ9.ZxNGpJR7Qw9t3ONgdZmbQA';
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [parseFloat(lat), parseFloat(lng)],
+            center: [lat, lng],
             zoom: 15,
         });
         const marker1 = new mapboxgl.Marker()
             .setLngLat([parseFloat(lat), parseFloat(lng)])
             .addTo(map);
 
+     
     </script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     
+<script>
+     var lat = "<?php echo $lat ?>";
+        var lng = "<?php echo $lat ?>";
+       var wellCircle;
+        var marker
 
-    <script type="text/javascript">
-        
-        $('.loaded_images').hover(function(){
+        function getLocation() {
 
-            id = $(this).data('button');
-                $('#'+id).show(1000);
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+        }
+
+
+        function showPosition(position) {
+            //                     lat_ = position.coords.latitude;
+            // lng_ = position.coords.longitude;
+            lat = parseFloat($('#lat').val());
+            lng = parseFloat($('#lng').val());
+
+            // lat = 36.83901
+            // lng = 10.23931;
+            marker = new google.maps.Marker({
+                position: {
+                    lat:lat,
+                    lng:lng
+                },
+                map
             });
 
+            //   $('#lat').val(lat);
+
+            //   $('#lng').val(lng);
+            console.log(lat, lng);
+            map.setCenter(marker.getPosition());
+
+            circle = new google.maps.Circle({
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#FF0000",
+                fillOpacity: 0.35,
+                map: map,
+                radius: 500
+            });
+            circle.bindTo('center', marker, 'position');
+
+
+        }
+
+        $(document).ready(function() {
+            getLocation();
+
+        });
+</script>
+    <script type="text/javascript">
+        $('.loaded_images').hover(function() {
+
+            id = $(this).data('button');
+            $('#' + id).show(1000);
+        });
     </script>
 </body>
 

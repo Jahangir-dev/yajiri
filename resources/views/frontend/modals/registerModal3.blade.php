@@ -138,7 +138,7 @@
 
                         <div class="input-group mb-1 professional" style="display:none;">
                             <input type="text" class="Modal4input4 form-control inputField_c" placeholder="SIRET Number" id="userSiretNumber" aria-label="SIRET Number" aria-describedby="basic-addon1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="13" size="13">
-                            <span class="col-md-12 inputError" style="font-size:12px;" for="userSiretNumber">SIRET Number field is required</span>
+                            <span class="col-md-12 inputError" style="font-size:12px;" id="userSiretNumberError" for="userSiretNumber">SIRET Number field is required</span>
                         </div>
 
                         <div class="input-group mb-1">

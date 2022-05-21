@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{asset('theme/css/ChoseDistanceStyle.css')}}">
 
@@ -19,11 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>ya jari</title>
     <style type="text/css">
-
-        .mapboxgl-marker{
+        .mapboxgl-marker {
             position: relative !important;
         }
-
     </style>
 </head>
 
@@ -31,8 +28,7 @@
 
     <!--Nav Bar-->
 
-    <nav class="navbar navbar-expand-xl navbar-light fixed-top"
-        style="background-color: white;box-shadow: 0px 2px 5px #acacac;">
+    <nav class="navbar navbar-expand-xl navbar-light fixed-top" style="background-color: white;box-shadow: 0px 2px 5px #acacac;">
         <div class="container" style="display: block;">
             <div class="row">
                 <div class="col">
@@ -44,8 +40,7 @@
                 </div>
                 <div class="col text-end">
                     <div class="CCdropdown dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="{{asset('theme/icons/1280px-Flag_of_France.svg.png')}}" alt="">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -92,7 +87,7 @@
                 </div>
             </div>
             <div class="CDtext row pb-3">
-               <form method="post" action="{{route('user_save_distance')}}" id="distanceForm">
+                <form method="post" action="{{route('user_save_distance')}}" id="distanceForm">
                     @csrf
                     <div class="col-6 col-sm-6">
                         <p style="font-size: 18px;font-weight: bolder;margin-bottom: 0;"><strong>Distance:</strong></p>
@@ -103,8 +98,8 @@
                     <input type="hidden" name="lat" value="{{isset($lat) ? $lat : ''}}" id="lat">
                     <input type="hidden" name="lng" value="{{isset($lng) ? $lng : ''}}" id="lng">
                     <div class="col-12 col-sm-12">
-                    <input type="range" class="form-range" id="customRange1" name="distance_range" step="1" value="5" min="5" max="20">
-                </div>
+                        <input type="range" class="form-range" id="customRange1" name="distance_range" step="1" value="5" min="5" max="20">
+                    </div>
 
                 </form>
             </div>
@@ -152,109 +147,112 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBikMgCY_d1NwtVzeM4mIviqZBBDrAFEko&callback=initMap&v=weekly&channel=2"
-      async
-    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBikMgCY_d1NwtVzeM4mIviqZBBDrAFEko&callback=initMap&v=weekly&channel=2" async></script>
 
     <script type="text/javascript">
-
         let map;
-var circle;
+        var circle;
+
         function initMap() {
 
-lat = parseFloat($('#lat').val());
-lng = parseFloat($('#lng').val());
-console.log(lat,lng);
-          map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: lat, lng: lng },
-            zoom: 12,
-          });
+            lat = parseFloat($('#lat').val());
+            lng = parseFloat($('#lng').val());
+            console.log(lat, lng);
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: lat,
+                    lng: lng
+                },
+                zoom: 12,
+            });
 
-                                            let infoWindow = new google.maps.InfoWindow({
-                                                content: "Click the map to get Lat/Lng!",
-                                                position: [lat,lng],
-                                            });
+            let infoWindow = new google.maps.InfoWindow({
+                content: "Click the map to get Lat/Lng!",
+                position: [lat, lng],
+            });
 
-                                            infoWindow.open(map);
-                                            // Configure the click listener.
-                                            map.addListener("click", (mapsMouseEvent) => {
-                                                // Close the current InfoWindow.
-                                                infoWindow.close();
-                                                // Create a new InfoWindow.
-                                                infoWindow = new google.maps.InfoWindow({
-                                                    position: mapsMouseEvent.latLng,
-                                                });
+            infoWindow.open(map);
+            // Configure the click listener.
+            map.addListener("click", (mapsMouseEvent) => {
+                // Close the current InfoWindow.
+                infoWindow.close();
+                // Create a new InfoWindow.
+                infoWindow = new google.maps.InfoWindow({
+                    position: mapsMouseEvent.latLng,
+                });
 
-                                                document.getElementById('lat').value = mapsMouseEvent.latLng
-                                                    .lat();
-                                                document.getElementById('lng').value = mapsMouseEvent.latLng
-                                                    .lng();
-                                                infoWindow.setContent(
-                                                    JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
-                                                );
-                                                infoWindow.open(map);
-                                            });
+                document.getElementById('lat').value = mapsMouseEvent.latLng
+                    .lat();
+                document.getElementById('lng').value = mapsMouseEvent.latLng
+                    .lng();
+                infoWindow.setContent(
+                    JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+                );
+                infoWindow.open(map);
+            });
 
 
         }
-            var wellCircle;var marker
-           function getLocation() {
+        var wellCircle;
+        var marker
 
-                  if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition);
-                  }
-                }
+        function getLocation() {
 
-                function showPosition(position) {
-//                     lat_ = position.coords.latitude;
-// lng_ = position.coords.longitude;
-                    lat = parseFloat($('#lat').val());
-                    lng = parseFloat($('#lng').val());
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+        }
 
-                            // lat = 36.83901
-                            // lng = 10.23931;
-                  marker = new google.maps.Marker({
-                        position: { lat: lat, lng: lng },
-                        map
-                      });
+        function showPosition(position) {
+            //                     lat_ = position.coords.latitude;
+            // lng_ = position.coords.longitude;
+            lat = parseFloat($('#lat').val());
+            lng = parseFloat($('#lng').val());
 
-                //   $('#lat').val(lat);
+            // lat = 36.83901
+            // lng = 10.23931;
+            marker = new google.maps.Marker({
+                position: {
+                    lat: lat,
+                    lng: lng
+                },
+                map
+            });
 
-                //   $('#lng').val(lng);
-                  console.log(lat,lng);
-                    map.setCenter(marker.getPosition());
+            //   $('#lat').val(lat);
 
-                    circle = new google.maps.Circle({
-                        strokeColor: "#FF0000",
-                        strokeOpacity: 0.8,
-                        strokeWeight: 2,
-                        fillColor: "#FF0000",
-                        fillOpacity: 0.35,
-                        map: map,
-                        radius: 500
-                    });
-                    circle.bindTo('center', marker, 'position');
+            //   $('#lng').val(lng);
+            console.log(lat, lng);
+            map.setCenter(marker.getPosition());
 
-
-                }
-
+            circle = new google.maps.Circle({
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#FF0000",
+                fillOpacity: 0.35,
+                map: map,
+                radius: 500
+            });
+            circle.bindTo('center', marker, 'position');
 
 
+        }
 
 
-          $(document).on('input', '#customRange1', function( ) {
-           var vl= $('#distance_m').html( $(this).val() );
+
+
+
+        $(document).on('input', '#customRange1', function() {
+            var vl = $('#distance_m').html($(this).val());
             // alert($(this).val());
-              circle.setRadius($(this).val()*100);
+            circle.setRadius($(this).val() * 100);
 
 
 
@@ -265,17 +263,17 @@ console.log(lat,lng);
 
 
 
-$(document).ready(function(){
-    getLocation();
+        $(document).ready(function() {
+            getLocation();
 
-});
+        });
         // $(window).on('load', function(){
         //     getLocation();
 
         // })
 
 
-        $('#submitForm').click(function(){
+        $('#submitForm').click(function() {
 
             $('#distanceForm').submit();
 
