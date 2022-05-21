@@ -22,9 +22,8 @@ class AuthController extends Controller
                $email = $request->input('email');
                $password = $request->input('password');
 
-                $user = User::where('email',$request->input('email'))->first();
+                $user = User::where('email',$request->input('email'))->orWhere('phone_number',$request->input('phone'))->first();
             //    /dd($user);
-
 
 
         if($user == null && $login == 'email'){
@@ -32,6 +31,11 @@ class AuthController extends Controller
          //toast('Please use valid email','danger');  
 
          return response()->json(['login' => 0,'msg' => 'Please use valid email']);
+       } 
+       
+       if(!empty($user) && $user->is_active == 0)
+       {
+        return response()->json(['login' => 0,'msg' => 'Email verification required']);
        }
 
        if($login=='phone'){
