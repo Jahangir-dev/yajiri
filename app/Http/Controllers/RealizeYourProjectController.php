@@ -15,7 +15,7 @@ class RealizeYourProjectController extends Controller
     {
         //
         $realizeYourProject=DB::select('SELECT  id ,  title ,  filename ,  created_at ,  updated_at  FROM  momentsoflife  order by id desc');
-        return view('frontend.realizeYourProject' , [ 'realizeYourProject' => $realizeYourProject ]);
+        return view('frontend.RealizeYourProject' , [ 'realizeYourProject' => $realizeYourProject ]);
     }
     
 
