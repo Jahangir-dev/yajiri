@@ -653,13 +653,11 @@ class RequestController extends Controller
 
 
             if($r->status){
-                $st = AllStatus::where('slug',$r->status)->first();
-                $request = $request->where('status',$st->id);
+                $request = $request->where('status',$r->status);
             }
 
             if($r->category){
-                $st = Category::where('slug',$r->category)->first();
-                $request = $request->where('category',$st->id);
+                $request = $request->where('category',$r->category);
             }
 
             if($r->search){

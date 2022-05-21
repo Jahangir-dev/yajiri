@@ -829,7 +829,7 @@
                                 style="color: #F91B66;">
                                 @if(\Request::has('status'))
                                     @foreach($allstatus as $status)
-                                    @if($status->slug==\Request::get('status'))
+                                    @if($status->id==\Request::get('status'))
                                         {{$status->status}}
                                     @endif
                                    @endforeach        
@@ -840,7 +840,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 @foreach($allstatus as $status)
-                                <li><a class="dropdown-item <?php if(\Request::has("status") &&  \Request::get("status")==$status->slug) echo "active"; ?>" href="?status={{$status->slug}}">{{$status->status}}</a></li>
+                                <li><a class="dropdown-item <?php if(\Request::has("status") &&  \Request::get("status")==$status->id) echo "active"; ?>" href="?status={{$status->id}}">{{$status->status}}</a></li>
                                 @endforeach
 
                             </ul>
@@ -853,7 +853,7 @@
                                 style="color: #F91B66;">
                                 @if(\Request::has('category'))
                                    @foreach($category as $cate)
-                                    @if($cate->slug==\Request::get('category'))
+                                    @if($cate->id==\Request::get('category'))
                                         {{$cate->name}}
                                     @endif
                                    @endforeach        
@@ -863,8 +863,8 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
                                 @foreach($category as $cate)
-                                <li value="{{$cate->name}}"><a class="dropdown-item <?php if(\Request::has("category") &&  \Request::get("category")==$cate->slug) echo "active"; ?>"
-                                        href='?category={{$cate->slug}}'>{{$cate->name}}</a></li>
+                                <li value="{{$cate->id}}"><a class="dropdown-item <?php if(\Request::has("category") &&  \Request::get("category")==$cate->id) echo "active"; ?>"
+                                        href='?category={{$cate->id}}'>{{$cate->name}}</a></li>
                                 @endforeach
 
                             </ul>
@@ -1464,7 +1464,6 @@
                             </section>
                             <!--Pagination-->
                             <div class="row" style="padding-bottom: 10%;">
-                                {{$request->render("pagination::requestPage")}}
                             </div>
                         </div>
                     </div>
