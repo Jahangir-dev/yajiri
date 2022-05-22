@@ -822,7 +822,7 @@
                     </form>
                 </div>
                 <div class="row pt-5 text-start searchbardown">
-                    <div class="col col1">
+                    <!-- <div class="col col1">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle allstatus allstatusfont" type="button"
                                 id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
@@ -845,7 +845,7 @@
 
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col col2">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle allcategories allcategoriesfont " type="button"
@@ -870,7 +870,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col col3">
+                    <!-- <div class="col col3">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle thebardos thebardosfont " type="button"
                                 id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false"
@@ -888,7 +888,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -906,197 +906,24 @@
                     <div class="col-lg-1">
                     </div>
                     <div class="col-lg-3 categoriestop">
-                        <div class="py-5"
-                            style="width: auto; box-shadow: 0px 10px 50px 1px #ffdae6;border-radius: 20px;margin: auto;">
-                            <div class=" text-center">
-                                <select class="selectbox categories" id="select-item"
-                                    style="width: 15rem;height: 3rem; color: #F91B66;border-color: lightgray; border-radius: 0px 5px 5px 0px; border-width: 1px;border-left:5px solid #F91B66;text-align-last: left;background-color: white;">
-                                    <option value="{{Null}}">Categories</option>
-                                    @foreach($category as $cate)
-                                    <option value="1">{{$cate->name}}</option>
-
-                                    @endforeach
-
-
-
-                                </select>
-                            </div>
-                            <div style="padding-top: 1rem;" class="homemaintenance d-none">
-                                <p class="homemaintenance d-none subcategory">Sub category</p>
-                                <div class="col-lg-12 subcategoryul">
-                                    <div style="padding-top: 1rem;">
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Urgent?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Only
-                                                    Professional?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Show Phone
-                                                    Number</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-top: 1rem;" class="officemaintenance d-none">
-                                <p class="officemaintenance d-none subcategory">Sub category</p>
-                                <div class="col-lg-12 subcategoryul">
-                                    <div style="padding-top: 1rem;">
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Urgent?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Only
-                                                    Professional?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Show Phone
-                                                    Number</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-top: 1rem;" class="electricity d-none">
-                                <p class="electricity d-none subcategory">Sub category</p>
-                                <div class="col-lg-12 subcategoryul">
-                                    <div style="padding-top: 1rem;">
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Urgent?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Only
-                                                    Professional?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Show Phone
-                                                    Number</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-top: 1rem;" class="computerrepair d-none">
-                                <p class="computerrepair d-none subcategory">Sub category</p>
-                                <div class="col-lg-12 subcategoryul">
-                                    <div style="padding-top: 1rem;">
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Urgent?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Only
-                                                    Professional?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Show Phone
-                                                    Number</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-top: 1rem;" class="mobilerepair d-none">
-                                <p class="mobilerepair d-none subcategory">Sub category</p>
-                                <div class="col-lg-12 subcategoryul">
-                                    <div style="padding-top: 1rem;">
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Urgent?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Only
-                                                    Professional?</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-check subcategoryallign">
-                                            <input class="form-check-input inputcheckbox" type="checkbox"
-                                                id="FieldsetCheck">
-                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
-                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">Show Phone
-                                                    Number</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="col-lg-7 sidebartop">
                         <div class="col-xxl-7 col-xl-12" style="width:100%;" id="CategoriesColShow">
                             @foreach($request as $r)
-                                @if($r->distance <= $distance)
+                            @php
+                            $auth = false;
+                            $condition = true;
+                            if(Auth::check())
+                            {
+                                $auth = true;
+                                if($r->distance <= $distance)
+                                {
+                                    $condition = false;
+                                }
+                            }
+                            @endphp
+                            @if($condition)
                             <div class="col pb-5 leftsidebar">  
                                 <div class="py-3 cardheight cardleft"
                                     style="background-color: white; border-radius: 10px;box-shadow: 10px 10px 100px 1px #ffe8ef; padding-left: 10px; margin: auto;">
@@ -1107,6 +934,7 @@
                                         </div>
                                         <div class="col pt-2 text-end" style="padding-right: 30px;">
                                             <!-- Heart Image -->
+                                            @if($auth)
                                             <a style="text-decoration: none" href="{{route('favouriterequest',[ 'user_id' =>  $r->auth_id  , 'requestid' =>  $r->id ] )}}"
                                                 role="button">
                                                 
@@ -1118,6 +946,9 @@
                                                     src="{{asset('theme/icons/ic_favorite_border_24px.png')}}">
                                                 @endif    
                                                 </a>
+                                                @else
+                                                <a href="#LoginRegisterModal8" style="text-decoration:none;" data-bs-toggle="modal" role="button"><img class="responses-heart" src="{{asset('theme/icons/ic_favorite_border_24px.png')}}"></a>
+                                                @endif
                                             <button type="button" class="responses-buttonQ1">
                                                 <p class="responses-tQ1">${{number_format($r->price,2)}}</p>
                                             </button>
