@@ -2,7 +2,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p class="modal-title" id="forgetNewPasswordLabel">{{__('messages.sign_in')}}</p>
+                    <p class="modal-title" id="forgetNewPasswordLabel">New Password</p>
                 </div>
                 <div class="modal-body" style="padding-top: 1rem;">
                     <p class="MBText1"><b>{{__('messages.welcome_to_ya_jari')}}</b></p>
