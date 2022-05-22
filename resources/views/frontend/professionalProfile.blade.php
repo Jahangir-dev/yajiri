@@ -673,49 +673,6 @@
                     <input type="hidden" name="position2" onchange="this.form.submit()" id="lng" class="Position-fromImg form-control" placeholder="Le Berdo">
 
                     <div id="map" style="height:500px;width: 500px;"></div>
-
-                    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBikMgCY_d1NwtVzeM4mIviqZBBDrAFEko&callback=initMap&v=weekly&channel=2" async></script>
-
-                    <script type="text/javascript">
-                        function initMap() {
-                            var lat = "<?php echo $lat ?>";
-                            var lng = "<?php echo $lat ?>";
-                            const myLatlng = {
-                                lat: parseFloat(lat),
-                                lng: parseFloat(lng)
-                            };
-                            const map = new google.maps.Map(document.getElementById("map"), {
-                                zoom: 13,
-                                center: myLatlng,
-                            });
-                            // Create the initial InfoWindow.
-                            let infoWindow = new google.maps.InfoWindow({
-                                content: "{{Auth::user()->address}}!",
-                                position: myLatlng,
-                            });
-
-                            infoWindow.open(map);
-                            // Configure the click listener.
-                            /* map.addListener("click", (mapsMouseEvent) => {
-                                 // Close the current InfoWindow.
-                                 infoWindow.close();
-                                 // Create a new InfoWindow.
-                                 infoWindow = new google.maps.InfoWindow({
-                                     position: mapsMouseEvent.latLng,
-                                 });
-
-                                 document.getElementById('lat').value = mapsMouseEvent.latLng
-                                     .lat();
-                                 document.getElementById('lng').value = mapsMouseEvent.latLng
-                                     .lng();
-                                 infoWindow.setContent(
-                                     JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
-                                 );
-                                 infoWindow.open(map);
-                             });*/
-                        }
-                    </script>
                 </form>
             </div>
         </div>
@@ -1216,7 +1173,8 @@
 
     <!--Footer-->
     @include('frontend.layout.footer')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    @include('frontend.layout.scripts')
+
     <script>
         function previewImages() {
 
@@ -1259,35 +1217,17 @@
 
         document.querySelector('#file').addEventListener("change", previewImages);
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-   
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
-
-    <script>
-        var lat = "<?php echo $lat ?>";
-        var lng = "<?php echo $lat ?>";
-        console.log("lat");
-        console.log(lat);
-        mapboxgl.accessToken =
-            'pk.eyJ1IjoiYW1tYXIxMjMxMjMiLCJhIjoiY2tydzJsMm9jMGNpajJucnh4M2pmaTVsZCJ9.ZxNGpJR7Qw9t3ONgdZmbQA';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [lat, lng],
-            zoom: 15,
-        });
-        const marker1 = new mapboxgl.Marker()
-            .setLngLat([parseFloat(lat), parseFloat(lng)])
-            .addTo(map);
-
-     
-    </script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      
 <script>
-     var lat = "<?php echo $lat ?>";
-        var lng = "<?php echo $lat ?>";
+    
+    function initMap() {
+            var lat = "<?php echo $lat ?>";
+            var lng = "<?php echo $lng ?>";
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: lat, lng: lng },
+                zoom: 13,
+            });
+        }
        var wellCircle;
         var marker
 
@@ -1300,10 +1240,10 @@
 
 
         function showPosition(position) {
-            //                     lat_ = position.coords.latitude;
-            // lng_ = position.coords.longitude;
             lat = parseFloat($('#lat').val());
             lng = parseFloat($('#lng').val());
+            console.log('lat', lat);
+            console.log('lng', lng);
 
             // lat = 36.83901
             // lng = 10.23931;
@@ -1315,13 +1255,10 @@
                 map
             });
 
-            //   $('#lat').val(lat);
-
-            //   $('#lng').val(lng);
             console.log(lat, lng);
             map.setCenter(marker.getPosition());
 
-            circle = new google.maps.Circle({
+            wellCircle = new google.maps.Circle({
                 strokeColor: "#FF0000",
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
@@ -1330,12 +1267,12 @@
                 map: map,
                 radius: 500
             });
-            circle.bindTo('center', marker, 'position');
+            wellCircle.bindTo('center', marker, 'position');
 
 
         }
 
-        $(document).ready(function() {
+        $(window).on('load', function(){
             getLocation();
 
         });
