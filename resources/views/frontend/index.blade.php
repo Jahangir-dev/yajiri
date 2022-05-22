@@ -1406,7 +1406,10 @@
                             </div>
                         </div>
                         <p class="card-text text-start pt-2 particularcard"><b class="particularinner">{{__('messages.perticular')}}</b></p>
-<!--                         <p class="text-start" style="font-size:10px;">{{Str::limit($u->aboutme, 100,'...') }} <a style="color: #2bbcea;">{{__('messages.more')}}</a></p> -->
+                        <div class="row pt-1">
+                            <p class="text-start" style="font-size:10px;color: black;font-weight: bolder;">{{Str::limit($u->aboutme, 50,'...') }} </p>
+                                <!-- <a style="color: #2bbcea;">{{__('messages.more')}}</a> -->
+                        </div>
                         <div class="row pt-1">
                             <div class="col d-flex lebardoiconrowtop">
                                 <img src="{{asset('theme/icons/ic_place_-1.png')}}" style="width: 15px;height: 22px;">
