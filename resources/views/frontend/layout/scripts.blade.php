@@ -369,7 +369,7 @@
 
         $('#userPhoneNumber').keypress(function (e) {    
             var charCode = (e.which) ? e.which : event.keyCode;
-            if($('#userPhoneNumber').val().length  < 1 || $('#userPhoneNumber').val().length > 10 ){
+            if($('#userPhoneNumber').val().length > 9 ){
                 $('#userPhoneNumberAlert').html('* Phone Number must be of 9 digits');
                 $('#userPhoneNumberAlert').show();
                 return false;
