@@ -634,7 +634,7 @@ class RequestController extends Controller
 
             }
             $request = $request->where('close',0)->where('status',1)->with('user','category_rel','user_fvrt')->orderBy('id','DESC')->paginate(30);
-
+            $request = $request->where('auth_id', '!=', Auth::user()->id);
            }else{
 
             // $lat = 33.6059770;
