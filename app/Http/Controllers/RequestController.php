@@ -617,6 +617,9 @@ class RequestController extends Controller
     {
         $distance = 50000000000;
         $request = PublishRequest::select();
+        if($r->search){
+            $request = $request->where('request_title', 'like', '%'.$r->search.'%');
+        }
 
            if(Auth::check()){
 
@@ -651,7 +654,7 @@ class RequestController extends Controller
 
           
 
-
+$subCategory = [];
             if($r->status){
                 $request = $request->where('status',$r->status);
             }
@@ -659,11 +662,10 @@ class RequestController extends Controller
             if($r->category){
                 $request = $request->where('category',$r->category);
             }
-
-            if($r->search){
-                $request = $request->where('request_title', 'like', '%'.$r->search.'%');
+            if($r->subcategory){
+                $subCategory = DB::table('sub_category')->where('category_id', $r->category)->get();
+                $request = $request->where('sub_category',$r->subcategory);
             }
-
             
 
             foreach($request as $u){
@@ -685,9 +687,22 @@ class RequestController extends Controller
             $allstatus = AllStatus::orderBy('id','desc')->get();
             $thebardos = theboard::orderBy('id','desc')->get();/*->DB::select('select DISTINCT position from publish_request ORDER BY id DESC')*/;
             $slider = DB::select('select * from requestslider ORDER BY id DESC');
-
-
-        return view('frontend.RequestsPage',compact('request','sub_category','allstatus','thebardos','category','slider','distance'));
+            $favs_final = [];
+            if(Auth::check())
+            {
+                $favs = DB::select('select userid from serviceproviderfav where user_favid='.Auth::user()->id);
+                if($favs)
+                {
+                    foreach($favs as $fav)
+                    {
+                        $favs_arr[] = $fav->userid;
+                    }
+                    $favs_final = DB::table('users')
+                    ->whereIn('id', $favs_arr)
+                    ->get();
+                }
+            }
+        return view('frontend.RequestsPage',compact('request','sub_category','allstatus','thebardos','category','slider','distance','favs_final','subCategory'));
     }
     public function requests2($limit1,$limit2)
     {

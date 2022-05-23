@@ -809,6 +809,64 @@
     <section class="pt-5" id="favourtiesIDWidth" style="margin: auto;">
         <div class="row" style="margin: auto;">
             <div class="col-lg-4">
+                @if(Auth::check())
+            <section class="py-5 text-center">
+                <div class="container" style="width: 75%;">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="col" style="width: 18rem;">
+                                <div class="d-flex" style="padding-left: 5vw;">
+                                    <img src="icons/ic_favorite_border_24px.png"
+                                        style="width: 1.2rem; height: 1.5rem; padding-top: 0.2rem;">
+                                    <p style="color: #F8286A;padding-left: 10px;">My favourties</p>
+                                </div>
+                                <div class="text-center my-1">
+                                    <div class="row">
+                                        @if(count($favs_final))
+                                        <div id="FavoritesCarouselID" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner" role="listbox">
+                                                @php
+                                                $fav_count = 1;
+                                                @endphp
+                                                @foreach($favs_final as $fav)
+                                                <div class="carousel-item {{$fav_count < 2 ? 'active' : ''}}">
+                                                    <div class="col-md-6">
+                                                        <img src="{{is_null($fav->image) ? 'icons/asset-1.png' : asset($fav->image)}}" class="card-img-top" style="width: 4rem;">
+                                                        <div class="card-body">
+                                                            <p class="card-text" style=" font-size: 12px; font-weight: bold;">
+                                                                {{$fav->name}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @php
+                                                $fav_count++;
+                                                @endphp
+                                                @endforeach
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#FavoritesCarouselID" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"><img
+                                                        src="icons/Group 2137.png"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#FavoritesCarouselID" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"><img
+                                                        src="icons/Group 1546.png"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        @else
+                                        <h5>Nothing found in favourites</h5>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @endif
             </div>
             <!--Search-->
             <div class="col-lg-8 col-md-8 search" style="padding-bottom:35px;">
@@ -906,6 +964,45 @@
                     <div class="col-lg-1">
                     </div>
                     <div class="col-lg-3 categoriestop">
+                        <div class="py-5 categoryicard" style="
+                                box-shadow: 0px 10px 50px 1px #dcf3ff;
+                                border-radius: 20px;
+                                margin: auto;">
+                        <div class=" text-center">
+                            <select class="selectbox categories sidebarCategories" id="select-item"
+                                style="width: 14rem;height: 3rem; color: #61aceb;border-color: lightgray; border-radius: 0px 5px 5px 0px; border-width: 1px;border-left:5px solid #7faceb;text-align-last: left;background-color: white;">
+                                    <option value="{{Null}}">Categories</option>
+                                @foreach($category as $cate)
+                                    <option <?php if(\Request::has('category') && \Request::get('category')==$cate->id) echo 'selected="selected"'; ?> value="{{$cate->id}}">{{$cate->name}}</option>
+                                @endforeach
+
+                            </select>
+
+                        </div>
+                        <div style="padding: 10px 0px 0px 25px;<?= isset($subCategory) && count($subCategory) ? '' : 'display: none;'?>" class="subcategory_list">
+                            <p class="homemaintenance d-none subcategorycard">Sub category</p>
+                            <div class="col-lg-12 subcategoryul">
+                            @if(isset($subCategory) && $subCategory->count())
+                            @foreach($subCategory as $sc)
+                            @php
+                            $categ = \Request::get('category');
+                            $sub_c = \Request::get('subcategory');
+                            @endphp
+                            <div style="padding-top: 1rem;">
+                                    <div class="form-check subcategoryallign">
+                                        <input class="form-check-input inputcheckbox" type="checkbox"
+                                            id="FieldsetCheck" value="{{$sc->id}}" <?= $sc->id == $sub_c ? 'checked' : ''?> onclick="loadCategories('{{$categ}}','{{$sc->id}}')">
+                                        <label class="form-check-label inputlabel" for="FieldsetCheck">
+                                            <p class="Form-Categoryt1" style="padding-top: 0.2rem;">{{$sc->subcategory_name}}</p>
+                                        </label>
+                                    </div>
+                                </div>
+                            @endforeach
+                            @endif
+                            </div>
+                        </div>                       
+                        
+                    </div>
                         
                     </div>
                     <div class="col-lg-7 sidebartop">
@@ -1539,6 +1636,70 @@
         });
 
     </script>
+    <script type="text/javascript">
+    // $(document).ready(function(e){
+    //     $('.show-less-div-4').myOwnLineShowMoreLess({
+    //         showLessText:'Less',
+    //         showMoreText:'...More',
+    //     });
+    // });
+
+    $('.sidebarCategories').change(function(){
+
+
+        val = $( ".sidebarCategories option:selected" ).val();
+        $.ajax({
+                type:'GET',
+                url:'{{route("get_subcategories")}}',
+                data:{val:val,
+                },
+                success: function( msg ) {
+                    var x = 'Not found Sub category';
+                    for(i=0;i<msg.length;i++){
+
+                        if(i==0){
+                            x = `<div style="padding-top: 1rem;">
+                                        <div class="form-check subcategoryallign">
+                                            <input class="form-check-input inputcheckbox" type="checkbox"
+                                                id="FieldsetCheck" value="`+msg[i].id+`" onclick="loadCategories('`+val+`','`+msg[i].id+`')">
+                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
+                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">`+msg[i].subcategory_name+`</p>
+                                            </label>
+                                        </div>
+                                    </div>`;
+                        }else{
+
+                            x = x + `<div style="padding-top: 1rem;">
+                                        <div class="form-check subcategoryallign">
+                                            <input class="form-check-input inputcheckbox" type="checkbox"
+                                                id="FieldsetCheck" value="`+msg[i].id+`" onclick="loadCategories('`+val+`','`+msg[i].id+`')">
+                                            <label class="form-check-label inputlabel" for="FieldsetCheck">
+                                                <p class="Form-Categoryt1" style="padding-top: 0.2rem;">`+msg[i].subcategory_name+`</p>
+                                            </label>
+                                        </div>
+                                    </div>`;
+
+                        }
+
+
+                    }
+
+                        $('.subcategory_list').html(x);                    
+                          $('.subcategory_list').show();                    
+
+                }
+            });
+
+    }); 
+
+
+    function loadCategories(cat,val){
+
+        window.location.href = '{{route("requests")}}?category='+cat+'&subcategory='+val;
+
+    }
+
+</script>
     <script>
         let items = document.querySelectorAll('#RealizeCarouselID .carousel-item')
         items.forEach((el) => {
