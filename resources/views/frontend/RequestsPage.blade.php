@@ -982,7 +982,7 @@
                         <div style="padding: 10px 0px 0px 25px;<?= isset($subCategory) && count($subCategory) ? '' : 'display: none;'?>" class="subcategory_list">
                             <p class="homemaintenance d-none subcategorycard">Sub category</p>
                             <div class="col-lg-12 subcategoryul">
-                            @if(isset($subCategory) && $subCategory->count())
+                            @if(isset($subCategory) && count($subCategory))
                             @foreach($subCategory as $sc)
                             @php
                             $categ = \Request::get('category');
