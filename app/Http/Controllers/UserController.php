@@ -86,6 +86,14 @@ class UserController extends Controller
         'remember_token' => $token
         ]);
        
+         $email = $request->registerEmail;
+        $token=$token;
+        $data = ['email'=>$email,'token'=>$token];
+
+
+        Mail::send('emails.verify_mail',['data'=>$data],function($mail) use ($email){
+                    $mail->to($email,'Email Verification')->from("info@yajiri.com")->subject("New Registration Email Verification");
+            });
 
         $user=User::find($user_id);
         $role=DB::table('roles')->where('name','User')->first();
@@ -101,15 +109,7 @@ class UserController extends Controller
             'lng' => $request->registerLng,
             'distance' => 0
         ]);
-        $email = $request->registerEmail;
-        $token=$token;
-        $data = ['email'=>$email,'token'=>$token];
-
-
-        Mail::send('emails.verify_mail',['data'=>$data],function($mail) use ($email){
-                    $mail->to($email,'Email Verification')->from("info@yajiri.com")->subject("New Registration Email Verification");
-            });
-
+       
             toast('Registration successful, verification email sent to email, please verify');
         // alert()->success('Registration successfully');
         return redirect()->back()->with('success','Registration successfully');

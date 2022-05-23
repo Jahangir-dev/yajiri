@@ -61,8 +61,8 @@ return [
 'you_can_make_a_call_or_send_a_message_for_the_further_proceedings' => 'You can make a call or send a message for the further proceedings',
 'send_message' => 'Send Message',
 'make_call' => 'Make a call',
-'call' => 'Call'
-
+'call' => 'Call',
+'new_password' => 'Enter New Password'
 
 
 
