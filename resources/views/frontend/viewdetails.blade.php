@@ -476,7 +476,7 @@
                                         <div class="d-flex flex-wrap confirmpublish">
                                             <p class="Responses-Name1 text-start">
                                             {{isset($detail->user)?$detail->user->name:''}}</p>
-                                            @if($detail->user->registration_type==1)<p class="CRperticularT">Professional</p> @elseif($detail->user->registration_type==2) <p class="CRperticularT">Private</p>@endif
+                                            @if(isset($detail->user->registration_type) && $detail->user->registration_type==1)<p class="CRperticularT">Professional</p> @elseif(isset($detail->user->registration_type) && $detail->user->registration_type ==2) <p class="CRperticularT">Private</p>@endif
                                         </div>
                                         <div class="d-flex flex-wrap">
                                             <span class="QuotationButton">${{$detail->price}}</span>
