@@ -670,11 +670,28 @@ $subCategory = [];
 
             foreach($request as $u){
 
-                $actual = 6371 * acos(
-                    cos(deg2rad((float)$lat)) * cos(deg2rad((float)$u->position))
-                    * cos(deg2rad((float)$u->position2) - deg2rad((float)$lng))
-                    + sin(deg2rad((float)$lat)) * sin(deg2rad((float)$u->position))
-                );
+                if(Auth::check())
+                {
+                     $user_dist = UserDistance::where('user_id', $u->id)->first();
+                     if($user_dist)
+                     {
+                      $actual = 6371 * acos(
+                          cos(deg2rad((float)$lat)) * cos(deg2rad((float)$user_dist->lat))
+                          * cos(deg2rad((float)$user_dist->lng) - deg2rad((float)$lng))
+                          + sin(deg2rad((float)$lat)) * sin(deg2rad((float)$user_dist->lat))
+                      );
+                     }
+                     else{
+                         $actual = 6371 * acos(
+                             cos(deg2rad((float)$lat)) * cos(deg2rad((float)$u->position))
+                             * cos(deg2rad((float)$u->position2) - deg2rad((float)$lng))
+                             + sin(deg2rad((float)$lat)) * sin(deg2rad((float)$u->position))
+                         );
+                     }
+                }
+                else{
+                    $actual = 0;
+                }
 
                 $u->distance = $actual;
            }
@@ -690,12 +707,12 @@ $subCategory = [];
             $favs_final = [];
             if(Auth::check())
             {
-                $favs = DB::select('select userid from serviceproviderfav where user_favid='.Auth::user()->id);
+                $favs = DB::select('select user_id from favouriterequest where whomtoshow='.Auth::user()->id);
                 if($favs)
                 {
                     foreach($favs as $fav)
                     {
-                        $favs_arr[] = $fav->userid;
+                        $favs_arr[] = $fav->user_id;
                     }
                     $favs_final = DB::table('users')
                     ->whereIn('id', $favs_arr)
@@ -794,7 +811,8 @@ $subCategory = [];
 
         if($isalreadyexsist)
         {
-            toast("Already Exists");
+            FavRequestModel::where('user_id', $id1)->where('request_id', $id2)->delete();
+            toast("Removed from favourites", 'warning');
             return back();
         }
         else{
