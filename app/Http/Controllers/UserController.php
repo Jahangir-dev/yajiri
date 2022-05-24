@@ -83,6 +83,7 @@ class UserController extends Controller
         'country' => $request->registerCountrySelect,
         'sms_code' => $request->registerFirstName,
         'email' => $request->registerEmail,
+        'usertype'=> $request->registeruserType,
         'remember_token' => $token
         ]);
        

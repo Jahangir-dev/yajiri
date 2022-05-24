@@ -11,7 +11,7 @@
 <input type="hidden" name="registerCountrySelect" id="registerCountrySelect">
 <input type="hidden" name="registerPhoneNumber1" id="registerPhoneNumber1">		
 <input type="hidden" name="registerSendCodeViaSMS" id="registerSendCodeViaSMS">	
-
+<input type="hidden" name="registeruserType" id="registeruserType">
 <input type="hidden" name="registerLat" id="registerLat">		
 <input type="hidden" name="registerLng" id="registerLng">	
 

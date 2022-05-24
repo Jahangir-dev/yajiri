@@ -310,6 +310,7 @@
              $('#registerSiretNumber').val($('#userSiretNumber').val());
              $('#registerPhoneNumber').val($('#userPhoneNumber').val());
              $('#registerPassword').val($('#userPassword').val());
+             $('#registeruserType').val($('#userType').val());
              $('#registerCountrySelect').val($('#registrationCountrySelect').val());
              $('#registerLat').val($('#lat').val());
              $('#registerLng').val($('#lng').val());
