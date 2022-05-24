@@ -486,7 +486,62 @@
     <section class="py-5" id="favourtiesIDWidth" style="margin: auto;">
         <div class="row container" style="margin: auto;">
             <div class="col-lg-5">
-
+            <section class="py-5 text-center">
+                <div class="container" style="width: 75%;">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="col" style="width: 18rem;">
+                                <div class="d-flex" style="padding-left: 5vw;">
+                                    <img src="icons/ic_favorite_border_24px.png"
+                                        style="width: 1.2rem; height: 1.5rem; padding-top: 0.2rem;">
+                                    <p style="color: #F8286A;padding-left: 10px;">My favourties</p>
+                                </div>
+                                <div class="text-center my-1">
+                                    <div class="row">
+                                        @if(count($favs_final))
+                                        <div id="FavoritesCarouselID" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner" role="listbox">
+                                                @php
+                                                $fav_count = 1;
+                                                @endphp
+                                                @foreach($favs_final as $fav)
+                                                <div class="carousel-item {{$fav_count < 2 ? 'active' : ''}}">
+                                                    <div class="col-md-6">
+                                                        <img src="{{is_null($fav->image) ? 'icons/asset-1.png' : asset($fav->image)}}" class="card-img-top" style="width: 4rem;">
+                                                        <div class="card-body">
+                                                            <p class="card-text" style=" font-size: 12px; font-weight: bold;">
+                                                                {{$fav->name}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @php
+                                                $fav_count++;
+                                                @endphp
+                                                @endforeach
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#FavoritesCarouselID" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"><img
+                                                        src="/icons/Group 2137.png"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#FavoritesCarouselID" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"><img
+                                                        src="/icons/Group 1546.png"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        @else
+                                        <h5>Nothing found in favourites</h5>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             </div>
             <div class="col-lg-7 col-md-12 " style="margin: auto;">
                 <div class="row searchbar">
@@ -1692,7 +1747,20 @@
         window.location.href = '{{route("serviceproviders")}}?category='+cat+'&subcategory='+val;
 
     }
-
+    let items2 = document.querySelectorAll('#FavoritesCarouselID .carousel-item')
+        items2.forEach((el) => {
+            const minPerSlide = 2
+            let next = el.nextElementSibling
+            for (var i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                    // wrap carousel by using first child
+                    next = items2[0]
+                }
+                let cloneChild = next.cloneNode(true)
+                el.appendChild(cloneChild.children[0])
+                next = next.nextElementSibling
+            }
+        });
 </script>
 
 </body>
