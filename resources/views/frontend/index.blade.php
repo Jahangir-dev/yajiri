@@ -1216,8 +1216,11 @@
                     top: -20px;">{{__('messages.moments_of_life')}}</p>
             <div class="row">
                 @foreach($momentsoflife as $life)
+                @php
+                $href_text = Auth::check() ? route('publishrequest') : '#LoginRegisterModal8';
+                @endphp
                 <div class="col" style="width: 10rem;">
-                <a href="{{route('publishrequest')}}">
+                <a class="<?= Auth::check() ? 'cat_home_listing' : 'open-login'?>" href="{{$href_text}}">
                     <img src="{{asset($life->filename)}}" style="width:10rem;height:10rem" class="card-img-top" style="width: 10rem;">
                     </a>
                     <div class="card-body">
@@ -1228,7 +1231,11 @@
                 @endforeach
             </div>
             <div class="seemore">
+                @if(Auth::check())
                 <button type="button" class="m-see-more btn btn-lg text-light" style="position:relative;top:20px;" onclick="document.location='{{route('realizeYourProject')}}'">{{__('messages.see_more')}}</button>
+                @else
+                <button type="button" class="m-see-more btn btn-lg text-light open-login" style="position:relative;top:20px;">{{__('messages.see_more')}}</button>
+                @endif
             </div>
         </div>
     </section>
@@ -1259,7 +1266,7 @@
                             @if(Auth::User() && isset($req->user))
                                 <a href="{{route('profileuser', [ 'id' =>  isset($req->user)?$req->user->id:''])}}">
                                     @else
-                                        <a href="javascript:void(0)">
+                                        <a class="open-login" href="javascript:void(0)">
                                     @endif 
 
                                 @if(isset($req->user->image))
@@ -1291,7 +1298,7 @@
                             @if(Auth::user())
                             <a href="{{route('view-detail',['id'=>$req->id])}}" style="text-decoration:none;color: black;"> 
                             @else 
-                            <a href="#" style="text-decoration:none;color: black;"> 
+                            <a class="open-login" href="#" style="text-decoration:none;color: black;"> 
                             @endif
                             <div style="padding-left: 20px;padding-top: 1rem;">
                                 <p class="text-start" style="font-size: 12px;display: inline;"> <b>{{$req->request_title}}</b>
@@ -1368,13 +1375,13 @@
                 @endforeach
                 
                 
-               @if($request->count())     
+               @if($request->count() && Auth::check())     
                 <div class="pt-2 text-center" style="padding-bottom: 3rem;">
                     <button type="button" class="m-see-more-2 btn btn-lg text-light" onclick="document.location='{{route('requestsPage')}}'">{{__('messages.see_more')}}</button>
                 </div>
               @else
                 <div class="pt-2 text-center" style="padding-bottom: 3rem;">
-                    <button type="button" class="m-see-more-2 btn btn-lg text-light">{{__('messages.no_more_results')}}</button>
+                    <button type="button" class="m-see-more-2 btn btn-lg text-light open-login">{{__('messages.no_more_results')}}</button>
                 </div>                
               @endif  
     </section>
@@ -1385,16 +1392,18 @@
             <div class="row" style="align-items: center;">
             @foreach($users as $u)
                 <div class="col pb-5">
-                <a <?php if(!Auth::check()) echo 'data-bs-toggle="modal" role="button" href="#LoginRegisterModal8"'; ?> href="{{Auth::user()!=NULL?route('profileuser', [ 'id' =>  $u->id]):'#'}}" style="text-decoration:none">
                     <div class="pt-3 px-3" style="min-height: 230px;width: 14rem; background-color: white; border-radius: 10px; box-shadow: 10px 10px 100px 1px #dff2f7; margin: auto;">
                         <div class="row">
                             <div class="col-4" style="position: relative;">
+                <a <?php if(!Auth::check()) echo 'data-bs-toggle="modal" role="button" href="#LoginRegisterModal8"'; ?> href="{{Auth::user()!=NULL?route('profileuser', [ 'id' =>  $u->id]):'#'}}" style="text-decoration:none">
+
                                 @if($u->image)
                                 <img src="{{asset($u->image)}}" class="card-img-left" style="height:70px;width:70px">
                                 @else
                                 <img src="https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png" class="card-img-left" style="height:70px;width:70px">
                                 @endif
                                 <img src="{{asset('theme/icons/Group 2412.png')}}" style="position: absolute; top: 3.4rem;left: 4.7rem;width: 1.3rem;">
+</a>
                             </div>
                             <div class="col-8">
                                 
@@ -1424,7 +1433,6 @@
                             </div> -->
                         </div>
                     </div>
-                </a>
                 </div>
                 
                 @endforeach
@@ -1574,7 +1582,9 @@
     <script type="text/javascript">
     
   $(document).ready(function () {
-
+    $('.open-login').click(function(){
+        $('#LoginRegisterModal8').modal('show');
+    });
      // Attach Button click event listener 
     $("#continue").click(function(){
 

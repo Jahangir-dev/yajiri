@@ -726,7 +726,7 @@
                                         <div class="row">
                                             <div class="col-3 col-sm-6" style="margin: auto;position: relative;">
 
-                                                <a href="{{Auth::user()!=NULL?route('profileuser', [ 'id' =>  $u->id]):'#'}}">
+                                                <a class="<?= Auth::check() ? '' : 'open-login'?>" href="{{Auth::user()!=NULL?route('profileuser', [ 'id' =>  $u->id]):'#'}}">
 
 
                                                         @if($u->image)
@@ -790,6 +790,7 @@
                                             padding-top: 1px;" class="Categoriestop">
                                         <p class="responses-buttons1234 text-start">{{isset($u->user_services)?$u->user_services->service:''}}</p>
                                     </div>
+                                    @if(Auth::check())
                                     <div class="col-md-3 col-sm-4 col-6 d-flex pt-1" style="    padding-left: 1.1rem;">
                                         <img src="{{asset('theme/icons/Union 21.png')}} " class="arrow"
                                             style="width: 25px;height: 16px;padding-top: 5px;">
@@ -797,8 +798,9 @@
                                         <p class="responses-buttons1234 text-start distance">{{number_format($u->distance,1)}} Km</p>
 
                                     </div>
+                                    @endif
 
-                                    <div class="col-md-2 col-sm-12 col-12 pb-2 ">
+                                    <div class="<?= Auth::check() ? 'col-md-2' : 'col-md-5 ml-auto'?> col-sm-12 col-12 pb-2 ">
 
                                          @if(Auth::user())
                                                 <a href="" style="text-decoration:none;position: relative;left: -15px;top: 0px;"
@@ -806,7 +808,7 @@
                                                     role="button" data-bs-target="#staticBackdrop{{$u->id}}"
                                                     data-bs-dismiss="modal">Contact</a>
                                                 @else
-                                                <a href="#LoginRegisterModal8" style="text-decoration:none;position: relative;left: -15px;top: 0px;"
+                                                <a href="#LoginRegisterModal8" style="text-decoration:none;position: relative;left: 185px;top: 0px;"
                                                     class=" nav-item nav-link Contact-b1" data-bs-toggle="modal"
                                                     role="button">Contact</a>
                                                 @endif
@@ -1590,6 +1592,9 @@
     <script type="text/javascript" src="{{asset('js/showmoreless.js')}}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            $('.open-login').click(function(){
+        $('#LoginRegisterModal8').modal('show');
+    });
             $('.purpose').on('change', function () {
                 if (this.value == '1')
                 //.....................^.......
