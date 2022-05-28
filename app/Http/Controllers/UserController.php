@@ -451,11 +451,7 @@ class UserController extends Controller
 
     public function user_save_categories(Request $request)
     {
-
-
-
         if($request->modified){
-
             foreach($request->category as $c){
 
                 $new = new UserCategory();
@@ -464,11 +460,9 @@ class UserController extends Controller
                 $new->save();                
 
             }
-
             return redirect()->back();    
-
-        }else{
-
+        }
+        else{
             $categories = explode(',',$request->selected_category);
             foreach($categories as $c){
                 $new = new UserCategory();

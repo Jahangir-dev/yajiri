@@ -412,8 +412,8 @@
                             <div class="mrgin_leftt">
                                     <div class="row" style="text-align: left;margin-top: 1rem;">
                                         <div class="col d-flex">
-                                            <p class="ProfileText1" data-bs-toggle="modal" data-bs-target="#exampleModalf">{{ $usersdetail->first_name}} {{ $usersdetail->last_name}}</p>
-                                             @if($usersdetail->usertype)
+                                            <p class="ProfileText1" data-bs-toggle="modal" data-bs-target="#exampleModalf">{{ isset($userdetail->first_name) ? $usersdetail->first_name : ''}} {{ isset($userdetail->last_name) ? $usersdetail->last_name : ''}}</p>
+                                             @if(isset($usersdetail->usertype))
                                             <p class="mt-2" style="margin-left: 1rem;" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModalll"><span
                                                     class="Privatetext">{{$usersdetail->usertype}}</span></p>
@@ -427,7 +427,7 @@
                                     <div class="row addressofjohn">
                                         <div class="col d-flex">
                                             <img src="{{asset('theme/icons/ic_place_-1.png')}}" class="ProfileAddressImg">
-                                            <p class="ProfileText3">{{ $usersdetail->address}} {{ $usersdetail->country}} </p>
+                                            <p class="ProfileText3">{{ isset($usersdetail->address) ? $userdetail->address : ''}} {{ isset($usersdetail->country) ? $usersdetail->country : ''}} </p>
                                         </div>
                                     </div>
                                 </div>
@@ -438,7 +438,7 @@
 
                             <div class="mt-3">
 
-                            <p style="text-align:end;" class="ProfileText2"><img src="{{asset('theme/icons/ic_date_range_-1.png')}}" class="ProfileDateImg" style="margin-top: 0px;"> {{date('F d, Y H:i A',strtotime($usersdetail->created_at))}}</p>
+                            <p style="text-align:end;" class="ProfileText2"><img src="{{asset('theme/icons/ic_date_range_-1.png')}}" class="ProfileDateImg" style="margin-top: 0px;"> {{isset($userdetail->created_at) ? date('F d, Y H:i A',strtotime($usersdetail->created_at)) : ''}}</p>
                             </div>
                             <div class="iconfb" style="top:0px;text-align: end;">
 
@@ -474,7 +474,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <p style="font-size: 14px;">{{$usersdetail->aboutme}}  </p>
+                            <p style="font-size: 14px;">{{isset($userdetail->aboutme) ? $usersdetail->aboutme : ''}}  </p>
                         </div>
                     </div>
                     <div class="AboutMeRow2" style="margin-top: 1rem;">
@@ -490,7 +490,7 @@
                         </div>
                         <div class="row">
                         <div class="col-xs-12">
-<!--                             <span class="servicesicon" id="vechile2">{{ $usersdetail->services}}</span> -->
+<!--                             <span class="servicesicon" id="vechile2">{{ isset($usersdetail->services) ? $userdetail->services : ''}}</span> -->
                             
                             @if($userprofileservice->count())
                                 @foreach($userprofileservice as $u)
@@ -533,11 +533,11 @@
                         </div>
                         <div class="row">
 <!--                             <div class="col piccenter" style="width: 10rem;">
-                                <img src="{{asset($usersdetail->photogallery1)}}" class="card-img-top imagewidth">
+                                <img src="{{isset($userdetail->photogallery1) ? asset($usersdetail->photogallery1) : ''}}" class="card-img-top imagewidth">
 
                             </div>
                             <div class="col" style="width: 10rem;">
-                                <img src="{{asset($usersdetail->photogallery2)}}" class="card-img-top imagewidth">
+                                <img src="{{isset($userdetail->photogallery1) ? asset($usersdetail->photogallery2) : ''}}" class="card-img-top imagewidth">
 
                             </div>
 
