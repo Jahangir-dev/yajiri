@@ -1245,7 +1245,6 @@
             <p class="p-5 text-center recentrequest">{{__('messages.recent_requests')}}</p>
             <div class="row">
                 @foreach($request as $req)
-
                 <div class="col pb-5">
                     <div style="width: 14rem; background-color: white; border-radius: 10px;box-shadow: 10px 10px 100px 1px #ffe8ef; padding-left: 10px; margin: auto;    height: 266px;">
                         <div class="d-flex" style="justify-content: space-between;">
@@ -1310,7 +1309,7 @@
                                             top: -6px;">
                                     <div class="col d-flex lebardoiconrowtop">
                                         <a href="javascript:void(0)"><img src="{{asset('theme/icons/ic_place_-2.png')}}" style="width: 15px;height: 22px;"></a>
-                                        <p class="text-start" style="font-size: 13px;padding-left: 10px;">{{$req->formated_address}}</p>
+                                        <p class="text-start" style="font-size: 13px;padding-left: 10px;">{{!empty($req->formated_address) ? $req->formated_address : (isset($req->user->address) ? $req->user->address : '')}}</p>
                                     </div>
                                     <div class="col d-flex">
                                         @if(Auth::user())

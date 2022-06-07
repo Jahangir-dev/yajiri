@@ -109,6 +109,7 @@ class indexController extends Controller
 /*        $users=DB::select('SELECT  id,name,first_name, last_name, company_name, address, created_at, image, aboutme, services FROM users  order by id desc limit 4');*/
         
         $users = User::orderBy('id','desc')->limit(4)->get();
+        
         return view('frontend.index', [ 'companylogo' => $companylogo , 'request' => $request , 'momentsoflife' => $momentsoflife ,
         'exchangewithconfidence' => $exchangewithconfidence , 'easystepstofind' => $easystepstofind , 'users' => $users
     ]);
