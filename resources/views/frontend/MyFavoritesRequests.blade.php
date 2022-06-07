@@ -381,7 +381,7 @@
                                 <p class="responses-date1 text-start"> {{$fav->created_at}}</p>
                             </div>
                             <div class="text-end d-flex" style="padding-right:5px;">
-                                <a href="">
+                                <a href="{{route('favouriterequest',[ 'user_id' =>  $fav->auth_id  , 'requestid' =>  $fav->id ] )}}">
                                     <img class="responses-heart1" src="{{asset('theme/icons/ic_favorite_224px.png')}}">
                                 </a>
                                 <a href="" style="text-decoration: none;"><span class="QuotationButton">$5</span></a>
