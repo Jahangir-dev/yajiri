@@ -809,7 +809,6 @@
     <section class="pt-5" id="favourtiesIDWidth" style="margin: auto;">
         <div class="row" style="margin: auto;">
             <div class="col-lg-4">
-                @if(Auth::check())
             <section class="py-5 text-center">
                 <div class="container" style="width: 75%;">
                     <div class="row">
@@ -866,7 +865,6 @@
                     </div>
                 </div>
             </section>
-            @endif
             </div>
             <!--Search-->
             <div class="col-lg-8 col-md-8 search" style="padding-bottom:35px;">

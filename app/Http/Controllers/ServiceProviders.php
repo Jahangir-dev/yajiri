@@ -167,10 +167,24 @@ class ServiceProviders extends Controller
                 $subCategory = SubCategory::where('slug',$req->subcategory)->where('category_id',$Scategory->id)->get();                            
             }
 
-
+            $favs_final = [];
+            if(Auth::check())
+            {
+                $favs = DB::select('select user_favid from serviceproviderfav where userid='.Auth::user()->id);
+                if($favs)
+                {
+                    foreach($favs as $fav)
+                    {
+                        $favs_arr[] = $fav->user_favid;
+                    }
+                    $favs_final = DB::table('users')
+                    ->whereIn('id', $favs_arr)
+                    ->get();
+                }
+            }
 
             return view('frontend.ServiceProviders' , [ 'category' => $category , 'sub_category' => $sub_category ,
-            'allstatus' => $allstatus , 'thebardos' => $thebardos , 'serviceprovider' => $serviceprovider , 'slider' => $slider, 'slider2' => $slider2 , 'users' => $users,'subCategory'=>$subCategory,'Scategory'=>$Scategory ]);
+            'allstatus' => $allstatus , 'thebardos' => $thebardos , 'serviceprovider' => $serviceprovider , 'slider' => $slider, 'slider2' => $slider2 , 'users' => $users,'subCategory'=>$subCategory,'Scategory'=>$Scategory, 'favs_final' => $favs_final ]);
 
     }
     public function serviceprovidercate($cate_name)
