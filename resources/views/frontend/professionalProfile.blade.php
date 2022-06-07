@@ -792,13 +792,13 @@
                                     top: 15px;">
 
 
-
+                    @if(Auth::user()->id != $usersdetail->id);
                         <div class="row" style="position: relative;top: 15px;">
                             <a href="{{route('LeaveReviewBlue', 'id')}}" class=" nav-item nav-link previews"><img src="{{asset('theme/icons/whitestar.png')}}" class="whitestar" alt="">
                                 Leave your review</a>
 
                         </div>
-
+                    @endif
                     </div>
                 </div>
             </div>
