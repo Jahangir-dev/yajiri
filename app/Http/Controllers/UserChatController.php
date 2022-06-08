@@ -25,6 +25,11 @@ class UserChatController extends Controller
     }
     public function bluechat($id)
     {
+        $auth_user_chat = Message::where(function($q) use ($id){
+            $q->where('user_id', Auth::user()->id)->orWhere('user_id', $id);
+        })->where(function($qu) use ($id){
+            $qu->where('to_user_id', Auth::user()->id)->orWhere('to_user_id', $id);
+        })->get();
         $chat = Message::where('user_id', Auth::user()->id)->orWhere('to_user_id', Auth::user()->id)->with('from_user')->get();
 
         $user_list = [];
@@ -59,7 +64,7 @@ class UserChatController extends Controller
         }
 
         return view('frontend.BlueChat', [
-            'id' => $id, 'user' => $user, 'chat' => $chat, 'user_list_c' => $user_list_c
+            'id' => $id, 'user' => $user, 'chat' => $chat, 'user_list_c' => $user_list_c, 'auth_user_chat' => $auth_user_chat
         ]);
     }
     public function LeaveReviewBlue($id)

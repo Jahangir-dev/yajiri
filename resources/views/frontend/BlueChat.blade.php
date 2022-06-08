@@ -177,7 +177,7 @@
                     <div class="LookingForMoveRow2 row">
                        @if($id!='all')
                         <div class="ChatMessagesRow row pt-5">
-                            @foreach($chat as $c)
+                            @foreach($auth_user_chat as $c)
 
                             @if($c->user_id == Auth::user()->id)
                             <div class="row" style="padding:10px;">
