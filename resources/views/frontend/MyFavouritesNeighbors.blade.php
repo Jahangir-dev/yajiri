@@ -1083,7 +1083,7 @@
 							</div>
 
 							<div id="responsesID1" class="col-12 categories" style="padding-left: 10px;"> <img src="{{asset('theme/icons/ic_label_24px.png')}}" style="width: 18px;height: 12px;margin-top: 5px;">
-								<p class="responses-buttons1234 text-start"> {{$d->provider_d->user_services->service}}</p>
+								<p class="responses-buttons1234 text-start"> {{isset($d->provider_d->user_services->service) ? $d->provider_d->user_services->service : ''}}</p>
 							</div>
 							<hr id="LineID1" class="hrmobile">
 							<div class="row pt-2" style="padding-left: 10px;">
@@ -1091,7 +1091,7 @@
 									<p class="responses-buttons1234 text-start lebardotext">{{$d->provider_d->address}}</p>
 								</div>
 								<div id="responsesID2" class="col-md-2 col-sm-4 col-12 pt-1"> <img src="{{asset('theme/icons/ic_label_24px.png')}}" style="width: 18px;height: 12px;margin-top: 5px;">
-									<p class="responses-buttons1234 text-start categorytop">{{$d->provider_d->user_services->service}}</p>
+									<p class="responses-buttons1234 text-start categorytop">{{isset($d->provider_d->user_services->service) ? $d->provider_d->user_services->service : ''}}</p>
 								</div>
 								<div class="col-md-2 col-sm-4 col-6 d-flex pt-1 distancetop"> <img src="{{asset('theme/icons/Union 21.png')}}" class="arrow" style="width: 20px;height: 10px;margin-top: 5px;">
 									<p class="responses-buttons1234 text-start distance">{{number_format($d->distance,1)}} Km</p>

@@ -9,4 +9,10 @@ class userprofileservice extends Model
 {
     use HasFactory;
     protected $table="userprofileservice";
+
+    
+    public function provider_d()
+    {
+        return $this->hasOne(User::class,'id','userid');
+    }
 }

@@ -830,7 +830,7 @@
                                                 @foreach($favs_final as $fav)
                                                 <div class="carousel-item {{$fav_count < 2 ? 'active' : ''}}">
                                                     <div class="col-md-6">
-                                                        <img src="{{is_null($fav->image) ? 'icons/asset-1.png' : asset($fav->image)}}" class="card-img-top" style="width: 4rem;">
+                                                        <img src="{{is_null($fav->image) ? 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png' : asset($fav->image)}}" class="card-img-top" style="width: 4rem;">
                                                         <div class="card-body">
                                                             <p class="card-text" style=" font-size: 12px; font-weight: bold;">
                                                                 {{$fav->name}}</p>
@@ -1133,7 +1133,7 @@
                                         <div class="col-md-3 col-sm-4 col-6 d-flex paddingmobile">
                                             <img src="{{asset('theme/icons/ic_place_-2.png')}}" class="lebardoicon"
                                                 style="width: 15px;height: 22px;">
-                                            <p class="responses-buttons1234 text-start lebardotext">{{$r->formated_address}}</p>
+                                            <p class="responses-buttons1234 text-start lebardotext">{{!empty($r->formated_address) ? $r->formated_address : (isset($r->user->address) ? $r->user->address : '')}}</p>
                                         </div>
                                         <div id="responsesID2" class="col-md-2 col-sm-4 col-12 pt-1">
                                             <img src="{{asset('theme/icons/ic_label_24px.png')}}"

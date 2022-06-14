@@ -507,7 +507,7 @@
                                                 @foreach($favs_final as $fav)
                                                 <div class="carousel-item {{$fav_count < 2 ? 'active' : ''}}">
                                                     <div class="col-md-6">
-                                                        <img src="{{is_null($fav->image) ? 'icons/asset-1.png' : asset($fav->image)}}" class="card-img-top" style="width: 4rem;">
+                                                        <img src="{{is_null($fav->image) ? 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png' : asset($fav->image)}}" class="card-img-top" style="width: 4rem;">
                                                         <div class="card-body">
                                                             <p class="card-text" style=" font-size: 12px; font-weight: bold;">
                                                                 {{$fav->name}}</p>

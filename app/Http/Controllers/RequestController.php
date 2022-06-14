@@ -367,12 +367,13 @@ class RequestController extends Controller
      if(Auth::user())
      {
 
-        $favourite=DB::select('select publish_request.id, publish_request.request_title, publish_request.category,publish_request.sub_category, publish_request.budget , publish_request.price
+        $favourite=DB::select('select publish_request.id, publish_request.request_title, publish_request.category,publish_request.sub_category, publish_request.formated_address, publish_request.budget , publish_request.price
         , publish_request.position , publish_request.description , publish_request.urgent , publish_request.urgent , publish_request.professional ,  publish_request.phone_number  ,
          publish_request.file , publish_request.auth_id , publish_request.map, publish_request.created_at , users.name , users.first_name ,  users.last_name , users.last_name , users.address ,users.phone_number
           from publish_request   left JOIN users  ON   publish_request.auth_id  = users.id   JOIN favouriterequest ON publish_request.auth_id = favouriterequest.user_id and publish_request.id
           = favouriterequest.request_id where favouriterequest.whomtoshow='.Auth::user()->id.' order by id desc limit 0 , 30');
           $category=Category::get();
+        //   dd($favourite);
           return view('frontend.MyFavoritesRequests', [ 'favourite' => $favourite ,  'category'  =>  $category ]);
 
 
@@ -541,10 +542,10 @@ class RequestController extends Controller
         $id=Auth::user()->id;
         $users = DB::table('users')->find(Auth::user()->id);
 
-        if($users->password==$pass){
+        if (\Hash::check($request->p_password , $users->password )) {
             if($request->n_password==$request->c_password)
             {
-                $pass= (md5($request->n_password));
+                $pass= (\Hash::make($request->n_password));
 
                 DB::table('users')->where('id',$id)->update(['password'=>$pass]);
                 return back()->with('message','Successfully Updated');

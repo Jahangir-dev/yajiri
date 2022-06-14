@@ -391,7 +391,7 @@
                             <div class="col-sm-4 col-12">
                                 <div class="d-flex" style="justify-content: left;">
                                     <div class="" style="position: relative;">
-                                        <a href="ProfessionalProfile.html"> <img class="requestFaceImg1" src="{{asset('theme/icons/asset-1.png')}}">
+                                        <a href="ProfessionalProfile.html"> <img class="requestFaceImg1" src="{{is_null($fav->file) ? 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png' : asset($fav->file)}}">
                                         </a>
                                     </div>
                                     <div class="text-start CardNameStar">
@@ -425,7 +425,7 @@
                         <div class="row pt-2" style="padding-left: 10px;">
                             <div class="col-md-2 col-sm-4 col-6 d-flex pt-1 lebardo">
                                 <img src="{{asset('theme/icons/ic_place_-2.png')}}" style="width: 15px;height: 22px;">
-                                <p class="responses-buttons1234 text-start">{{$fav->position}}</p>
+                                <p class="responses-buttons1234 text-start">{{!empty($fav->formated_address) ? $fav->formated_address : (isset($fav->address) ? $fav->address : '')}}</p>
                             </div>
                             <div class="col-md-2 col-sm-4 col-6 d-flex pt-1">
                                 <img src="{{asset('theme/icons/Union 21.png')}}" class="arrow" style="width: 20px;height: 10px;margin-top: 5px;">
