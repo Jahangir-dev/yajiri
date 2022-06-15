@@ -280,7 +280,7 @@
                             <div class="row mb-4">
                             </div>
                             <div class="row">
-                                <a href="{{route('pink-leave-review',[ 'id'  => $u->id ])}}" style="background: linear-gradient(to right,#ff8dad,#ff2160);background: linear-gradient(to right,#ff8dad,#ff2160);border: none;width: 200px;height: 40px;font-size: 14px;border-radius: 8px;color: white;padding: 8px 10px;text-decoration: none;"><img src="{{asset('theme/icons/whitestar.png')}}" alt="" class="whitestar">Leave your review</a>
+                            @foreach($users as $user) <a href="{{route('pink-leave-review',[ 'id'  => $user->created_at ])}}" style="background: linear-gradient(to right,#ff8dad,#ff2160);background: linear-gradient(to right,#ff8dad,#ff2160);border: none;width: 200px;height: 40px;font-size: 14px;border-radius: 8px;color: white;padding: 8px 10px;text-decoration: none;"><img src="{{asset('theme/icons/whitestar.png')}}" alt="" class="whitestar">Leave your review</a>@endforeach
                             </div>
                         </div>
                     </div>

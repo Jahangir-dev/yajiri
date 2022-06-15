@@ -1185,14 +1185,15 @@
                                                                             style="width: 2.3rem;">
                                                                     </div>
                                                                     <p class="MBText1">Contact via messages or make a
-                                                                        call{{$r->id}}</p>
+                                                                        call {{$r->first_name}}</p>
                                                                     <p class="MBText2">You can make a call or send a
                                                                         message
                                                                         for the further proceedings.
                                                                     </p>
                                                                     <div class="row">
                                                                         <div class="col text-center">
-                                                                            <a href="{{route('user-chat',[ 'id' => $r->id ])}}"
+                                                                            <!-- <a href="{{route('user-chat',[ 'id' => $r->id ])}}" -->
+                                                                            <a href="{{route('bluechat', [ 'id' => $r->user->id ])}}"
                                                                                 class="SendMessageButton">Send
                                                                                 Message</a>
                                                                         </div>

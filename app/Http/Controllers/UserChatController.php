@@ -25,9 +25,9 @@ class UserChatController extends Controller
     }
     public function bluechat($id)
     {
-        $auth_user_chat = Message::where(function($q) use ($id){
+        $auth_user_chat = Message::where(function ($q) use ($id) {
             $q->where('user_id', Auth::user()->id)->orWhere('user_id', $id);
-        })->where(function($qu) use ($id){
+        })->where(function ($qu) use ($id) {
             $qu->where('to_user_id', Auth::user()->id)->orWhere('to_user_id', $id);
         })->get();
         $chat = Message::where('user_id', Auth::user()->id)->orWhere('to_user_id', Auth::user()->id)->with('from_user')->get();
@@ -62,9 +62,21 @@ class UserChatController extends Controller
 
             $user = User::find(Auth::user()->id);
         }
-
+        $final_rating = 'Not Rated';
+        $ratings = serviceproviderreview::where('serviceprodiverid', $id)->get();
+        if(count($ratings))
+        {
+            $rating_user = 0;
+            $count = 0;
+            foreach($ratings as $rat)
+            {
+                $rating_user = $rating_user + $rat->rating;
+                $count++;
+            }
+            $final_rating = $rating_user/$count;
+        }
         return view('frontend.BlueChat', [
-            'id' => $id, 'user' => $user, 'chat' => $chat, 'user_list_c' => $user_list_c, 'auth_user_chat' => $auth_user_chat
+            'id' => $id, 'user' => $user, 'chat' => $chat, 'user_list_c' => $user_list_c, 'auth_user_chat' => $auth_user_chat, 'final_rating' => $final_rating
         ]);
     }
     public function LeaveReviewBlue($id)
@@ -73,9 +85,15 @@ class UserChatController extends Controller
     }
     public function save_serviceprovider(Request $request)
     {
-
         if (Auth::user()) {
-
+            if (empty($request->rating)) {
+                toast('Please rate this review with start', 'info');
+                return back();
+            }
+            if ($request->rating < 1) {
+                toast('Please rate this review with at leat 1 star', 'info');
+                return back();
+            }
             if (empty($request->review)) {
                 toast('Please write Something for the Service Provider', 'info');
                 return back();
@@ -89,6 +107,7 @@ class UserChatController extends Controller
             $new->user_id = $request->userid;
             $new->serviceprodiverid = $request->serviceproviderid;
             $new->review = $request->review;
+            $new->rating = $request->rating;
             $new->save();
             alert()->success('Review Submitted');
             return redirect()->route('bluechat', ['id' => $request->userid]);

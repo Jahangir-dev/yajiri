@@ -8,6 +8,10 @@ body {
     padding-left: 50px;
 }
 
+.car_heightmobile.active{
+    background: linear-gradient(to left,#9bd6e2,#21beea);
+}
+
 .chatM2 {
     position: relative;
     left: 35px;

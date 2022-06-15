@@ -131,7 +131,7 @@
                     @foreach($user_list_c as $l)
                     <a href="{{route('chat',['id'=>$l['user']->id])}}" style="text-decoration:none;color: black;">
                     <div class="row mb-2">
-                        <div class="card car_heightmobile" style="max-width: 540px;height: 85px;">
+                        <div class="card car_heightmobile {{$id == $l['user']->id ? 'active' : ''}} {{$id}} {{$l['user']->id}}" style="max-width: 540px;height: 85px;">
                             <div class="row g-0">
                                 <div class="col-xxl-2 col-lg-3 col-md-2">
                                     @if($l['user']->image)
@@ -287,8 +287,12 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col d-flex">
+                                @if($final_rating != 'Not Rated')
                                 <img src="{{asset('icons/Group 2411.png')}}" style="width: 7rem; height: 1rem; margin-top: 0.15rem;">
-                                <p class="ReviewText1"><b>4.5</b></p>
+                                @else
+                                <img src="{{asset('icons/whitestar.png')}}"/>
+                                @endif
+                                <p class="ReviewText1"><b>{{$final_rating}}</b></p>
                             </div>
                         </div>
                         <div class="row mb-3">
