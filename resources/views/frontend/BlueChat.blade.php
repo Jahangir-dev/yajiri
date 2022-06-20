@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('BlueChat.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://use.fontawesome.com/5ac93d4ca8.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>ya jari</title>
 
@@ -107,7 +108,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -130,41 +130,41 @@
 
                     @foreach($user_list_c as $l)
                     <a href="{{route('chat',['id'=>$l['user']->id])}}" style="text-decoration:none;color: black;">
-                    <div class="row mb-2">
-                        <div class="card car_heightmobile {{$id == $l['user']->id ? 'active' : ''}} {{$id}} {{$l['user']->id}}" style="max-width: 540px;height: 85px;">
-                            <div class="row g-0">
-                                <div class="col-xxl-2 col-lg-3 col-md-2">
-                                    @if($l['user']->image)
-                                    <img src="{{asset($l['user']->image)}}" class="CardImg" style="width: 64px;height: 64px;border-radius: 50%;">                                
-                                    @else
+                        <div class="row mb-2">
+                            <div class="card car_heightmobile {{$id == $l['user']->id ? 'active' : ''}} {{$id}} {{$l['user']->id}}" style="max-width: 540px;height: 85px;">
+                                <div class="row g-0">
+                                    <div class="col-xxl-2 col-lg-3 col-md-2">
+                                        @if($l['user']->image)
+                                        <img src="{{asset($l['user']->image)}}" class="CardImg" style="width: 64px;height: 64px;border-radius: 50%;">
+                                        @else
                                         <img src="https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png" class="CardImg" style="width: 64px;height: 64px;border-radius: 50%;">
-                                    @endif
+                                        @endif
 
-                                </div>
-                                <div class="col-xxl-10 col-lg-9 col-md-10">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-xxl-8 col-lg-7 col-md-8">
-                                                <p class="chatcardtext1">{{$l['user']->name}}</p>
+                                    </div>
+                                    <div class="col-xxl-10 col-lg-9 col-md-10">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-xxl-8 col-lg-7 col-md-8">
+                                                    <p class="chatcardtext1">{{$l['user']->name}}</p>
+                                                </div>
+                                                <div class="col-xxl-4 col-lg-5 col-md-4 text-end">
+                                                    <p class="chatcardtext2">{{$l['time']}}</p>
+                                                </div>
                                             </div>
-                                            <div class="col-xxl-4 col-lg-5 col-md-4 text-end">
-                                                <p class="chatcardtext2">{{$l['time']}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
+                                            <div class="row">
                                                 <p class="chatcardtext3" id="recent_text_message">{{$l['mesageR']}}<i style="display:none">Typing...</i></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
                     @endforeach
 
-                    
-                    
+
+
                 </div>
                 <div class="col-md-6 col-sm-12 col-12 mr-l_00">
                     <div class="LookingForMoveRow1 row" style="position: relative;">
@@ -175,7 +175,7 @@
                         </a>
                     </div>
                     <div class="LookingForMoveRow2 row">
-                       @if($id!='all')
+                        @if($id!='all')
                         <div class="ChatMessagesRow row pt-5">
                             @foreach($auth_user_chat as $c)
 
@@ -188,11 +188,11 @@
                                 </div>
                                 @php
 
-                                    if(isset($c->from_user->image)){
-                                        $image = asset($c->from_user->image);
-                                    }else{
-                                        $image = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
-                                    }    
+                                if(isset($c->from_user->image)){
+                                $image = asset($c->from_user->image);
+                                }else{
+                                $image = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
+                                }
 
                                 @endphp
                                 <div class="col-xxl-1 col-lg-3 col-md-2 text-end">
@@ -203,13 +203,13 @@
 
                             @php
 
-                                    if(isset($user->image)){
-                                        $image = asset($user->image);
-                                    }else{
-                                        $image = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
-                                    }    
+                            if(isset($user->image)){
+                            $image = asset($user->image);
+                            }else{
+                            $image = 'https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png';
+                            }
 
-                                @endphp
+                            @endphp
 
                             <div class="row" style="padding:10px;">
                                 <div class="col-xxl-2 col-lg-3 col-md-2 text-start">
@@ -249,13 +249,12 @@
                         <div class="onlineCard card" style="max-width: 540px;height: 115px;">
                             <div class="row g-0">
                                 <div class="col-md-3 col-sm-4 col-4">
-                                    <a href="javascript:void(0)"> 
-                                    @if(isset($l) && $l['user']->image)
-                                    <img src="{{asset($l['user']->image)}}" class="CardImg" style="width: 64px;height: 64px;border-radius: 50%;">                                
+                                    <a href="javascript:void(0)">
+                                        @if(isset($l) && $l['user']->image)
+                                        <img src="{{asset($l['user']->image)}}" class="CardImg" style="width: 64px;height: 64px;border-radius: 50%;">
+                                        @else
                                         <img src="https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png" class="CardImg" style="width: 64px;height: 64px;margin-top: 1rem;border-radius: 50%;">
-                                                                            @else
-                                        <img src="https://wise.edu.pk/wp-content/uploads/2021/03/placeholder.png" class="CardImg" style="width: 64px;height: 64px;margin-top: 1rem;border-radius: 50%;">
-                                    @endif
+                                        @endif
 
                                     </a>
                                     <span class="dot dotgreen"></span>
@@ -270,7 +269,8 @@
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <p style="color: #08c8f9;font-weight: 500;margin-left: 0.7rem;margin-bottom: 0;margin-top: 0.5rem;">
-                                                {{$user->services}}</p>
+                                                    {{$user->services}}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -288,11 +288,23 @@
                         <div class="row mb-2">
                             <div class="col d-flex">
                                 @if($final_rating != 'Not Rated')
-                                <img src="{{asset('icons/Group 2411.png')}}" style="width: 7rem; height: 1rem; margin-top: 0.15rem;">
+                                <p class="p-1 mb-0"><b>Rating</b></p>
+                                @foreach(range(1,5) as $i)
+                                <span class="fa-stack" style="width:1em">
+                                    <!-- <i class="far fa-star"></i> -->
+                                    @if($final_rating >0)
+                                    @if($final_rating >0.5)
+                                    <i class="fa fa-star text-warning"></i>
+                                    @else
+                                    <i class="fa fa-star-half-o text-warning"></i>
+                                    @endif
+                                    @endif
+                                    @php $final_rating--; @endphp
+                                </span>
+                                @endforeach
                                 @else
-                                <img src="{{asset('icons/whitestar.png')}}"/>
+                                <p class="p-1 mb-0"><b>Not Rated Yet</b></p>
                                 @endif
-                                <p class="ReviewText1"><b>{{$final_rating}}</b></p>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -305,7 +317,7 @@
 
                         </div>
                         <div class="row">
-                           
+
                             <a href="{{route('LeaveReviewBlue',[ 'id' => $id])}}" style="background: linear-gradient(to right,#9bd6e2,#21beea);
                                         background: linear-gradient(to right,#9bd6e2,#21beea);
                                         border: none;
@@ -385,74 +397,75 @@
     <!--Footer-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.0.6/pusher.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.0.6/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script type="text/javascript">
-    
+    <script type="text/javascript">
+        var pusher = new Pusher('{{env("MIX_PUSHER_APP_KEY")}}', {
+            cluster: '{{env("PUSHER_APP_CLUSTER")}}',
+            encrypted: true
+        });
 
-     var pusher = new Pusher('{{env("MIX_PUSHER_APP_KEY")}}', {
-      cluster: '{{env("PUSHER_APP_CLUSTER")}}',
-      encrypted: true
-    });
+        var channel = pusher.subscribe('notification-send');
+        channel.bind('App\\Events\\NotificationEvent', function(data) {
 
-    var channel = pusher.subscribe('notification-send');
-    channel.bind('App\\Events\\NotificationEvent', function(data) {
-        
-        var x;    
-        if(data.to_user_id=='{{Auth::user()->id}}'){
-            x = `<div class="row" style="padding:10px;">
+            var x;
+            if (data.to_user_id == '{{Auth::user()->id}}') {
+                x = `<div class="row" style="padding:10px;">
                                 <div class="col-xxl-2 col-lg-3 col-md-2 text-start">
                                     <a href="javascript:void(0)"> <img style="width:44px;height: 44px;border-radius: 50%;" src="{{asset($user->image)}}" style="width: 3rem;"></a>
                                 </div>
                                 <div class="col-xxl-10 col-lg-9 col-md-10 text-start">
-                                    <p class="chatM3">`+data.message+`</p>
+                                    <p class="chatM3">` + data.message + `</p>
 
 
                                 </div>
                             </div>`;
 
-        }else{
-            x = `<div class="row" style="padding:10px;">
+            } else {
+                x = `<div class="row" style="padding:10px;">
                                 <div class="col-xxl-11 col-lg-9 col-md-10 text-end">
-                                    <p><span class="chatM2">`+data.message+`</span></p>
+                                    <p><span class="chatM2">` + data.message + `</span></p>
                                 </div>
                                 <div class="col-xxl-1 col-lg-3 col-md-2 text-end">
                                     <a href="javascript:void(0)"> <img style="width:44px;height: 44px;border-radius: 50%;" src="{{asset(Auth::user()->image)}}" style="width: 3rem;"></a>
                                 </div>
                             </div>`;
-        }
+            }
 
 
-        $('#recent_text_message').html(data.message);
-        $('.ChatMessagesRow').append(x);    
-        $('.ChatMessagesRow').scrollTop($('.ChatMessagesRow')[0].scrollHeight);
-    });
+            $('#recent_text_message').html(data.message);
+            $('.ChatMessagesRow').append(x);
+            $('.ChatMessagesRow').scrollTop($('.ChatMessagesRow')[0].scrollHeight);
+        });
 
-    function sendMessage(){
+        function sendMessage() {
 
-    text = $('#exampleFormControlInput1').val();
-    user_id = '{{$id}}';    
-    $.ajax({
-                type:'POST',
-                url:'{{route("sendMessage")}}',
-                data:{_token: "{{ csrf_token() }}",msg:text,user_id,user_id,
+            text = $('#exampleFormControlInput1').val();
+            user_id = '{{$id}}';
+            $.ajax({
+                type: 'POST',
+                url: '{{route("sendMessage")}}',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    msg: text,
+                    user_id,
+                    user_id,
                 },
-                success: function( msg ) {
+                success: function(msg) {
 
                     $('#exampleFormControlInput1').val('');
 
                 }
             });
 
-    }
+        }
 
 
-    $(document).ready(function(){
-        $('.ChatMessagesRow').scrollTop($('.ChatMessagesRow')[0].scrollHeight);
-    })
-
-</script>
+        $(document).ready(function() {
+            $('.ChatMessagesRow').scrollTop($('.ChatMessagesRow')[0].scrollHeight);
+        })
+    </script>
 
 </body>
 

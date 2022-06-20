@@ -31,6 +31,7 @@
             <li><a class="nav-link" href="{{route('admin-home')}}"><i class="fas fa-home"></i><span>Home</span></a></li>
 
 
+            <li><a class="nav-link" href="{{route('allUserReviews')}}"><i class="fas fa-home"></i><span>All User Reviews</span></a></li>
             <li><a class="nav-link" href="{{route('momentoflifetable')}}"><i class="fas fa-home"></i><span>Moments of Life</span></a></li>
 
             <li><a class="nav-link" href="{{route('exchangewithconfidence')}}"><i class="fas fa-home"></i><span>Exchange with confidence</span></a></li>

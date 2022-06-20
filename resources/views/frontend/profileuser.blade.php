@@ -574,13 +574,13 @@
 
 
                         <div class="row" style="position: relative;top: 15px;">
-                            <a href="LeaveReview.html" class=" nav-item nav-link previews"><img src="{{asset('theme/icons/whitestar.png')}}" class="whitestar" alt="">
+                            <a href="LeaveReview.html" class="nav-item nav-link previews"><img src="{{asset('theme/icons/whitestar.png')}}" class="whitestar" alt="">
                                 Leave your review</a>
 
                         </div>
 
                         <div class="row" style="position: relative;top: 20px;">
-                            <a href="LeaveReview.html" class="nav-item nav-link previews" style="background: linear-gradient(to right, #ffacbf, #fa4d75)"><img src="{{asset('theme/icons/Icon ionic-md-warning.png')}}" style="width:10%;" class="whitestar" alt="">
+                            <a href="{{route('reportUser', ['id' => $usersdetail->id])}}" class="nav-item nav-link previews" style="background: linear-gradient(to right, #ffacbf, #fa4d75)"><img src="{{asset('theme/icons/Icon ionic-md-warning.png')}}" style="width:10%;" class="whitestar" alt="">
                                 Report</a>
 
                         </div>

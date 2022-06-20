@@ -8,6 +8,7 @@ use App\Models\SubCategory;
 use App\Models\AllStatus;
 use App\Models\theboard;
 use App\Models\serviceProviderModel;
+use App\Models\serviceproviderreview;
 use App\Models\RequestSliderModel;
 use App\Models\ServiceSliderModel;
 use App\Models\User;
@@ -25,6 +26,11 @@ class AdminController extends Controller
     public function admin_home()
     {
         return view('admin.adminhome');
+    }
+    public function allUserReviews()
+    {
+        $reviews = serviceproviderreview::all();
+        return view('admin.all-user-reviews', ['reviews' => $reviews]);   
     }
     public function category_list()
     {

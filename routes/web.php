@@ -102,8 +102,9 @@ Route::get('requestsPage', [RequestController::class, 'requests'])->name('reques
 Route::get('professionalProfile', [ professionalProfileController::class,'index' ])->name('professionalProfile');
 Route::post('updateuserprofile/{id}' , [ professionalProfileController::class ,  'updateuserprofile'])->name('updateuserprofile');
 Route::post('userprofileservice' , [ professionalProfileController::class ,  'userprofileservice'])->name('userprofileservice');
-
 Route::get('profileuser/{id}', [ professionalProfileController::class,'profileuser' ])->name('profileuser');
+Route::post('report-user-save' , [ professionalProfileController::class ,  'saveReport'])->name('saveReport');
+Route::get('report-user/{id}' , [ professionalProfileController::class ,  'reportUser'])->name('reportUser');
 Route::post('updatephotogallary' , [ professionalProfileController::class ,  'updatephotogallary'])->name('updatephotogallary');
 Route::get('delete_gallery/{id}' , [ professionalProfileController::class ,  'delete_gallery'])->name('delete_gallery');
 
@@ -250,6 +251,7 @@ Route::get('modify-personal-info', [RequestController::class, 'modify_personal_i
 Route::get('change-password', [RequestController::class, 'change_password'])->name('change-password');
 
 Route::post('changepassword', [RequestController::class, 'changepassword'])->name('changepassword');
+Route::post('change-user-language', [RequestController::class, 'changeUserLanguage'])->name('changeUserLanguage');
 
 
 
@@ -262,8 +264,6 @@ Route::get('modify-categories-edit', [RequestController::class, 'modify_categori
 
 
 Route::get('modify-distance', [RequestController::class, 'modify_distance'])->name('modify-distance');
-
-
 
 Route::get('change-language', [RequestController::class, 'change_language'])->name('change-language');
 
@@ -310,6 +310,7 @@ Route::group(['prefix' => 'admin',  'middleware' => ['can:admin']], function()
 {
 
 
+    Route::get('all-user-reviews', [AdminController::class, 'allUserReviews'])->name('allUserReviews');
     Route::get('admin-home', [AdminController::class, 'admin_home'])->name('admin-home');
 
    Route::get('category-list', [AdminController::class, 'category_list'])->name('category-list');

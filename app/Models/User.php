@@ -88,6 +88,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Category::class, 'user_category');
     }
 
+    public function reviews()
+    {
+        return $this->belongsToMany(serviceproviderreview::class, 'serviceprodiverid');
+    }
+
    
 
 

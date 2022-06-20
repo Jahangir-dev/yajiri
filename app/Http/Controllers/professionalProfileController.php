@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\userprofileservice;
 use App\Models\UserDistance;
 use App\Models\UserCategory;
+use App\Models\Report;
 use Auth;
 use DB;
 use App\Models\PhotoGallery;
@@ -65,6 +66,21 @@ class professionalProfileController extends Controller
         return view('frontend.profileuser', [  'usersdetail' => $usersdetail , 'usersdetailroles' => $usersdetailroles , 'category' => $category
     , 'userprofileservice' => $userprofileservice]);
         
+    }
+
+    public function reportUser($id)
+    {
+        return view('frontend.reportForm', ['id' => $id]);
+    }
+    public function saveReport(Request $request)
+    {
+        Report::create([
+            'user_id' => $request->user_id,
+            'reporter_id' => Auth::user()->id,
+            'reason' => $request->reason
+        ]);
+        toast('Your report request has been submitted successfully', 'success');
+        return redirect()->back();
     }
     public function updatemapofuser(Request $request)
     {
