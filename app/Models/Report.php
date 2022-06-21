@@ -12,4 +12,14 @@ class Report extends Model
     protected $fillable = [
         'reporter_id', 'user_id', 'reason'
     ];
+
+    public function reporter()
+    {
+        return $this->hasOne('App\Models\User','id','reporter_id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User','id','user_id');
+    }
 }

@@ -63,7 +63,7 @@ class UserChatController extends Controller
             $user = User::find(Auth::user()->id);
         }
         $final_rating = 'Not Rated';
-        $ratings = serviceproviderreview::where('serviceprodiverid', $id)->get();
+        $ratings = serviceproviderreview::where('serviceprodiverid', $id)->where('status', 1)->get();
         if(count($ratings))
         {
             $rating_user = 0;

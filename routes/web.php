@@ -98,13 +98,14 @@ Route::post('updatemapofuser', [ professionalProfileController::class,'updatemap
 Route::get('requestsPage', [RequestController::class, 'requests'])->name('requestsPage');
 
 
-
 Route::get('professionalProfile', [ professionalProfileController::class,'index' ])->name('professionalProfile');
 Route::post('updateuserprofile/{id}' , [ professionalProfileController::class ,  'updateuserprofile'])->name('updateuserprofile');
 Route::post('userprofileservice' , [ professionalProfileController::class ,  'userprofileservice'])->name('userprofileservice');
 Route::get('profileuser/{id}', [ professionalProfileController::class,'profileuser' ])->name('profileuser');
 Route::post('report-user-save' , [ professionalProfileController::class ,  'saveReport'])->name('saveReport');
 Route::get('report-user/{id}' , [ professionalProfileController::class ,  'reportUser'])->name('reportUser');
+Route::get('accept-user-review/{id}' , [ AdminController::class ,  'acceptReview'])->name('acceptReview');
+Route::post('reject-user-review' , [ AdminController::class ,  'rejectReview'])->name('rejectReview');
 Route::post('updatephotogallary' , [ professionalProfileController::class ,  'updatephotogallary'])->name('updatephotogallary');
 Route::get('delete_gallery/{id}' , [ professionalProfileController::class ,  'delete_gallery'])->name('delete_gallery');
 
@@ -311,6 +312,7 @@ Route::group(['prefix' => 'admin',  'middleware' => ['can:admin']], function()
 
 
     Route::get('all-user-reviews', [AdminController::class, 'allUserReviews'])->name('allUserReviews');
+    Route::get('all-reported-users', [AdminController::class, 'allReportedUsers'])->name('allReportedUsers');
     Route::get('admin-home', [AdminController::class, 'admin_home'])->name('admin-home');
 
    Route::get('category-list', [AdminController::class, 'category_list'])->name('category-list');
